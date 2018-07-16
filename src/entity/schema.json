@@ -15,6 +15,14 @@
       "type": "string",
       "description": "Entity singular name on ke-bab case"
     },
+    "username": {
+      "type": "string",
+      "description": "Username"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email"
+    },
     "root": {
       "type": "string",
       "description": "Root folder",

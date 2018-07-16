@@ -16,11 +16,13 @@ describe('new', () => {
     const runner = new SchematicTestRunner('schematics', collectionPath);
     const tree = runner.runSchematic('new', {
       name: 'demo',
-      root: "fixtures/new"
+      root: "fixtures/new",
+      username: 'demo',
+      email: 'demo@demo.demo'
     }, Tree.empty());
     tree.getDir('')
       .visit(filePath => {
-        if (basename(filePath) !== 'index.ts' && basename(filePath) !== 'package.json' && basename(filePath) !== '.env') {
+        if (basename(filePath) !== '.env') {
           const content = tree.readContent(filePath);
           const existsContent = readFileSync(
             join(rootPath, filePath)
