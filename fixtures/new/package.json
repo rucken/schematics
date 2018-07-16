@@ -7,7 +7,7 @@
   },
   "private": true,
   "license": "MIT",
-  "author": " <>",
+  "author": "demo <demo@demo.demo>",
   "description": "Core with UI for web and native application maked on Angular6+",
   "bugs": {
     "url": "https://github.com/demo/core/issues"
@@ -29,8 +29,8 @@
   ],
   "maintainers": [
     {
-      "name": "",
-      "email": ""
+      "name": "demo",
+      "email": "demo@demo.demo"
     }
   ],
   "scripts": {

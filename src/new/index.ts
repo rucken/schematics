@@ -11,7 +11,7 @@ const gitUsername = require('git-username');
 export default function (options: any): Rule {
   const root = options.root;
   const name = options.name;
-  const gitInfo = { username: gitUsername(), email: gitEmail() };
+  const gitInfo = { username: options.username || gitUsername(), email: options.email || gitEmail() };
   const templateSource = apply(url('./files'), [
     template({
       ...strings,

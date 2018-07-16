@@ -18,7 +18,7 @@
     "core"
   ],
   "license": "MIT",
-  "author": " <>",
+  "author": "demo <demo@demo.demo>",
   "bugs": {
     "url": "https://github.com/demo/core/issues"
   },
@@ -29,8 +29,8 @@
   },
   "maintainers": [
     {
-      "name": "",
-      "email": ""
+      "name": "demo",
+      "email": "demo@demo.demo"
     }
   ],
   "peerDependencies": {
