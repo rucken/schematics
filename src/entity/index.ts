@@ -5,6 +5,8 @@ import { humanize, pluralize, underscore } from 'inflection';
 import { join, resolve } from 'path';
 
 const dot = require('dot-object');
+const gitEmail = require('git-user-email');
+const gitUsername = require('git-username');
 
 // Instead of `any`, it would make sense here to get a schema-to-dts package and output the
 // interfaces so you get type-safe options.
@@ -12,6 +14,7 @@ export default function (options: any): Rule {
   const root = options.root;
   const name = options.name;
   const fields = options.fields;
+  const gitInfo = { username: options.username || gitUsername(), email: options.email || gitEmail() };
   const chains = [];
   let app = options.app;
   let core = options.core;
@@ -26,7 +29,7 @@ export default function (options: any): Rule {
   } catch (e) {
     angularConfigPath = resolve(__dirname, 'files', 'project', 'angular.json');
     chains.push(
-      schematic('new', { root: root, name: 'demo' })
+      schematic('new', { root: root, name: 'demo', username: gitInfo.username, email: gitInfo.email })
     )
   }
   try {
@@ -75,6 +78,8 @@ export default function (options: any): Rule {
     name: name,
     fields: fields,
     root: root,
+    gitInfo: gitInfo,
+    ...dot.dot({ gitInfo: gitInfo }),
     app: appConfig,
     core: coreConfig,
     web: webConfig,
@@ -115,8 +120,8 @@ export default function (options: any): Rule {
   } catch (error) {
     existsFrames = [
       'content-types',
-      'permissions',
       'groups',
+      'permissions',
       'users'
     ];
   }
@@ -125,6 +130,7 @@ export default function (options: any): Rule {
       data.pluralize(name)
     );
   }
+  existsFrames = existsFrames.sort();
   try {
     accessSync(entityPageModuleFile, constants.F_OK);
     const templatePageSource = apply(url('./files/page-only-routes'), [
