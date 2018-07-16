@@ -1,0 +1,11 @@
+<% for (i=0;i<frames.length;i++){ %>import { <%=classify(frames[i])%>FrameRoutes } from './<%=frames[i]%>-frame/<%=frames[i]%>-frame.routes';
+<% } %>
+
+export const EntitiesPageChildrenRoutes = [
+  { path: '', redirectTo: '/entities/<%=frames[0]%>', pathMatch: 'full' },
+  <% for (i=0;i<frames.length;i++){ %>{
+    path: '<%=frames[i]%>',
+    loadChildren: './<%=frames[i]%>-frame/<%=frames[i]%>-frame.module#<%=classify(frames[i])%>FrameModule',
+    data: <%=classify(frames[i])%>FrameRoutes[0].data
+  }, <% } %>
+];

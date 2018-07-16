@@ -1,0 +1,62 @@
+import { Component, EventEmitter, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { ErrorsExtractor, translate } from '@rucken/core';
+import { <%= classify(name) %>, <%= classify(pluralize(name)) %>Config } from '<%= core.name %>';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { DynamicRepository } from 'ngx-repository';
+import { MessageModalService } from '@rucken/web';
+import { <%= classify(pluralize(name)) %>GridModalComponent } from '../<%= pluralize(name) %>-grid-modal/<%= pluralize(name) %>-grid-modal.component';
+import { <%= classify(pluralize(name)) %>GridComponent } from '../<%= pluralize(name) %>-grid/<%= pluralize(name) %>-grid.component';
+
+
+@Component({
+  selector: '<%= name %>-input',
+  templateUrl: './<%= name %>-input.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class <%= classify(name) %>InputComponent extends <%= classify(pluralize(name)) %>GridComponent implements OnInit {
+
+  @Output()
+  select = new EventEmitter <<%= classify(name) %>> ();
+
+  constructor(
+    public modalService: BsModalService,
+    protected errorsExtractor: ErrorsExtractor,
+    protected translateService: TranslateService,
+    protected dynamicRepository: DynamicRepository,
+    protected <%= camelize(pluralize(name)) %>Config: <%= classify(pluralize(name)) %>Config,
+    protected messageModalService: MessageModalService
+  ) {
+    super(
+      modalService,
+      errorsExtractor,
+      translateService,
+      dynamicRepository,
+      <%= camelize(pluralize(name)) %>Config,
+      messageModalService
+    );
+  }
+  ngOnInit() {
+    this.mockedItems = [];
+    this.repository.useMock({
+      items: this.mockedItems,
+      ...this.<%= camelize(pluralize(name)) %>Config
+    });
+    this.mockedItemsChange.subscribe(items =>
+      this.onSelect(items[0])
+    );
+  }
+  createAppendFromGridModal(): BsModalRef {
+    return this.modalService.show(<%= classify(pluralize(name)) %>GridModalComponent, {
+      class: 'modal-md',
+      initialState: {
+        title: translate('Select <%= humanize(name,true) %>'),
+        yesTitle: translate('Select'),
+        apiUrl: this.apiUrl
+      }
+    });
+  }
+  onSelect(item: <%= classify(name) %>) {
+    this.select.emit(item);
+  }
+}

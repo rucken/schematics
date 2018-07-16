@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "RuckenEntitySchematicsSchema",
+  "title": "Rucken Entity Schematics Schema",
+  "type": "object",
+  "properties": {
+    "fields": {
+      "type": "array",
+      "description": "Entity fields",
+      "default": [
+        "name"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Entity singular name on ke-bab case"
+    },
+    "root": {
+      "type": "string",
+      "description": "Root folder",
+      "default": "."
+    },
+    "app": {
+      "type": "string",
+      "description": "Application name in angular.json"
+    },
+    "core": {
+      "type": "string",
+      "description": "Core library name in angular.json"
+    },
+    "web": {
+      "type": "string",
+      "description": "Web library name in angular.json"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,29 @@
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { EntitySelectModule } from '@rucken/web';
+import { <%= classify(pluralize(name)) %>GridModalModule } from '../<%= pluralize(name) %>-grid-modal/<%= pluralize(name) %>-grid-modal.module';
+import { <%= classify(name) %>SelectComponent } from './<%= name %>-select.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    EntitySelectModule,
+    <%= classify(pluralize(name)) %>GridModalModule
+  ],
+  declarations: [
+    <%= classify(name) %>SelectComponent
+  ],
+  exports: [
+    <%= classify(name) %>SelectComponent,
+    EntitySelectModule,
+    <%= classify(pluralize(name)) %>GridModalModule
+  ]
+})
+export class <%= classify(name) %>SelectModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: <%= classify(name) %>SelectModule,
+      providers: []
+  };
+}
+}
