@@ -1,0 +1,29 @@
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { PromptFormModalModule } from '@rucken/web';
+import { <%= classify(name) %>ModalComponent } from './<%= name %>-modal.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    PromptFormModalModule
+  ],
+  declarations: [
+    <%= classify(name) %>ModalComponent
+  ],
+  entryComponents: [
+    <%= classify(name) %>ModalComponent
+  ],
+  exports: [
+    <%= classify(name) %>ModalComponent,
+    PromptFormModalModule
+  ]
+})
+export class <%= classify(name) %>ModalModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: <%= classify(name) %>ModalModule,
+      providers: []
+  };
+}
+}

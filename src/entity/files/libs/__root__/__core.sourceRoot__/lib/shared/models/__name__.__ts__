@@ -1,0 +1,20 @@
+import { IsNotEmpty } from 'class-validator';
+import { IModel } from 'ngx-repository';
+import { translate } from '@rucken/core';
+
+export class <%= classify(name) %> implements IModel {
+  static strings = {
+    id: translate('Id'),
+<%for (var i = 0; i < fields.length; i++) {%>    <%=camelize(fields[i],true) + ': translate(\'' + humanize(fields[i]) + '\'),\n' %><%}%>
+    createTitle: translate('Add new <%= humanize(name,true) %>'),
+    viewTitle: translate('<%= humanize(name) %> #{{id}}'),
+    updateTitle: translate('Update <%= humanize(name,true) %> #{{id}}'),
+    deleteTitle: translate('Delete <%= humanize(name,true) %> #{{id}}'),
+    deleteMessage: translate('Do you really want to delete <%= humanize(name,true) %>?')
+  };
+  id: number = undefined;
+<%for (var i = 0; i < fields.length; i++) { %>  <%='@IsNotEmpty()\n' %>  <%=fields[i] + ': string;\n' %><%}%>
+  toString() {
+    return this.<%=(fields&&fields.length)?camelize(fields[0],true):id.toString()%>;
+  }
+}

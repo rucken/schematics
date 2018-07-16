@@ -1,0 +1,32 @@
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { EntityGridModalModule } from '@rucken/web';
+import { <%= classify(pluralize(name)) %>GridModule } from '../<%= pluralize(name) %>-grid/<%= pluralize(name) %>-grid.module';
+import { <%= classify(pluralize(name)) %>GridModalComponent } from './<%= pluralize(name) %>-grid-modal.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    EntityGridModalModule,
+    <%= classify(pluralize(name)) %>GridModule
+  ],
+  declarations: [
+    <%= classify(pluralize(name)) %>GridModalComponent
+  ],
+  entryComponents: [
+    <%= classify(pluralize(name)) %>GridModalComponent
+  ],
+  exports: [
+    <%= classify(pluralize(name)) %>GridModalComponent,
+    EntityGridModalModule,
+    <%= classify(pluralize(name)) %>GridModule
+  ]
+})
+export class <%= classify(pluralize(name)) %>GridModalModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: <%= classify(pluralize(name)) %>GridModalModule,
+      providers: []
+  };
+}
+}

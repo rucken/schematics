@@ -1,0 +1,24 @@
+import { Component, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { <%= classify(name) %> } from '<%= core.name %>';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BaseEntityListModalComponent } from '@rucken/web';
+import { <%= classify(pluralize(name)) %>GridComponent } from '../<%= pluralize(name) %>-grid/<%= pluralize(name) %>-grid.component';
+
+@Component({
+  selector: '<%= pluralize(name) %>-grid-modal',
+  templateUrl: './<%= pluralize(name) %>-grid-modal.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class <%= classify(pluralize(name)) %>GridModalComponent extends BaseEntityListModalComponent <<%= classify(name) %>> {
+
+  @ViewChild('grid')
+  grid: <%= classify(pluralize(name)) %>GridComponent;
+  @Input()
+  apiUrl?: string;
+
+  constructor(
+    protected bsModalRef: BsModalRef
+  ) {
+    super(bsModalRef);
+  }
+}

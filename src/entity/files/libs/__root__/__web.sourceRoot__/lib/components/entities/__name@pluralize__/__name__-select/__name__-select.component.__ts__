@@ -1,0 +1,59 @@
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { ErrorsExtractor } from '@rucken/core';
+import { <%= classify(name) %>, <%= classify(pluralize(name)) %>Config } from '<%= core.name %>';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { DynamicRepository } from 'ngx-repository';
+import { MessageModalService } from '@rucken/web';
+import { <%= classify(pluralize(name)) %>GridComponent } from '../<%= pluralize(name) %>-grid/<%= pluralize(name) %>-grid.component';
+
+
+@Component({
+  selector: '<%= name %>-select',
+  templateUrl: './<%= name %>-select.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class <%= classify(name) %>SelectComponent extends <%= classify(pluralize(name)) %>GridComponent implements OnInit {
+
+  @Input()
+  searchField: FormControl = new FormControl();
+
+  nameField = '<%=fields&&fields?fields[0]:"id"%>';
+
+  constructor(
+    public modalService: BsModalService,
+    protected errorsExtractor: ErrorsExtractor,
+    protected translateService: TranslateService,
+    protected dynamicRepository: DynamicRepository,
+    protected <%= camelize(pluralize(name)) %>Config: <%= classify(pluralize(name)) %>Config,
+    protected messageModalService: MessageModalService
+  ) {
+    super(
+      modalService,
+      errorsExtractor,
+      translateService,
+      dynamicRepository,
+      <%= camelize(pluralize(name)) %>Config,
+      messageModalService
+    );
+  }
+  ngOnInit() {
+    if (!this.mockedItems) {
+      this.repository.useRest({
+        apiUrl: this.apiUrl,
+        ...this.<%= camelize(pluralize(name)) %>Config,
+        paginationMeta: { perPage: 1000 }
+      });
+    }
+    if (this.mockedItems) {
+      this.repository.useMock({
+        items: this.mockedItems,
+        ...this.<%= camelize(pluralize(name)) %>Config
+      });
+    }
+  }
+  checkChange(value: any, item: any) {
+    return item instanceof <%= classify(name) %>;
+  }
+}
