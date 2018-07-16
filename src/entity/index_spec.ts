@@ -21,7 +21,7 @@ describe('entity', () => {
     }, Tree.empty());
     tree.getDir('')
       .visit(filePath => {
-        if (basename(filePath) !== 'index.ts' && basename(filePath) !== 'package.json') {
+        if (basename(filePath) !== 'index.ts' && basename(filePath) !== 'package.json' && basename(filePath) !== '.env') {
           const content = tree.readContent(filePath);
           const existsContent = readFileSync(
             join(rootPath, filePath)

@@ -1,7 +1,7 @@
 import { Tree } from '@angular-devkit/schematics';
 import { SchematicTestRunner } from '@angular-devkit/schematics/testing';
 import { readFileSync } from 'fs';
-import { join, basename } from 'path';
+import { basename, join } from 'path';
 
 
 // SchematicTestRunner needs an absolute path to the collection to test.
@@ -20,7 +20,7 @@ describe('new', () => {
     }, Tree.empty());
     tree.getDir('')
       .visit(filePath => {
-        if (basename(filePath) !== 'index.ts' && basename(filePath) !== 'package.json') {
+        if (basename(filePath) !== 'index.ts' && basename(filePath) !== 'package.json' && basename(filePath) !== '.env') {
           const content = tree.readContent(filePath);
           const existsContent = readFileSync(
             join(rootPath, filePath)
