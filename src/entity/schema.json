@@ -5,11 +5,9 @@
   "type": "object",
   "properties": {
     "fields": {
-      "type": "array",
+      "type": "string",
       "description": "Entity fields",
-      "default": [
-        "name"
-      ]
+      "default": "[name]"
     },
     "name": {
       "type": "string",
