@@ -1,3 +1,13 @@
+<a name="3.0.4"></a>
+## [3.0.4](https://github.com/rucken/schematics/compare/3.0.3...3.0.4) (2018-07-19)
+
+
+### Bug Fixes
+
+* **entity:** Update process "fields" array options ([81ae50a](https://github.com/rucken/schematics/commit/81ae50a))
+
+
+
 <a name="3.0.3"></a>
 ## [3.0.3](https://github.com/rucken/schematics/compare/3.0.2...3.0.3) (2018-07-19)
 
