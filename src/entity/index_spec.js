@@ -16,7 +16,8 @@ describe('entity', () => {
             name: 'test-entity',
             root: "fixtures/entity",
             username: 'demo',
-            email: 'demo@demo.demo'
+            email: 'demo@demo.demo',
+            fields: '[name]'
         }, schematics_1.Tree.empty());
         tree.getDir('')
             .visit(filePath => {

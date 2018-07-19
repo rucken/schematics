@@ -13,7 +13,8 @@ const gitUsername = require('git-username');
 export default function (options: any): Rule {
   const root = options.root;
   const name = options.name;
-  const fields = options.fields;
+  const fields =
+    options.fields.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '').replace(new RegExp('\"', 'g'), '').split(',');
   const gitInfo = { username: options.username || gitUsername(), email: options.email || gitEmail() };
   const chains = [];
   let app = options.app;

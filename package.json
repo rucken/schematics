@@ -1,6 +1,6 @@
 {
   "name": "@rucken/schematics",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "engines": {
     "node": "8",
     "npm": ">=6.1.0"
@@ -20,7 +20,7 @@
     "build:tsc": "tsc -p tsconfig.json",
     "build": "run-s build:tsc",
     "test": "npm run build && jasmine src/**/*_spec.js",
-    "run-entity": "npm run build && schematics .:entity --name=test-entity --root=fixtures/entity --username=demo --email=demo@demo.demo --dry-run=false --force",
+    "run-entity": "npm run build && schematics .:entity --name=test-entity --root=fixtures/entity --username=demo --email=demo@demo.demo --fields=[name] --dry-run=false --force",
     "run-new": "npm run build && schematics .:new --name=demo --root=fixtures/new --username=demo --email=demo@demo.demo --dry-run=false --force",
     "manual-test": "npm run run-entity && npm run run-new && npm run test"
   },
