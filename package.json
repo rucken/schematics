@@ -20,8 +20,8 @@
     "build:tsc": "tsc -p tsconfig.json",
     "build": "run-s build:tsc",
     "test": "npm run build && jasmine src/**/*_spec.js",
-    "run-entity": "npm run build && node ./node_modules/@angular-devkit/schematics/src/index.js .:entity --name=test-entity --root=fixtures/entity --username=demo --email=demo@demo.demo --fields=[name] --dry-run=false --force",
-    "run-new": "npm run build && node ./node_modules/@angular-devkit/schematics/src/index.js .:new --name=demo --root=fixtures/new --username=demo --email=demo@demo.demo --dry-run=false --force",
+    "run-entity": "npm run build && schematics .:entity --name=test-entity --root=fixtures/core/entity --username=demo --email=demo@demo.demo --fields=[name] --dry-run=false --force",
+    "run-new": "npm run build && schematics .:new --name=demo --root=fixtures/core/new --username=demo --email=demo@demo.demo --dry-run=false --force",
     "manual-test": "npm run run-entity && npm run run-new && npm run test"
   },
   "keywords": [
@@ -44,7 +44,6 @@
   "schematics": "./src/collection.json",
   "dependencies": {
     "@angular-devkit/schematics": "^0.7.3",
-    "@schematics/angular": "^0.7.3",
     "@types/inflection": "^1.5.28",
     "@types/node": "^8.0.31",
     "dot-object": "^1.7.0",
@@ -54,6 +53,7 @@
   },
   "devDependencies": {
     "@angular-devkit/core": "^0.7.3",
+    "@angular-devkit/schematics-cli": "^0.7.3",
     "@angular/cli": "^6.1.3",
     "@types/jasmine": "^2.8.8",
     "conventional-changelog-cli": "^2.0.1",

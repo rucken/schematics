@@ -54,8 +54,7 @@ function default_1(options) {
     const webConfig = Object.assign({ name: web }, angularConfig.projects[web]);
     const data = Object.assign({}, core_1.strings, { humanize: (str, low_first_letter) => inflection_1.humanize(inflection_1.underscore(str).replace(new RegExp('-', 'g'), ' '), low_first_letter), pluralize: inflection_1.pluralize, name: name, fields: fields, root: root, gitInfo: gitInfo }, dot.dot({ gitInfo: gitInfo }), { app: appConfig, core: coreConfig, web: webConfig }, dot.dot({ app: appConfig }), dot.dot({ core: coreConfig }), dot.dot({ web: webConfig }), { ts: 'ts', json: 'json' });
     const templateLibsSource = schematics_1.apply(schematics_1.url('./files/libs'), [
-        schematics_1.template(data),
-        schematics_1.move('.'),
+        schematics_1.template(data)
     ]);
     chains.push(schematics_1.mergeWith(templateLibsSource, schematics_1.MergeStrategy.Overwrite));
     const frameModuleFile = path_1.resolve(root, data.app.sourceRoot, 'app', 'components', 'pages', 'entities-page', data.pluralize(data.name), data.pluralize(data.name) + '-frame.module.ts');
@@ -64,8 +63,7 @@ function default_1(options) {
     }
     catch (e) {
         const templateFrameSource = schematics_1.apply(schematics_1.url('./files/frame'), [
-            schematics_1.template(data),
-            schematics_1.move('.'),
+            schematics_1.template(data)
         ]);
         chains.push(schematics_1.mergeWith(templateFrameSource, schematics_1.MergeStrategy.Overwrite));
     }
@@ -90,8 +88,7 @@ function default_1(options) {
     try {
         fs_1.accessSync(entityPageModuleFile, fs_1.constants.F_OK);
         const templatePageSource = schematics_1.apply(schematics_1.url('./files/page-only-routes'), [
-            schematics_1.template(Object.assign({}, data, { frames: existsFrames })),
-            schematics_1.move('.'),
+            schematics_1.template(Object.assign({}, data, { frames: existsFrames }))
         ]);
         chains.push(schematics_1.mergeWith(templatePageSource, schematics_1.MergeStrategy.Overwrite));
     }
