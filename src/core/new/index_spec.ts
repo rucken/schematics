@@ -5,8 +5,8 @@ import { basename, join } from 'path';
 
 
 // SchematicTestRunner needs an absolute path to the collection to test.
-const collectionPath = join(__dirname, '../collection.json');
-const rootPath = join(__dirname, '../..');
+const collectionPath = join(__dirname, '../../collection.json');
+const rootPath = join(__dirname, '../../..');
 
 
 describe('new', () => {
@@ -16,7 +16,7 @@ describe('new', () => {
     const runner = new SchematicTestRunner('schematics', collectionPath);
     const tree = runner.runSchematic('new', {
       name: 'demo',
-      root: "fixtures/new",
+      root: "fixtures/core/new",
       username: 'demo',
       email: 'demo@demo.demo'
     }, Tree.empty());

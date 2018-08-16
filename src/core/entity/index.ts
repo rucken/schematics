@@ -1,5 +1,5 @@
 import { strings } from '@angular-devkit/core';
-import { apply, chain, MergeStrategy, mergeWith, move, Rule, schematic, SchematicsException, template, url } from '@angular-devkit/schematics';
+import { apply, chain, MergeStrategy, mergeWith, Rule, schematic, SchematicsException, template, url } from '@angular-devkit/schematics';
 import { accessSync, constants, readdirSync, readFileSync, statSync } from 'fs';
 import { humanize, pluralize, underscore } from 'inflection';
 import { join, resolve } from 'path';
@@ -91,8 +91,7 @@ export default function (options: any): Rule {
     json: 'json'
   };
   const templateLibsSource = apply(url('./files/libs'), [
-    template(data),
-    move('.'),
+    template(data)
   ]);
   chains.push(
     mergeWith(templateLibsSource, MergeStrategy.Overwrite)
@@ -104,8 +103,7 @@ export default function (options: any): Rule {
     accessSync(frameModuleFile, constants.F_OK);
   } catch (e) {
     const templateFrameSource = apply(url('./files/frame'), [
-      template(data),
-      move('.'),
+      template(data)
     ]);
     chains.push(
       mergeWith(templateFrameSource, MergeStrategy.Overwrite)
@@ -135,16 +133,14 @@ export default function (options: any): Rule {
   try {
     accessSync(entityPageModuleFile, constants.F_OK);
     const templatePageSource = apply(url('./files/page-only-routes'), [
-      template({ ...data, frames: existsFrames }),
-      move('.'),
+      template({ ...data, frames: existsFrames })
     ]);
     chains.push(
       mergeWith(templatePageSource, MergeStrategy.Overwrite)
     );
   } catch (e) {
     const templatePageSource = apply(url('./files/page'), [
-      template({ ...data, frames: existsFrames }),
-      move('.'),
+      template({ ...data, frames: existsFrames })
     ]);
     chains.push(
       mergeWith(templatePageSource, MergeStrategy.Overwrite)

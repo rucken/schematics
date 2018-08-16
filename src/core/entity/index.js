@@ -97,8 +97,7 @@ function default_1(options) {
     }
     catch (e) {
         const templatePageSource = schematics_1.apply(schematics_1.url('./files/page'), [
-            schematics_1.template(Object.assign({}, data, { frames: existsFrames })),
-            schematics_1.move('.'),
+            schematics_1.template(Object.assign({}, data, { frames: existsFrames }))
         ]);
         chains.push(schematics_1.mergeWith(templatePageSource, schematics_1.MergeStrategy.Overwrite));
     }

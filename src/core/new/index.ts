@@ -1,5 +1,5 @@
 import { strings } from '@angular-devkit/core';
-import { apply, chain, MergeStrategy, mergeWith, move, Rule, template, url } from '@angular-devkit/schematics';
+import { apply, chain, MergeStrategy, mergeWith, Rule, template, url } from '@angular-devkit/schematics';
 import { humanize, pluralize, underscore } from 'inflection';
 
 const dot = require('dot-object');
@@ -28,8 +28,7 @@ export default function (options: any): Rule {
       ts: 'ts',
       json: 'json',
       env: 'env'
-    }),
-    move('.'),
+    })
   ]);
   // The chain rule allows us to chain multiple rules and apply them one after the other.
   return chain([

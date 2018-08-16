@@ -2,12 +2,12 @@ import { Tree } from '@angular-devkit/schematics';
 import { SchematicTestRunner } from '@angular-devkit/schematics/testing';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { basename } from '../../node_modules/@angular-devkit/core';
+import { basename } from '../../../node_modules/@angular-devkit/core';
 
 
 // SchematicTestRunner needs an absolute path to the collection to test.
-const collectionPath = join(__dirname, '../collection.json');
-const rootPath = join(__dirname, '../..');
+const collectionPath = join(__dirname, '../../collection.json');
+const rootPath = join(__dirname, '../../..');
 
 
 describe('entity', () => {
@@ -17,7 +17,7 @@ describe('entity', () => {
     const runner = new SchematicTestRunner('schematics', collectionPath);
     const tree = runner.runSchematic('entity', {
       name: 'test-entity',
-      root: "fixtures/entity",
+      root: "fixtures/core/entity",
       username: 'demo',
       email: 'demo@demo.demo',
       fields: '[name]'

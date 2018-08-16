@@ -3,13 +3,13 @@
   "schematics": {
     "entity": {
       "description": "Generate model, service, grid, lookup input, modal for edit row in grid, modal for select items from grid with items",
-      "factory": "./entity",
-      "schema": "./entity/schema.json"
+      "factory": "./core/entity",
+      "schema": "./core/entity/schema.json"
     },
     "new": {
       "description": "Generate empty application based on rucken template",
-      "factory": "./new",
-      "schema": "./new/schema.json"
+      "factory": "./core/new",
+      "schema": "./core/new/schema.json"
     }
   }
 }
