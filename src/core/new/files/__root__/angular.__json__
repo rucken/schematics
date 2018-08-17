@@ -65,23 +65,6 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
-            },
-            "mockapi": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/<%=name%>/src/environments/environment.ts",
-                  "with": "apps/<%=name%>/src/environments/environment.mockapi.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
             }
           }
         },
@@ -96,9 +79,6 @@
             },
             "production": {
               "browserTarget": "<%=name%>:build:production"
-            },
-            "mockapi": {
-              "browserTarget": "<%=name%>:build:mockapi"
             }
           }
         },
@@ -172,20 +152,6 @@
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false
-            },
-            "mockapi": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/<%=name%>/src/environments/environment.ts",
-                  "with": "apps/<%=name%>/src/environments/environment-server.mockapi.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false
             }
           }
         }
@@ -207,9 +173,6 @@
             },
             "production": {
               "devServerTarget": "<%=name%>:serve:production"
-            },
-            "mockapi": {
-              "devServerTarget": "<%=name%>:serve:mockapi"
             }
           }
         },

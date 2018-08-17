@@ -16,7 +16,7 @@ Core with UI for web application maked on Angular6+
 git clone https://github.com/<%=name%>/core.git my-app
 cd my-app
 npm install
-npm run run-mockapi
+npm run start:prod
 ```
 
 ## Quick links
