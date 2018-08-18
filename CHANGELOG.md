@@ -1,3 +1,13 @@
+<a name="3.0.8"></a>
+## [3.0.8](https://github.com/rucken/schematics/compare/3.0.7...3.0.8) (2018-08-18)
+
+
+### Bug Fixes
+
+* Update source ([56c91db](https://github.com/rucken/schematics/commit/56c91db))
+
+
+
 <a name="3.0.7"></a>
 ## [3.0.7](https://github.com/rucken/schematics/compare/3.0.6...3.0.7) (2018-08-18)
 
