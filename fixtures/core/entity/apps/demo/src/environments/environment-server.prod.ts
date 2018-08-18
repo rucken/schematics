@@ -1,6 +1,6 @@
 export const environment = {
   server: true,
-  type: 'prod',
+  type: "prod",
   production: true,
-  apiUrl: '/api'
+  apiUrl: "https://rucken-core-nestjs.now.sh/api"
 };

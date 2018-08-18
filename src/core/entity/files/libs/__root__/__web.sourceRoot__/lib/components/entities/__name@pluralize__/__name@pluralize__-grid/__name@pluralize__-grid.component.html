@@ -5,7 +5,7 @@
     [columns]="<%=JSON.stringify([...fields,'action']).replace(new RegExp('"', 'g'), '\'')%>"
     [readonly]="readonly"
     [strings]="strings"
-    (create)="onCreateClick()"
+    (create)="onCreateClick($event)"
     (update)="onUpdateClick($event)"
     (delete)="onDeleteClick($event)"
     (view)="onViewClick($event)"

@@ -21,9 +21,9 @@ npm run start:prod
 
 ## Quick links
 
-[Live <%=name%>](https://<%=name%>.github.io/core) [[source]](https://github.com/<%=name%>/core) - <%= humanize(name) %> application (backend: http://www.mockapi.io).
+[Live <%=name%>](https://<%=name%>.github.io/core) [[source]](https://github.com/<%=name%>/core) - <%= humanize(name) %> application (backend: https://zeit.co/now).
 
-[Live <%=name%> (SSR)](https://<%=name%>.herokuapp.com) [[source]](https://github.com/<%=name%>/core) - <%= humanize(name) %> application with server side rendering (backend: http://www.mockapi.io).
+[Live <%=name%> (SSR)](https://<%=name%>.herokuapp.com) [[source]](https://github.com/<%=name%>/core) - <%= humanize(name) %> application with server side rendering (backend: https://zeit.co/now).
 
 ## License
 

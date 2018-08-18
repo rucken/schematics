@@ -1,15 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ThemesService } from '@rucken/web';
+import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { ThemesService } from "@rucken/web";
 
 @Component({
-  selector: 'themes-page',
-  templateUrl: './themes-page.component.html',
+  selector: "themes-page",
+  templateUrl: "./themes-page.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ThemesPageComponent {
-
-  constructor(
-    public themesService: ThemesService
-  ) {
-  }
+  constructor(public themesService: ThemesService) {}
 }

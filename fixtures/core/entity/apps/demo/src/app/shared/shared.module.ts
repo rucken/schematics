@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
-import { MessageModalModule, PipesModule } from '@rucken/web';
-import { NgxRepositoryModule } from 'ngx-repository';
+import { CommonModule } from "@angular/common";
+import { ModuleWithProviders, NgModule } from "@angular/core";
+import { TranslateModule } from "@ngx-translate/core";
+import { MessageModalModule, PipesModule } from "@rucken/web";
+import { NgxRepositoryModule } from "ngx-repository";
 
 @NgModule({
   imports: [
@@ -10,7 +10,7 @@ import { NgxRepositoryModule } from 'ngx-repository';
     NgxRepositoryModule.forRoot(),
     MessageModalModule.forRoot(),
     PipesModule,
-    TranslateModule.forChild(),
+    TranslateModule.forChild()
   ],
   exports: [
     CommonModule,

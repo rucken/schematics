@@ -1,11 +1,11 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { ContentTypesGridModule } from '@rucken/web';
-import { SharedModule } from '../../../../shared/shared.module';
-import { ContentTypesFrameComponent } from './content-types-frame.component';
-import { ContentTypesFrameRoutes } from './content-types-frame.routes';
-import { NgxPermissionsModule } from 'ngx-permissions';
+import { ModuleWithProviders, NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
+import { ContentTypesGridModule } from "@rucken/web";
+import { SharedModule } from "../../../../shared/shared.module";
+import { ContentTypesFrameComponent } from "./content-types-frame.component";
+import { ContentTypesFrameRoutes } from "./content-types-frame.routes";
+import { NgxPermissionsModule } from "ngx-permissions";
 
 @NgModule({
   imports: [
@@ -15,9 +15,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     ContentTypesGridModule,
     FormsModule
   ],
-  declarations: [
-    ContentTypesFrameComponent
-  ]
+  declarations: [ContentTypesFrameComponent]
 })
 export class ContentTypesFrameModule {
   static forRoot(): ModuleWithProviders {

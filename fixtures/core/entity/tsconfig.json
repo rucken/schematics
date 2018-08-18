@@ -18,16 +18,16 @@
     ],
     "paths": {
       "@demo/core": [
-        "dist/demo/core"
+        "libs/demo/core/src"
       ],
       "@demo/core/*": [
-        "dist/demo/core/*"
+        "libs/demo/core/src/*"
       ],
       "@demo/web": [
-        "dist/demo/web"
+        "libs/demo/web/src"
       ],
       "@demo/web/*": [
-        "dist/demo/web/*"
+        "libs/demo/web/src/*"
       ]
     }
   }

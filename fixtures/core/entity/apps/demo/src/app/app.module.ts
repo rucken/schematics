@@ -1,69 +1,83 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { PreloadAllModules, RouterModule } from '@angular/router';
-import { AccountConfig, AccountModule, ContentTypesConfig, ErrorsExtractor, GroupsConfig, LangModule, PermissionsConfig, PermissionsGuard, RuI18n as CoreRuI18n, TokenModule, TransferHttpCacheModule, translate, UsersConfig } from '@rucken/core';
-import { AuthModalModule, NavbarModule, RuI18n as WebRuI18n, ThemesModule } from '@rucken/web';
-import { defineLocale } from 'ngx-bootstrap/chronos';
-import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
-import { enGbLocale, ruLocale } from 'ngx-bootstrap/locale';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { CookieService } from 'ngx-cookie-service';
-import { NgxPermissionsModule } from 'ngx-permissions';
-import { environment } from '../environments/environment';
-import { AppComponent } from './app.component';
-import { AppRoutes } from './app.routes';
-import { RuI18n } from './i18n/ru.i18n';
-import { SharedModule } from './shared/shared.module';
-
-defineLocale('ru', ruLocale);
-defineLocale('en', enGbLocale);
+import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { PreloadAllModules, RouterModule } from "@angular/router";
+import {
+  AccountModule,
+  ContentTypesConfig,
+  ErrorsExtractor,
+  GroupsConfig,
+  LangModule,
+  PermissionsConfig,
+  PermissionsGuard,
+  TransferHttpCacheModule,
+  UsersConfig,
+  AuthModule
+} from "@rucken/core";
+import { AuthModalModule, NavbarModule, ThemesModule } from "@rucken/web";
+import { BsDatepickerModule, BsLocaleService } from "ngx-bootstrap/datepicker";
+import { ModalModule } from "ngx-bootstrap/modal";
+import { CookieService } from "ngx-cookie-service";
+import { NgxPermissionsModule } from "ngx-permissions";
+import { environment } from "../environments/environment";
+import { AppComponent } from "./app.component";
+import { AppRoutes } from "./app.routes";
+import { SharedModule } from "./shared/shared.module";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { MetaModule, MetaLoader } from "@ngx-meta/core";
+import {
+  OauthProviders,
+  AppLangs,
+  AllRoutes,
+  OauthModalProviders,
+  appMetaFactory
+} from "./app.config";
+import { TranslateService } from "@ngx-translate/core";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     RouterModule,
     SharedModule,
     HttpClientModule,
-    BrowserModule.withServerTransition({ appId: 'demo' }),
+    BrowserModule.withServerTransition({ appId: "demo" }),
     TransferHttpCacheModule.forRoot(),
     NgxPermissionsModule.forRoot(),
-    TokenModule.forRoot({
-      withoutTokenUrls: [
-        '/api/account/info',
-        '/api/account/login',
-        ...(environment.type === 'mockapi' ? ['/'] : [])
-      ]
+    AuthModule.forRoot({
+      apiUri: environment.apiUrl,
+      oauth: {
+        providers: OauthProviders
+      }
     }),
-    AccountModule.forRoot(),
+    AccountModule.forRoot({
+      apiUri: environment.apiUrl
+    }),
     LangModule.forRoot({
-      languages: [{
-        title: translate('Russian'),
-        code: 'ru',
-        translations: [WebRuI18n, CoreRuI18n, RuI18n]
-      }, {
-        title: translate('English'),
-        code: 'en',
-        translations: []
-      }]
+      languages: AppLangs
     }),
     ThemesModule.forRoot(),
-    RouterModule.forRoot(
-      AppRoutes,
-      { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' }
-    ),
+    RouterModule.forRoot(AllRoutes, {
+      preloadingStrategy: PreloadAllModules,
+      initialNavigation: "enabled"
+    }),
+    MetaModule.forRoot({
+      provide: MetaLoader,
+      useFactory: appMetaFactory,
+      deps: [TranslateService]
+    }),
     ModalModule.forRoot(),
-    AuthModalModule,
+    AuthModalModule.forRoot({
+      oauth: {
+        providers: OauthModalProviders
+      }
+    }),
     NavbarModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [
-    // { provide: ErrorHandler, useClass: CustomErrorHandler },
     CookieService,
     ErrorsExtractor,
-    AccountConfig,
     GroupsConfig,
     PermissionsConfig,
     ContentTypesConfig,
@@ -73,5 +87,4 @@ defineLocale('en', enGbLocale);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

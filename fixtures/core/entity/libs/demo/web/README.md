@@ -16,14 +16,14 @@ Core with UI for web application maked on Angular6+
 git clone https://github.com/demo/core.git my-app
 cd my-app
 npm install
-npm run run-mockapi
+npm run start:prod
 ```
 
 ## Quick links
 
-[Live demo](https://demo.github.io/core) [[source]](https://github.com/demo/core) - Demo application (backend: http://www.mockapi.io).
+[Live demo](https://demo.github.io/core) [[source]](https://github.com/demo/core) - Demo application (backend: https://zeit.co/now).
 
-[Live demo (SSR)](https://demo.herokuapp.com) [[source]](https://github.com/demo/core) - Demo application with server side rendering (backend: http://www.mockapi.io).
+[Live demo (SSR)](https://demo.herokuapp.com) [[source]](https://github.com/demo/core) - Demo application with server side rendering (backend: https://zeit.co/now).
 
 ## License
 
