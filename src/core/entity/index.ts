@@ -28,7 +28,7 @@ export default function (options: any): Rule {
   try {
     accessSync(angularConfigPath, constants.F_OK);
   } catch (e) {
-    angularConfigPath = resolve(__dirname, 'files', 'project', 'angular.json');
+    angularConfigPath = resolve(__dirname, 'files', 'project', 'angular.__json__');
     chains.push(
       schematic('new', { root: root, name: 'demo', username: gitInfo.username, email: gitInfo.email })
     )
