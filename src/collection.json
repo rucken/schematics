@@ -10,6 +10,11 @@
       "description": "Generate empty application based on rucken template",
       "factory": "./core/new",
       "schema": "./core/new/schema.json"
+    },
+    "nestjs-new": {
+      "description": "Generate empty application based on rucken template",
+      "factory": "./nestjs/new",
+      "schema": "./nestjs/new/schema.json"
     }
   }
 }

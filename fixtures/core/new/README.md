@@ -15,10 +15,8 @@ Core with UI for web application maked on Angular6+
 
 ## Usage
 ```
-git clone https://github.com/demo/core.git my-app
-cd my-app
 npm install
-npm run start:prod
+npm run start:prod (npm run start:dev - if backend runned on http://localhost:5000)
 ```
 
 ## Quick links
