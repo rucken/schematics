@@ -1,3 +1,13 @@
+<a name="3.0.6"></a>
+## [3.0.6](https://github.com/rucken/schematics/compare/3.0.5...3.0.6) (2018-08-18)
+
+
+### Bug Fixes
+
+* Rename ext .json to .__json__ and .ts to .__ts__ ([4967322](https://github.com/rucken/schematics/commit/4967322))
+
+
+
 <a name="3.0.5"></a>
 ## [3.0.5](https://github.com/rucken/schematics/compare/3.0.4...3.0.5) (2018-08-18)
 
