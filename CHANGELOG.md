@@ -1,3 +1,13 @@
+<a name="3.0.7"></a>
+## [3.0.7](https://github.com/rucken/schematics/compare/3.0.6...3.0.7) (2018-08-18)
+
+
+### Bug Fixes
+
+* **entity:** Update default angular.json ([116201f](https://github.com/rucken/schematics/commit/116201f))
+
+
+
 <a name="3.0.6"></a>
 ## [3.0.6](https://github.com/rucken/schematics/compare/3.0.5...3.0.6) (2018-08-18)
 
