@@ -1,3 +1,13 @@
+<a name="3.0.5"></a>
+## [3.0.5](https://github.com/rucken/schematics/compare/3.0.4...3.0.5) (2018-08-18)
+
+
+### Bug Fixes
+
+* **new:** Update to [@rucken](https://github.com/rucken)/core and web with version ([a3d20e9](https://github.com/rucken/schematics/commit/a3d20e9))
+
+
+
 <a name="3.0.4"></a>
 ## [3.0.4](https://github.com/rucken/schematics/compare/3.0.3...3.0.4) (2018-07-19)
 
