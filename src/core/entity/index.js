@@ -28,7 +28,7 @@ function default_1(options) {
         fs_1.accessSync(angularConfigPath, fs_1.constants.F_OK);
     }
     catch (e) {
-        angularConfigPath = path_1.resolve(__dirname, 'files', 'project', 'angular.json');
+        angularConfigPath = path_1.resolve(__dirname, 'files', 'project', 'angular.__json__');
         chains.push(schematics_1.schematic('new', { root: root, name: 'demo', username: gitInfo.username, email: gitInfo.email }));
     }
     try {
