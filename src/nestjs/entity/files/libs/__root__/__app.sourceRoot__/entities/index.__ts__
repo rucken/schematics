@@ -1,0 +1,7 @@
+<% for (i = 0; i < entities.length; i++) { %>import { <%=classify(entities[i]) %> } from './<%=entities[i]%>.entity';
+<% } %>
+
+export const entities = [
+  <% for (i=0;i<entities.length;i++){ %><%=classify(entities[i]) %>,
+  <% } %>
+];

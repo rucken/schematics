@@ -1,0 +1,33 @@
+import { IsNotEmpty, MaxLength, validateSync } from 'class-validator';
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn
+} from 'typeorm';
+import { CustomValidationError } from '<%=core.name%>';
+
+@Entity({ name: '<%= decamelize(camelize(name)) %>' })
+export class <%= classify(name) %> {
+  @PrimaryGeneratedColumn()
+  id: number = undefined;
+<%for (var i = 0; i < fields.length; i++) { %>  <%='@Column({ length: 100 })\n' %>  <%='@IsNotEmpty()\n' %>  <%='@MaxLength(100)\n' %>  <%=fields[i] + ': string = undefined;\n' %><%}%>
+
+  @BeforeInsert()
+  doBeforeInsertion() {
+    const errors = validateSync(this, { validationError: { target: false } });
+    if (errors.length > 0) {
+      throw new CustomValidationError(errors);
+    }
+  }
+
+  @BeforeUpdate()
+  doBeforeUpdate() {
+    const errors = validateSync(this, { validationError: { target: false } });
+    if (errors.length > 0) {
+      throw new CustomValidationError(errors);
+    }
+  }
+}

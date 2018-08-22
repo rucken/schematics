@@ -11,8 +11,13 @@
       "factory": "./core/new",
       "schema": "./core/new/schema.json"
     },
+    "nestjs-entity": {
+      "description": "Generate dto, entity, service and controller for nestjs backend",
+      "factory": "./nestjs/entity",
+      "schema": "./nestjs/entity/schema.json"
+    },
     "nestjs-new": {
-      "description": "Generate empty application based on rucken template",
+      "description": "Generate empty nestjs backend application",
       "factory": "./nestjs/new",
       "schema": "./nestjs/new/schema.json"
     }

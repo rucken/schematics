@@ -23,7 +23,8 @@
     "run-entity": "npm run build && schematics .:entity --name=test-entity --root=fixtures/core/entity --username=demo --email=demo@demo.demo --fields=[name] --dry-run=false --force",
     "run-new": "npm run build && schematics .:new --name=demo --root=fixtures/core/new --username=demo --email=demo@demo.demo --dry-run=false --force",
     "run-nestjs-new": "npm run build && schematics .:nestjs-new --name=demo --root=fixtures/nestjs/new --username=demo --email=demo@demo.demo --dry-run=false --force",
-    "manual-test": "run-s run-entity run-new run-nestjs-new test"
+    "run-nestjs-entity": "npm run build && schematics .:nestjs-entity --name=test-entity --root=fixtures/nestjs/entity --username=demo --email=demo@demo.demo --fields=[name] --dry-run=false --force",
+    "manual-test": "run-s run-entity run-new run-nestjs-entity run-nestjs-new test"
   },
   "keywords": [
     "schematics",

@@ -71,7 +71,7 @@ function default_1(options) {
     const entityPageModuleFile = path_1.resolve(root, data.app.sourceRoot, 'app', 'components', 'pages', 'entities-page', 'entities-page.module.ts');
     let existsFrames;
     try {
-        existsFrames = fs_1.readdirSync(entitiesPagePath).filter(f => fs_1.statSync(path_1.join(entitiesPagePath, f)).isDirectory()).map(f => f.replace('-frame', ''));
+        existsFrames = fs_1.readdirSync(entitiesPagePath).filter(f => fs_1.statSync(path_1.join(entitiesPagePath, f)).isDirectory() && f.indexOf('-frame') !== -1).map(f => f.replace('-frame', ''));
     }
     catch (error) {
         existsFrames = [

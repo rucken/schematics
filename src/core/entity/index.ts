@@ -115,7 +115,9 @@ export default function (options: any): Rule {
     resolve(root, data.app.sourceRoot, 'app', 'components', 'pages', 'entities-page', 'entities-page.module.ts');
   let existsFrames: string[];
   try {
-    existsFrames = readdirSync(entitiesPagePath).filter(f => statSync(join(entitiesPagePath, f)).isDirectory()).map(f => f.replace('-frame', ''));
+    existsFrames = readdirSync(entitiesPagePath).filter(f =>
+      statSync(join(entitiesPagePath, f)).isDirectory() && f.indexOf('-frame') !== -1
+    ).map(f => f.replace('-frame', ''));
   } catch (error) {
     existsFrames = [
       'content-types',
