@@ -1,3 +1,15 @@
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/rucken/schematics/compare/3.0.8...3.1.0) (2018-08-23)
+
+
+### Features
+
+* **nestjs:** Add generator for create backend on nestjs ([cb02fe4](https://github.com/rucken/schematics/commit/cb02fe4))
+* **nestjs:** Add generator for create dto, entity, service and controller for backend on nestjs ([3221c45](https://github.com/rucken/schematics/commit/3221c45))
+* **nestjs:** Add migration for generator to create entity ([d6cb91f](https://github.com/rucken/schematics/commit/d6cb91f))
+
+
+
 <a name="3.0.8"></a>
 ## [3.0.8](https://github.com/rucken/schematics/compare/3.0.7...3.0.8) (2018-08-18)
 
