@@ -10,14 +10,14 @@ const collectionPath = join(__dirname, '../../collection.json');
 const rootPath = join(__dirname, '../../..');
 
 
-describe('entity', () => {
+describe('nestjs-entity', () => {
   it('requires required option', () => {
     // We test that
 
     const runner = new SchematicTestRunner('schematics', collectionPath);
-    const tree = runner.runSchematic('entity', {
+    const tree = runner.runSchematic('nestjs-entity', {
       name: 'test-entity',
-      root: "fixtures/core/entity",
+      root: "fixtures/nestjs/entity",
       username: 'demo',
       email: 'demo@demo.demo',
       fields: '[name]'

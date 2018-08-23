@@ -1,23 +1,23 @@
 {
   "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "entity": {
-      "description": "Generate model, service, grid, lookup input, modal for edit row in grid, modal for select items from grid with items",
-      "factory": "./core/entity",
-      "schema": "./core/entity/schema.json"
+    "angular-entity": {
+      "description": "Generate frontend model, service, grid, lookup input, modal for edit row in grid, modal for select items from grid with items for Angular 6+ application based on Rucken template",
+      "factory": "./angular/entity",
+      "schema": "./angular/entity/schema.json"
     },
-    "new": {
-      "description": "Generate empty application based on rucken template",
-      "factory": "./core/new",
-      "schema": "./core/new/schema.json"
+    "angular-new": {
+      "description": "Generate frontend web empty Angular 6+ application based on Rucken template",
+      "factory": "./angular/new",
+      "schema": "./angular/new/schema.json"
     },
     "nestjs-entity": {
-      "description": "Generate dto, entity, service and controller for nestjs backend",
+      "description": "Generate dto, entity, service and controller for NestJS backend",
       "factory": "./nestjs/entity",
       "schema": "./nestjs/entity/schema.json"
     },
     "nestjs-new": {
-      "description": "Generate empty nestjs backend application",
+      "description": "Generate empty NestJS backend application",
       "factory": "./nestjs/new",
       "schema": "./nestjs/new/schema.json"
     }

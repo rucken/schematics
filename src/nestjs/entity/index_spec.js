@@ -8,13 +8,13 @@ const core_1 = require("../../../node_modules/@angular-devkit/core");
 // SchematicTestRunner needs an absolute path to the collection to test.
 const collectionPath = path_1.join(__dirname, '../../collection.json');
 const rootPath = path_1.join(__dirname, '../../..');
-describe('entity', () => {
+describe('nestjs-entity', () => {
     it('requires required option', () => {
         // We test that
         const runner = new testing_1.SchematicTestRunner('schematics', collectionPath);
-        const tree = runner.runSchematic('entity', {
+        const tree = runner.runSchematic('nestjs-entity', {
             name: 'test-entity',
-            root: "fixtures/core/entity",
+            root: "fixtures/nestjs/entity",
             username: 'demo',
             email: 'demo@demo.demo',
             fields: '[name]'

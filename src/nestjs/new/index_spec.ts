@@ -9,14 +9,14 @@ const collectionPath = join(__dirname, '../../collection.json');
 const rootPath = join(__dirname, '../../..');
 
 
-describe('new', () => {
+describe('nestjs-new', () => {
   it('requires required option', () => {
     // We test that
 
     const runner = new SchematicTestRunner('schematics', collectionPath);
-    const tree = runner.runSchematic('new', {
+    const tree = runner.runSchematic('nestjs-new', {
       name: 'demo',
-      root: "fixtures/core/new",
+      root: "fixtures/nestjs/new",
       username: 'demo',
       email: 'demo@demo.demo'
     }, Tree.empty());

@@ -1,7 +1,7 @@
-import { AuthModule } from '@demo/auth-nestjs';
-import { CoreModule } from '@demo/core-nestjs';
-import { DynamicModule, Module, Provider } from '@nestjs/common';
+import { Module, DynamicModule, Provider } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CoreModule } from '@demo/core-nestjs';
+import { AuthModule } from '@demo/auth-nestjs';
 import { DemoModule } from './demo.module';
 
 @Module({

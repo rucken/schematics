@@ -1,4 +1,2 @@
-export const configs = [{
-    provide: 'EMPTY',
-    useValue: 'empty'
-}];
+export const configs = [
+];
