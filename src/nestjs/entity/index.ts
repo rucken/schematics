@@ -14,12 +14,13 @@ export default function (options: any): Rule {
   const root = options.root;
   const name = options.name;
   const fields =
-    options.fields.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '').replace(new RegExp('\"', 'g'), '').split(',');
+    options.fields.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '').replace(new RegExp('\"', 'g'), '').split(',').map((field: string) => field.trim());
   const gitInfo = { username: options.username || gitUsername(), email: options.email || gitEmail() };
   const chains = [];
   let app = options.app;
   let core = options.core;
   let nestCliConfig: any;
+  let time = options.time;
   let apps: string[];
   let libs: string[];
   let nestCliConfigPath = resolve(root, '.nestcli.json');
@@ -65,6 +66,7 @@ export default function (options: any): Rule {
     ...nestCliConfig.projects[key]
   }));
   const data = {
+    time: time ? time : new Date().getTime(),
     ...strings,
     humanize: (str: string, low_first_letter?: boolean) =>
       humanize(

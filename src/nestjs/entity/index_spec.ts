@@ -20,7 +20,8 @@ describe('nestjs-entity', () => {
       root: "fixtures/nestjs/entity",
       username: 'demo',
       email: 'demo@demo.demo',
-      fields: '[name]'
+      fields: '[name]',
+      time: 1533634559618
     }, Tree.empty());
     tree.getDir('')
       .visit(filePath => {

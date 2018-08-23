@@ -1,2 +1,1 @@
-export const configs = [
-];
+export const configs = [];

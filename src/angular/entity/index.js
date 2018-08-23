@@ -13,7 +13,7 @@ const gitUsername = require('git-username');
 function default_1(options) {
     const root = options.root;
     const name = options.name;
-    const fields = options.fields.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '').replace(new RegExp('\"', 'g'), '').split(',');
+    const fields = options.fields.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '').replace(new RegExp('\"', 'g'), '').split(',').map((field) => field.trim());
     const gitInfo = { username: options.username || gitUsername(), email: options.email || gitEmail() };
     const chains = [];
     let app = options.app;

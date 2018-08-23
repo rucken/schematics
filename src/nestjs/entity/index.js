@@ -13,12 +13,13 @@ const gitUsername = require('git-username');
 function default_1(options) {
     const root = options.root;
     const name = options.name;
-    const fields = options.fields.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '').replace(new RegExp('\"', 'g'), '').split(',');
+    const fields = options.fields.replace(new RegExp('\\[', 'g'), '').replace(new RegExp('\\]', 'g'), '').replace(new RegExp('\"', 'g'), '').split(',').map((field) => field.trim());
     const gitInfo = { username: options.username || gitUsername(), email: options.email || gitEmail() };
     const chains = [];
     let app = options.app;
     let core = options.core;
     let nestCliConfig;
+    let time = options.time;
     let apps;
     let libs;
     let nestCliConfigPath = path_1.resolve(root, '.nestcli.json');
@@ -47,7 +48,7 @@ function default_1(options) {
     const appConfigs = apps.map(key => (Object.assign({ name: key }, nestCliConfig.projects[key])));
     const coreConfig = Object.assign({ name: core }, nestCliConfig.projects[core]);
     const libConfigs = libs.map(key => (Object.assign({ name: key }, nestCliConfig.projects[key])));
-    const data = Object.assign({}, core_1.strings, { humanize: (str, low_first_letter) => inflection_1.humanize(inflection_1.underscore(str).replace(new RegExp('-', 'g'), ' '), low_first_letter), pluralize: inflection_1.pluralize, name: name, fields: fields, root: root, gitInfo: gitInfo }, dot.dot({ gitInfo: gitInfo }), { app: appConfig, core: coreConfig, apps: appConfigs, libs: libConfigs }, dot.dot({ app: appConfig }), dot.dot({ core: coreConfig }), dot.dot({ apps: appConfigs }), dot.dot({ libs: libConfigs }), { ts: 'ts', json: 'json' });
+    const data = Object.assign({ time: time ? time : new Date().getTime() }, core_1.strings, { humanize: (str, low_first_letter) => inflection_1.humanize(inflection_1.underscore(str).replace(new RegExp('-', 'g'), ' '), low_first_letter), pluralize: inflection_1.pluralize, name: name, fields: fields, root: root, gitInfo: gitInfo }, dot.dot({ gitInfo: gitInfo }), { app: appConfig, core: coreConfig, apps: appConfigs, libs: libConfigs }, dot.dot({ app: appConfig }), dot.dot({ core: coreConfig }), dot.dot({ apps: appConfigs }), dot.dot({ libs: libConfigs }), { ts: 'ts', json: 'json' });
     let controllersPath = path_1.resolve(root, data.app.sourceRoot, 'controllers');
     let servicesPath = path_1.resolve(root, data.app.sourceRoot, 'services');
     let entitiesPath = path_1.resolve(root, data.app.sourceRoot, 'entities');
