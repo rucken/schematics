@@ -1,0 +1,187 @@
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  ParseIntPipe,
+  Post,
+  Put,
+  Query,
+  UseGuards
+} from '@nestjs/common';
+import {
+  ApiBearerAuth,
+  ApiImplicitParam,
+  ApiImplicitQuery,
+  ApiResponse,
+  ApiUseTags
+} from '@nestjs/swagger';
+import { plainToClass } from 'class-transformer';
+import { Permissions } from '<%=core.name%>';
+import { Roles } from '<%=core.name%>';
+import { In<%=classify(name) %>Dto } from '../dto/in-<%=name%>.dto';
+import { Out<%=classify(name) %>Dto } from '../dto/out-<%=name%>.dto';
+import { Out<%=classify(pluralize(name)) %>Dto } from '../dto/out-<%=pluralize(name)%>.dto';
+import { <%=classify(name) %> } from '../entities/<%=name%>.entity';
+import { AccessGuard } from '<%=core.name%>';
+import { ParseIntWithDefaultPipe } from '<%=core.name%>';
+import { <%=classify(pluralize(name)) %>Service } from '../services/<%=pluralize(name)%>.service';
+
+@ApiUseTags('<%=pluralize(name)%>')
+@ApiBearerAuth()
+@Controller('/api/<%= decamelize(camelize(pluralize(name))) %>')
+@UseGuards(AccessGuard)
+export class <%=classify(pluralize(name)) %>Controller {
+  constructor(private readonly service: <%=classify(pluralize(name)) %>Service) {}
+  @Roles('isSuperuser')
+  @Permissions('add_<%=name%>')
+  @HttpCode(HttpStatus.CREATED)
+  @ApiResponse({
+    status: HttpStatus.CREATED,
+    type: Out<%=classify(name) %>Dto,
+    description: 'The record has been successfully created.'
+  })
+  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Forbidden.' })
+  @Post()
+  async create(@Body() dto: In<%=classify(name) %>Dto) {
+    try {
+      return plainToClass(
+        Out<%=classify(name) %>Dto,
+        await this.service.create({
+          item: plainToClass(<%=classify(name) %>, dto)
+        })
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+  @Roles('isSuperuser')
+  @Permissions('change_<%=name%>')
+  @HttpCode(HttpStatus.OK)
+  @ApiResponse({
+    status: HttpStatus.OK,
+    type: Out<%=classify(name) %>Dto,
+    description: 'The record has been successfully updated.'
+  })
+  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Forbidden.' })
+  @ApiImplicitParam({ name: 'id', type: Number })
+  @Put(':id')
+  async update(
+    @Param('id', new ParseIntPipe()) id,
+    @Body() dto: In<%=classify(name) %>Dto
+  ) {
+    try {
+      return plainToClass(
+        Out<%=classify(name) %>Dto,
+        await this.service.update({
+          id,
+          item: plainToClass(<%=classify(name) %>, dto)
+        })
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+  @Roles('isSuperuser')
+  @Permissions('delete_<%=name%>')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @ApiResponse({
+    status: HttpStatus.NO_CONTENT,
+    description: 'The record has been successfully deleted.'
+  })
+  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Forbidden.' })
+  @ApiImplicitParam({ name: 'id', type: Number })
+  @Delete(':id')
+  async delete(@Param('id', new ParseIntPipe()) id) {
+    try {
+      return plainToClass(
+        Out<%=classify(name) %>Dto,
+        await this.service.delete({
+          id
+        })
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+  @Roles('isSuperuser')
+  @Permissions('read_<%=name%>')
+  @HttpCode(HttpStatus.OK)
+  @ApiResponse({
+    status: HttpStatus.OK,
+    type: Out<%=classify(name) %>Dto,
+    description: ''
+  })
+  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Forbidden.' })
+  @ApiImplicitParam({ name: 'id', type: Number })
+  @Get(':id')
+  async findById(@Param('id', new ParseIntPipe()) id) {
+    try {
+      return plainToClass(
+        Out<%=classify(name) %>Dto,
+        await this.service.findById({
+          id
+        })
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+  @Roles('isSuperuser')
+  @Permissions('read_<%=name%>')
+  @HttpCode(HttpStatus.OK)
+  @ApiResponse({
+    status: HttpStatus.OK,
+    type: Out<%=classify(pluralize(name)) %>Dto,
+    description: ''
+  })
+  @ApiResponse({ status: HttpStatus.FORBIDDEN, description: 'Forbidden.' })
+  @ApiImplicitQuery({
+    name: 'q',
+    required: false,
+    type: String,
+    description: 'Text for search (default: empty)'
+  })
+  @ApiImplicitQuery({
+    name: 'sort',
+    required: false,
+    type: String,
+    description: 'Column name for sort (default: -id)'
+  })
+  @ApiImplicitQuery({
+    name: 'per_page',
+    required: false,
+    type: Number,
+    description: 'Number of results to return per page. (default: 10)'
+  })
+  @ApiImplicitQuery({
+    name: 'cur_page',
+    required: false,
+    type: Number,
+    description: 'A page number within the paginated result set. (default: 1)'
+  })
+  @Get()
+  async findAll(
+    @Query('cur_page', new ParseIntWithDefaultPipe(1)) curPage,
+    @Query('per_page', new ParseIntWithDefaultPipe(10)) perPage,
+    @Query('q') q,
+    @Query('sort') sort
+  ) {
+    try {
+      return plainToClass(
+        Out<%=classify(pluralize(name)) %>Dto,
+        await this.service.findAll({
+          curPage,
+          perPage,
+          q,
+          sort
+        })
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+}

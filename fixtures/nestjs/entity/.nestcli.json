@@ -1,0 +1,22 @@
+{
+  "language": "ts",
+  "collection": "@nestjs/schematics",
+  "projects": {
+    "demo": {
+      "root": "src/apps/demo/",
+      "sourceRoot": "src/apps/demo",
+      "projectType": "application"
+    },
+    "@demo/core-nestjs": {
+      "root": "src/libs/core/",
+      "sourceRoot": "src/libs/core",
+      "projectType": "library"
+    },
+    "@demo/auth-nestjs": {
+      "root": "src/libs/auth/",
+      "sourceRoot": "src/libs/auth",
+      "projectType": "library"
+    }
+  },
+  "defaultProject": "demo"
+}

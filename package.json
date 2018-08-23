@@ -1,6 +1,6 @@
 {
   "name": "@rucken/schematics",
-  "version": "3.0.8",
+  "version": "3.1.0",
   "engines": {
     "node": "8",
     "npm": ">=6.1.0"
@@ -20,9 +20,11 @@
     "build:tsc": "tsc -p tsconfig.json",
     "build": "run-s build:tsc",
     "test": "npm run build && jasmine src/**/*_spec.js",
-    "run-entity": "npm run build && schematics .:entity --name=test-entity --root=fixtures/core/entity --username=demo --email=demo@demo.demo --fields=[name] --dry-run=false --force",
-    "run-new": "npm run build && schematics .:new --name=demo --root=fixtures/core/new --username=demo --email=demo@demo.demo --dry-run=false --force",
-    "manual-test": "npm run run-entity && npm run run-new && npm run test"
+    "run-new:angular": "npm run build && schematics .:angular-new --name=demo --root=fixtures/angular/new --username=demo --email=demo@demo.demo --dry-run=false --force",
+    "run-entity:angular": "npm run build && schematics .:angular-entity --name=test-entity --root=fixtures/angular/entity --username=demo --email=demo@demo.demo --fields=[name] --dry-run=false --force",
+    "run-new:nestjs": "npm run build && schematics .:nestjs-new --name=demo --root=fixtures/nestjs/new --username=demo --email=demo@demo.demo --dry-run=false --force",
+    "run-entity:nestjs": "npm run build && schematics .:nestjs-entity --name=test-entity --root=fixtures/nestjs/entity --username=demo --email=demo@demo.demo --fields=[name] --time=1533634559618 --dry-run=false --force",
+    "manual-test": "run-s run-entity:angular run-new:angular run-entity:nestjs run-new:nestjs test"
   },
   "keywords": [
     "schematics",

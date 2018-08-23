@@ -1,0 +1,13 @@
+import { ApiModelProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
+import { <%= classify(name) %>Dto } from './<%=name%>.dto';
+import { MetaDto } from '<%=core.name%>';
+
+export class Out<%= classify(pluralize(name)) %>Dto {
+  @Type(() => <%= classify(name) %>Dto)
+  @ApiModelProperty({ type: <%= classify(name) %>Dto, isArray: true })
+  <%= camelize(pluralize(name)) %>: <%= classify(name) %>Dto[];
+  @Type(() => MetaDto)
+  @ApiModelProperty({ type: MetaDto })
+  meta: MetaDto;
+}

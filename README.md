@@ -6,13 +6,15 @@
 [![Gitter][gitter-image]][gitter-url]
 [![Join the chat at telegram][telegram-image]][telegram-url]
 
-A schematics collections for generate source files for Angular6+ application based on Rucken template
+A schematics collections for generate source files for [Angular6+](https://angular.io/) and [NestJS](https://nestjs.com/) application based on [Rucken](https://github.com/rucken)  template
 
 ## Links
 
-[@rucken/cli](https://github.com/rucken/cli) - Console tools for create and build Angular6+ application based on [rucken](https://github.com/rucken) template
+[@rucken/cli](https://github.com/rucken/cli) - Console tools for create and build [Angular6+](https://angular.io/) and [NestJS](https://nestjs.com/) application based on [Rucken](https://github.com/rucken) template
 
-[@rucken/core](https://github.com/rucken/core) - Core with Admin UI for web application maked on Angular6+
+[@rucken/core](https://github.com/rucken/core) - Core with Admin UI for web application maked on [Angular6+](https://angular.io/)
+
+[@rucken/core-nestjs](https://github.com/rucken/core-nestjs) - A simple application demonstrating the basic usage of permissions with [NestJS](https://nestjs.com/)
 
 ## License
 
