@@ -1,3 +1,20 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/rucken/schematics/compare/3.1.0...3.2.0) (2018-08-29)
+
+
+### Bug Fixes
+
+* **nestjs-new-generator:** Update detect db source ext ([40cce5f](https://github.com/rucken/schematics/commit/40cce5f))
+* **nestjs-new-generator:** Update source for correct deploy with postgres database ([cabf186](https://github.com/rucken/schematics/commit/cabf186))
+
+
+### Features
+
+* **nestjs-new-generator:** Add deploy to Postgres on heroku ([4305efd](https://github.com/rucken/schematics/commit/4305efd))
+* **nestjs-new-generator:** Update start:prod and start to run with pm2 ([c3ec750](https://github.com/rucken/schematics/commit/c3ec750))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/rucken/schematics/compare/3.0.8...3.1.0) (2018-08-23)
 
