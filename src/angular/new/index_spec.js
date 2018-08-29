@@ -19,7 +19,7 @@ describe('angular-new', () => {
         }, schematics_1.Tree.empty());
         tree.getDir('')
             .visit(filePath => {
-            if (path_1.basename(filePath) !== '.env') {
+            if (path_1.basename(filePath).indexOf('.env') == -1) {
                 const content = tree.readContent(filePath);
                 const existsContent = fs_1.readFileSync(path_1.join(rootPath, filePath)).toString();
                 expect(content).toEqual(existsContent);

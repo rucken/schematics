@@ -1,8 +1,13 @@
 {
     "alias": [
-        "<%=name%>-core-nestjs.now.sh"
+        "<%=name%>-nestjs.now.sh",
+        "<%=name%>-core-nestjs.now.sh",
+        "<%=name%>-core-nestjs-mongo.now.sh",
+        "<%=name%>-todo-nestjs.now.sh"
     ],
     "env": {
+        "NODE_ENV": "production",
+        "NPM_CONFIG_PRODUCTION": "false",
         "DEBUG": "@debug",
         "DEMO": "true",
         "DOMAIN": "@domain",

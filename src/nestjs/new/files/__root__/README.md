@@ -20,7 +20,7 @@ A simple application demonstrating the basic usage of permissions with NestJS (J
 ## Usage
 - run `npm install` to install project dependencies
 - run `npm build` to install project dependencies
-- run `npm run start` to fire up prod server (`npm run start:dev` - dev server)
+- run `npm run start:prod` to fire up prod server (`npm run start:dev` - dev server)
 - Open browser to [`http://localhost:5000/swagger`](http://localhost:5000/swagger)
 
 ### Users
