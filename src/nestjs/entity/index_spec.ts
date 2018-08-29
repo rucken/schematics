@@ -25,7 +25,7 @@ describe('nestjs-entity', () => {
     }, Tree.empty());
     tree.getDir('')
       .visit(filePath => {
-        if (basename(filePath) !== '.env') {
+        if (basename(filePath).indexOf('.env') == -1) {
           const content = tree.readContent(filePath);
           const existsContent = readFileSync(
             join(rootPath, filePath)
