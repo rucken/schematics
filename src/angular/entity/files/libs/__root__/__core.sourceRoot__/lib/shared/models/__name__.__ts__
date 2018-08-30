@@ -13,7 +13,7 @@ export class <%= classify(name) %> implements IModel {
     deleteMessage: translate('Do you really want to delete <%= humanize(name,true) %>?')
   };
   id: number = undefined;
-<%for (var i = 0; i < fields.length; i++) { %>  <%='@IsNotEmpty()\n' %>  <%=fields[i] + ': string;\n' %><%}%>
+<%for (var i = 0; i < fields.length; i++) { %>  <%='@IsNotEmpty()\n' %>  <%=fields[i] + ': string = undefined;\n' %><%}%>
   toString() {
     return this.<%=(fields&&fields.length)?camelize(fields[0],true):id.toString()%>;
   }
