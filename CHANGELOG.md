@@ -1,3 +1,15 @@
+<a name="3.2.2"></a>
+## [3.2.2](https://github.com/rucken/schematics/compare/3.2.1...3.2.2) (2018-08-30)
+
+
+### Bug Fixes
+
+* **angular-entity-generator:** Add default "undefined" value for model property ([a81419d](https://github.com/rucken/schematics/commit/a81419d))
+* **generators:** Update [@rucken](https://github.com/rucken)/cli version ([1598e9e](https://github.com/rucken/schematics/commit/1598e9e))
+* **nestjs-new-generator:** Update start:dev script ([0a9cbcd](https://github.com/rucken/schematics/commit/0a9cbcd))
+
+
+
 <a name="3.2.1"></a>
 ## [3.2.1](https://github.com/rucken/schematics/compare/3.2.0...3.2.1) (2018-08-30)
 
