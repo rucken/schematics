@@ -1,3 +1,14 @@
+<a name="3.2.1"></a>
+## [3.2.1](https://github.com/rucken/schematics/compare/3.2.0...3.2.1) (2018-08-30)
+
+
+### Bug Fixes
+
+* **nestjs-entity-generator:** Update temp nestcli.json content for detect core and auth modules ([aa4340d](https://github.com/rucken/schematics/commit/aa4340d))
+* **nestjs-new-generator:** Fix detect sqlite database on production mode ([4b103c5](https://github.com/rucken/schematics/commit/4b103c5))
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/rucken/schematics/compare/3.1.0...3.2.0) (2018-08-29)
 
