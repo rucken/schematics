@@ -15,7 +15,7 @@ export class TestEntity implements IModel {
   };
   id: number = undefined;
   @IsNotEmpty()
-  name: string;
+  name: string = undefined;
 
   toString() {
     return this.name;
