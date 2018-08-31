@@ -75,6 +75,7 @@ export default function (options: any): Rule {
         underscore(str).replace(new RegExp('-', 'g'), ' '),
         low_first_letter
       ),
+    underscore: underscore,
     pluralize: pluralize,
     name: name,
     fields: fields,

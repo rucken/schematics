@@ -73,6 +73,7 @@ export default function (options: any): Rule {
         underscore(str).replace(new RegExp('-', 'g'), ' '),
         low_first_letter
       ),
+    underscore: underscore,
     pluralize: pluralize,
     name: name,
     fields: fields,
@@ -153,7 +154,7 @@ export default function (options: any): Rule {
   } catch (e) {
   }
   const moduleFile =
-    resolve(root, data.app.sourceRoot, data.decamelize(data.camelize(data.app.name)) + '.module.ts');
+    resolve(root, data.app.sourceRoot, data.decamelize(data.app.name) + '.module.ts');
   try {
     accessSync(moduleFile, constants.F_OK);
   } catch (e) {

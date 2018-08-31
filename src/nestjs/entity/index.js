@@ -48,7 +48,7 @@ function default_1(options) {
     const appConfigs = apps.map(key => (Object.assign({ name: key }, nestCliConfig.projects[key])));
     const coreConfig = Object.assign({ name: core }, nestCliConfig.projects[core]);
     const libConfigs = libs.map(key => (Object.assign({ name: key }, nestCliConfig.projects[key])));
-    const data = Object.assign({ time: time ? time : new Date().getTime() }, core_1.strings, { humanize: (str, low_first_letter) => inflection_1.humanize(inflection_1.underscore(str).replace(new RegExp('-', 'g'), ' '), low_first_letter), pluralize: inflection_1.pluralize, name: name, fields: fields, root: root, gitInfo: gitInfo }, dot.dot({ gitInfo: gitInfo }), { app: appConfig, core: coreConfig, apps: appConfigs, libs: libConfigs }, dot.dot({ app: appConfig }), dot.dot({ core: coreConfig }), dot.dot({ apps: appConfigs }), dot.dot({ libs: libConfigs }), { ts: 'ts', json: 'json' });
+    const data = Object.assign({ time: time ? time : new Date().getTime() }, core_1.strings, { humanize: (str, low_first_letter) => inflection_1.humanize(inflection_1.underscore(str).replace(new RegExp('-', 'g'), ' '), low_first_letter), underscore: inflection_1.underscore, pluralize: inflection_1.pluralize, name: name, fields: fields, root: root, gitInfo: gitInfo }, dot.dot({ gitInfo: gitInfo }), { app: appConfig, core: coreConfig, apps: appConfigs, libs: libConfigs }, dot.dot({ app: appConfig }), dot.dot({ core: coreConfig }), dot.dot({ apps: appConfigs }), dot.dot({ libs: libConfigs }), { ts: 'ts', json: 'json' });
     let controllersPath = path_1.resolve(root, data.app.sourceRoot, 'controllers');
     let servicesPath = path_1.resolve(root, data.app.sourceRoot, 'services');
     let entitiesPath = path_1.resolve(root, data.app.sourceRoot, 'entities');
@@ -93,7 +93,7 @@ function default_1(options) {
     }
     catch (e) {
     }
-    const moduleFile = path_1.resolve(root, data.app.sourceRoot, data.decamelize(data.camelize(data.app.name)) + '.module.ts');
+    const moduleFile = path_1.resolve(root, data.app.sourceRoot, data.decamelize(data.app.name) + '.module.ts');
     try {
         fs_1.accessSync(moduleFile, fs_1.constants.F_OK);
     }
