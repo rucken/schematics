@@ -1,3 +1,13 @@
+<a name="3.2.4"></a>
+## [3.2.4](https://github.com/rucken/schematics/compare/3.2.3...3.2.4) (2018-08-31)
+
+
+### Bug Fixes
+
+* **nestjs-new-generator:** Change default app name, demo => name ([0870869](https://github.com/rucken/schematics/commit/0870869))
+
+
+
 <a name="3.2.3"></a>
 ## [3.2.3](https://github.com/rucken/schematics/compare/3.2.2...3.2.3) (2018-08-31)
 
