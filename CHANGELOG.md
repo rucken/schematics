@@ -1,3 +1,13 @@
+<a name="3.2.5"></a>
+## [3.2.5](https://github.com/rucken/schematics/compare/3.2.4...3.2.5) (2018-08-31)
+
+
+### Bug Fixes
+
+* **generators:** Fix name of module ([f5799ca](https://github.com/rucken/schematics/commit/f5799ca))
+
+
+
 <a name="3.2.4"></a>
 ## [3.2.4](https://github.com/rucken/schematics/compare/3.2.3...3.2.4) (2018-08-31)
 
