@@ -17,6 +17,7 @@
     "url": "git+https://github.com/rucken/schematics.git"
   },
   "scripts": {
+    "prepack": "run-s manual-test",
     "build:tsc": "tsc -p tsconfig.json",
     "build": "run-s build:tsc",
     "test": "npm run build && jasmine src/**/*_spec.js",
