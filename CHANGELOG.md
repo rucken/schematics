@@ -1,3 +1,13 @@
+<a name="3.2.3"></a>
+## [3.2.3](https://github.com/rucken/schematics/compare/3.2.2...3.2.3) (2018-08-31)
+
+
+### Bug Fixes
+
+* **generators:** Update rucken dependencies ([9ac8283](https://github.com/rucken/schematics/commit/9ac8283))
+
+
+
 <a name="3.2.2"></a>
 ## [3.2.2](https://github.com/rucken/schematics/compare/3.2.1...3.2.2) (2018-08-30)
 
