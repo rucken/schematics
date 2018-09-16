@@ -2,8 +2,8 @@
   "name": "@rucken/schematics",
   "version": "3.2.5",
   "engines": {
-    "node": "8",
-    "npm": ">=6.1.0"
+    "node": ">=10",
+    "npm": ">=6.4.0"
   },
   "license": "MIT",
   "author": "EndyKaufman <admin@site15.ru>",
