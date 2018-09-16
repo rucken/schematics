@@ -1,3 +1,14 @@
+<a name="3.2.6"></a>
+## [3.2.6](https://github.com/rucken/schematics/compare/3.2.5...3.2.6) (2018-09-16)
+
+
+### Bug Fixes
+
+* **generators:** Update templates ([eaeb81c](https://github.com/rucken/schematics/commit/eaeb81c))
+* **generators:** Update angular with root dependencies and update templates ([0e1c2a7](https://github.com/rucken/schematics/commit/0e1c2a7))
+
+
+
 <a name="3.2.5"></a>
 ## [3.2.5](https://github.com/rucken/schematics/compare/3.2.4...3.2.5) (2018-08-31)
 

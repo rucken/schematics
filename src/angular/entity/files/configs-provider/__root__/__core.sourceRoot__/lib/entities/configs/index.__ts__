@@ -1,0 +1,10 @@
+import { Provider } from '@angular/core';
+<% for (i=0;i<models.length;i++){ %>import { <%= snakecase(pluralize(name), true) %>_CONFIG_TOKEN, default<%= classify(pluralize(name)) %>Config } from './<%=pluralize(models[i])%>.config';
+<% } %>
+
+export const entitiesProviders: Provider[] = [
+  <% for (i=0;i<models.length;i++){ %>{
+    provide: <%= snakecase(pluralize(name), true) %>_CONFIG_TOKEN,
+    useValue: default<%= classify(pluralize(models[i])) %>Config
+  },<% } %>
+];

@@ -4,16 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import {
   AccountModule,
-  ContentTypesConfig,
   ErrorsExtractor,
-  GroupsConfig,
   LangModule,
-  PermissionsConfig,
   PermissionsGuard,
   TransferHttpCacheModule,
-  UsersConfig,
-  AuthModule
+  AuthModule,
+  entitiesProviders as coreEntitiesProviders
 } from '@rucken/core';
+import { entitiesProviders } from '@<%=name%>/core';
 import { AuthModalModule, NavbarModule, ThemesModule } from '@rucken/web';
 import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -76,12 +74,10 @@ import { TranslateService } from '@ngx-translate/core';
     FontAwesomeModule
   ],
   providers: [
+    ...coreEntitiesProviders,
+    ...entitiesProviders,
     CookieService,
     ErrorsExtractor,
-    GroupsConfig,
-    PermissionsConfig,
-    ContentTypesConfig,
-    UsersConfig,
     BsLocaleService,
     PermissionsGuard
   ],

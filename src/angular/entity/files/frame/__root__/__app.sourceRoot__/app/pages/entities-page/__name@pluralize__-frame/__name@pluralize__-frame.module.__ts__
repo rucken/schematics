@@ -1,0 +1,29 @@
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { <%= classify(pluralize(name)) %>GridModule } from '<%= web.name %>';
+import { SharedModule } from '../../../shared/shared.module';
+import { <%= classify(pluralize(name)) %>FrameComponent } from './<%= pluralize(name) %>-frame.component';
+import { <%= classify(pluralize(name)) %>FrameRoutes } from './<%= pluralize(name) %>-frame.routes';
+import { NgxPermissionsModule } from 'ngx-permissions';
+
+@NgModule({
+  imports: [
+    SharedModule,
+    NgxPermissionsModule,
+    RouterModule.forChild(<%= classify(pluralize(name)) %>FrameRoutes),
+    <%= classify(pluralize(name)) %>GridModule,
+    FormsModule
+  ],
+  declarations: [
+    <%= classify(pluralize(name)) %>FrameComponent
+  ]
+})
+export class <%= classify(pluralize(name)) %>FrameModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: <%= classify(pluralize(name)) %>FrameModule,
+      providers: []
+    };
+  }
+}

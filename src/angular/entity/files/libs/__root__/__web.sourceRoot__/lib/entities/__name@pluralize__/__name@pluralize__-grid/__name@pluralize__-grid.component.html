@@ -1,0 +1,20 @@
+<entity-grid
+    title="<%= humanize(pluralize(name)) %>"
+    [items]="items$ | async"
+    (selected)="onSelected($event)"
+    [columns]="<%=JSON.stringify([...fields,'action']).replace(new RegExp('"', 'g'), '\'')%>"
+    [readonly]="readonly"
+    [strings]="strings"
+    (create)="onCreateClick($event)"
+    (update)="onUpdateClick($event)"
+    (delete)="onDeleteClick($event)"
+    (view)="onViewClick($event)"
+    (search)="onSearch($event)"
+    (changeOrder)="onChangeOrder($event)"
+    [paginationMeta]="paginationMeta$ | async"
+    [enableCreate]="'add_<%= name %>' | perm:false | async"
+    [enableUpdate]="'change_<%= name %>' | perm:false | async"
+    [enableDelete]="'delete_<%= name %>' | perm:false | async"
+    (changePage)="onChangePage($event)"
+    [processing]="processing$ | async">
+</entity-grid>

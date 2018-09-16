@@ -73,6 +73,8 @@ export default function (options: any): Rule {
         underscore(str).replace(new RegExp('-', 'g'), ' '),
         low_first_letter
       ),
+    snakecase: (str: string, uppercase?: boolean) =>
+      underscore(uppercase ? str.toUpperCase() : str, true).replace(new RegExp('-', 'g'), '_'),
     underscore: underscore,
     pluralize: pluralize,
     name: name,
