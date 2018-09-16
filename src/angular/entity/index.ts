@@ -75,6 +75,8 @@ export default function (options: any): Rule {
         underscore(str).replace(new RegExp('-', 'g'), ' '),
         low_first_letter
       ),
+    snakecase: (str: string, uppercase?: boolean) =>
+      underscore(uppercase ? str.toUpperCase() : str, true).replace(new RegExp('-', 'g'), '_'),
     underscore: underscore,
     pluralize: pluralize,
     name: name,
@@ -99,7 +101,7 @@ export default function (options: any): Rule {
   );
 
   const frameModuleFile =
-    resolve(root, data.app.sourceRoot, 'app', 'components', 'pages', 'entities-page', data.pluralize(data.name), data.pluralize(data.name) + '-frame.module.ts');
+    resolve(root, data.app.sourceRoot, 'app', 'pages', 'entities-page', data.pluralize(data.name), data.pluralize(data.name) + '-frame.module.ts');
   try {
     accessSync(frameModuleFile, constants.F_OK);
   } catch (e) {
@@ -111,9 +113,9 @@ export default function (options: any): Rule {
     );
   }
   const entitiesPagePath: string =
-    resolve(root, data.app.sourceRoot, 'app', 'components', 'pages', 'entities-page');
+    resolve(root, data.app.sourceRoot, 'app', 'pages', 'entities-page');
   const entityPageModuleFile =
-    resolve(root, data.app.sourceRoot, 'app', 'components', 'pages', 'entities-page', 'entities-page.module.ts');
+    resolve(root, data.app.sourceRoot, 'app', 'pages', 'entities-page', 'entities-page.module.ts');
   let existsFrames: string[];
   try {
     existsFrames = readdirSync(entitiesPagePath).filter(f =>
@@ -149,6 +151,30 @@ export default function (options: any): Rule {
       mergeWith(templatePageSource, MergeStrategy.Overwrite)
     );
   }
+  ///
+  const modelsConfigsPath: string =
+    resolve(root, data.core.sourceRoot, 'lib', 'entities', 'configs');
+  let existsConfigs: string[];
+  try {
+    existsConfigs = readdirSync(modelsConfigsPath).filter(f =>
+      statSync(join(modelsConfigsPath, f)).isFile() && f.indexOf('.config.ts') !== -1
+    ).map(f => f.replace('.config.ts', ''));
+  } catch (error) {
+    existsConfigs = [
+    ];
+  }
+  if (existsConfigs.indexOf(data.pluralize(name)) === -1) {
+    existsConfigs.push(
+      name
+    );
+  }
+  existsConfigs = existsConfigs.sort();
+  const templateConfigsSource = apply(url('./files/configs-provider'), [
+    template({ ...data, models: existsConfigs })
+  ]);
+  chains.push(
+    mergeWith(templateConfigsSource, MergeStrategy.Overwrite)
+  );
   // The chain rule allows us to chain multiple rules and apply them one after the other.
   return chain(chains);
 }
