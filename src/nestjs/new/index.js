@@ -13,7 +13,7 @@ function default_1(options) {
     const name = options.name;
     const gitInfo = { username: options.username || gitUsername(), email: options.email || gitEmail() };
     const templateSource = schematics_1.apply(schematics_1.url('./files'), [
-        schematics_1.template(Object.assign({}, core_1.strings, { humanize: (str, low_first_letter) => inflection_1.humanize(inflection_1.underscore(str).replace(new RegExp('-', 'g'), ' '), low_first_letter), snakecase: (str, uppercase) => inflection_1.underscore(uppercase ? str.toUpperCase() : str, true).replace(new RegExp('-', 'g'), '_'), underscore: inflection_1.underscore, pluralize: inflection_1.pluralize, name: name, root: root, gitInfo: gitInfo }, dot.dot({ gitInfo: gitInfo }), { js: 'js', ts: 'ts', json: 'json', env: 'env' }))
+        schematics_1.template(Object.assign({}, core_1.strings, { humanize: (str, low_first_letter) => inflection_1.humanize(inflection_1.underscore(str).replace(new RegExp('-', 'g'), ' '), low_first_letter), snakecase: (str, uppercase) => inflection_1.underscore(uppercase ? str.toUpperCase() : str, true).replace(new RegExp('-', 'g'), '_'), underscore: inflection_1.underscore, pluralize: inflection_1.pluralize, name: name, root: root, gitInfo: gitInfo }, dot.dot({ gitInfo: gitInfo }), { js: 'js', ts: 'ts', gitignore: 'gitignore', json: 'json', env: 'env' }))
     ]);
     // The chain rule allows us to chain multiple rules and apply them one after the other.
     return schematics_1.chain([

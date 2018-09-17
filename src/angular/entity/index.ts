@@ -90,8 +90,11 @@ export default function (options: any): Rule {
     ...dot.dot({ app: appConfig }),
     ...dot.dot({ core: coreConfig }),
     ...dot.dot({ web: webConfig }),
+    js: 'js',
     ts: 'ts',
-    json: 'json'
+    gitignore: 'gitignore',
+    json: 'json',
+    env: 'env'
   };
   const templateLibsSource = apply(url('./files/libs'), [
     template(data)

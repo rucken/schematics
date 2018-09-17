@@ -90,8 +90,11 @@ export default function (options: any): Rule {
     ...dot.dot({ core: coreConfig }),
     ...dot.dot({ apps: appConfigs }),
     ...dot.dot({ libs: libConfigs }),
+    js: 'js',
     ts: 'ts',
-    json: 'json'
+    gitignore: 'gitignore',
+    json: 'json',
+    env: 'env'
   };
   let controllersPath = resolve(root, data.app.sourceRoot, 'controllers');
   let servicesPath = resolve(root, data.app.sourceRoot, 'services');
