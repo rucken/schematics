@@ -1,5 +1,5 @@
 <entity-grid
-    title="<%= humanize(pluralize(name)) %>"
+    [title]="title"
     [items]="items$ | async"
     (selected)="onSelected($event)"
     [columns]="<%=JSON.stringify([...fields,'action']).replace(new RegExp('"', 'g'), '\'')%>"

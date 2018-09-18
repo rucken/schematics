@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Inject, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Inject, Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate } from '@rucken/core';
 import { <%= classify(name) %>, <%= snakecase(pluralize(name), true) %>_CONFIG_TOKEN } from '<%= core.name %>';
@@ -15,7 +15,8 @@ import { <%= classify(name) %>ModalComponent } from '../<%= name %>-modal/<%= na
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class <%= classify(pluralize(name)) %>GridComponent extends BaseEntityListComponent <<%= classify(name) %>> implements OnInit {
-
+  @Input()
+  title = translate('<%= humanize(pluralize(name)) %>');
   constructor(
     public modalService: BsModalService,
     protected errorsExtractor: ErrorsExtractor,
