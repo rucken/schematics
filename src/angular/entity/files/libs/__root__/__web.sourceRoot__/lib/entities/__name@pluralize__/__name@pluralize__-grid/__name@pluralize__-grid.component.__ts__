@@ -16,6 +16,8 @@ import { <%= classify(name) %>ModalComponent } from '../<%= name %>-modal/<%= na
 })
 export class <%= classify(pluralize(name)) %>GridComponent extends BaseEntityListComponent <<%= classify(name) %>> implements OnInit {
   @Input()
+  modalItemComponent = <%= classify(name) %>ModalComponent;
+  @Input()
   title = translate('<%= humanize(pluralize(name)) %>');
   constructor(
     public modalService: BsModalService,
@@ -45,6 +47,7 @@ export class <%= classify(pluralize(name)) %>GridComponent extends BaseEntityLis
       });
     }
   }
+  /*
   createDeleteModal(item: <%= classify(name) %>): BsModalRef {
     return this.modalService.show(<%= classify(name) %>ModalComponent, {
       class: 'modal-md',
@@ -92,4 +95,5 @@ export class <%= classify(pluralize(name)) %>GridComponent extends BaseEntityLis
       }
     });
   }
+  */
 }
