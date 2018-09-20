@@ -1,5 +1,5 @@
 <entity-grid
-    title="Test entities"
+    [title]="title"
     [items]="items$ | async"
     (selected)="onSelected($event)"
     [columns]="['name','action']"

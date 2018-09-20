@@ -28,7 +28,9 @@ export default function (options: any): Rule {
       root: root,
       gitInfo: gitInfo,
       ...dot.dot({ gitInfo: gitInfo }),
+      js: 'js',
       ts: 'ts',
+      gitignore: 'gitignore',
       json: 'json',
       env: 'env'
     })

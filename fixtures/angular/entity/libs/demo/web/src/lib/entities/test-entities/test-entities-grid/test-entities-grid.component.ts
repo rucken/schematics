@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Inject, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Inject, Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate } from '@rucken/core';
 import { TestEntity, TEST_ENTITIES_CONFIG_TOKEN } from '@demo/core';
@@ -15,7 +15,10 @@ import { TestEntityModalComponent } from '../test-entity-modal/test-entity-modal
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestEntitiesGridComponent extends BaseEntityListComponent <TestEntity> implements OnInit {
-
+  @Input()
+  modalItemComponent = TestEntityModalComponent;
+  @Input()
+  title = translate('Test entities');
   constructor(
     public modalService: BsModalService,
     protected errorsExtractor: ErrorsExtractor,
@@ -44,6 +47,7 @@ export class TestEntitiesGridComponent extends BaseEntityListComponent <TestEnti
       });
     }
   }
+  /*
   createDeleteModal(item: TestEntity): BsModalRef {
     return this.modalService.show(TestEntityModalComponent, {
       class: 'modal-md',
@@ -91,4 +95,5 @@ export class TestEntitiesGridComponent extends BaseEntityListComponent <TestEnti
       }
     });
   }
+  */
 }
