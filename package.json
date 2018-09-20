@@ -46,18 +46,18 @@
   ],
   "schematics": "./src/collection.json",
   "dependencies": {
-    "@angular-devkit/schematics": "^0.8.2",
+    "@angular-devkit/schematics": "^0.8.3",
     "@types/inflection": "^1.5.28",
-    "@types/node": "^10.9.4",
+    "@types/node": "^10.10.1",
     "dot-object": "^1.7.0",
     "git-user-email": "^0.2.2",
     "git-username": "^1.0.0",
     "inflection": "^1.12.0"
   },
   "devDependencies": {
-    "@angular-devkit/core": "^0.8.2",
-    "@angular-devkit/schematics-cli": "^0.8.2",
-    "@angular/cli": "^6.2.2",
+    "@angular-devkit/core": "^0.8.3",
+    "@angular-devkit/schematics-cli": "^0.8.3",
+    "@angular/cli": "^6.2.3",
     "@types/jasmine": "^2.8.8",
     "conventional-changelog-cli": "^2.0.5",
     "conventional-commits-detector": "^0.1.1",
