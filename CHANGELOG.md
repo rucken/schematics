@@ -1,3 +1,22 @@
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/rucken/schematics/compare/3.2.6...3.3.0) (2018-09-20)
+
+
+### Bug Fixes
+
+* **angular-entity:** Update configs-provider script ([0124906](https://github.com/rucken/schematics/commit/0124906))
+* **angular-new-template:** Update dependencies ([1e884f3](https://github.com/rucken/schematics/commit/1e884f3))
+* **angular-template:** Move title from template to component Class ([b37e5d2](https://github.com/rucken/schematics/commit/b37e5d2))
+* **templates:** Add gitignore to template ([d006014](https://github.com/rucken/schematics/commit/d006014))
+
+
+### Features
+
+* **angular-template:** Move used entryComponents to @Input properties and comment duplicate code in classes ([ad96e07](https://github.com/rucken/schematics/commit/ad96e07))
+* **angular-template:** Update dependencies and fixtures for test ([dc7a303](https://github.com/rucken/schematics/commit/dc7a303))
+
+
+
 <a name="3.2.6"></a>
 ## [3.2.6](https://github.com/rucken/schematics/compare/3.2.5...3.2.6) (2018-09-16)
 
