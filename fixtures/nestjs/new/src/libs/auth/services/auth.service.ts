@@ -1,27 +1,15 @@
-import {
-  BadRequestException,
-  ConflictException,
-  HttpService,
-  Inject,
-  Injectable,
-  Logger
-} from '@nestjs/common';
-import {
-  CORE_CONFIG_TOKEN,
-  CustomError,
-  GroupsService,
-  ICoreConfig,
-  User,
-  UsersService
-} from '@demo/core-nestjs';
+import { BadRequestException, ConflictException, HttpService, Inject, Injectable, Logger } from '@nestjs/common';
+import { CustomError, GroupsService, User, UsersService } from '@demo/core-nestjs';
 import { plainToClass } from 'class-transformer';
 import { stringify } from 'querystring';
 import { map } from 'rxjs/operators';
+import { AUTH_CONFIG_TOKEN } from '../configs/auth.config';
 import { FACEBOOK_CONFIG_TOKEN } from '../configs/facebook.config';
 import { GOOGLE_PLUS_CONFIG_TOKEN } from '../configs/google-plus.config';
-import { SignInDto } from '../dto/sign-in.dto';
 import { RedirectUriDto } from '../dto/redirect-uri.dto';
+import { SignInDto } from '../dto/sign-in.dto';
 import { SignUpDto } from '../dto/sign-up.dto';
+import { IAuthConfig } from '../interfaces/auth-config.interface';
 import { IFacebookConfig } from '../interfaces/facebook-config.interface';
 import { IGooglePlusConfig } from '../interfaces/google-plus-config.interface';
 @Injectable()
@@ -29,7 +17,7 @@ export class AuthService {
   private localUri: string;
 
   constructor(
-    @Inject(CORE_CONFIG_TOKEN) private readonly coreConfig: ICoreConfig,
+    @Inject(AUTH_CONFIG_TOKEN) private readonly authConfig: IAuthConfig,
     @Inject(FACEBOOK_CONFIG_TOKEN) private readonly fbConfig: IFacebookConfig,
     @Inject(GOOGLE_PLUS_CONFIG_TOKEN)
     private readonly googlePlusConfig: IGooglePlusConfig,
@@ -37,12 +25,12 @@ export class AuthService {
     private readonly usersService: UsersService,
     private readonly groupsService: GroupsService
   ) {
-    if (this.coreConfig.port) {
-      this.localUri = `http://${this.coreConfig.domain}:${
-        this.coreConfig.port
-      }`;
+    if (this.authConfig.port) {
+      this.localUri = `http://${this.authConfig.domain}:${
+        this.authConfig.port
+        }`;
     } else {
-      this.localUri = `http://${this.coreConfig.domain}`;
+      this.localUri = `http://${this.authConfig.domain}`;
     }
   }
   async info(options: { id: number }) {
@@ -77,7 +65,7 @@ export class AuthService {
         throw new ConflictException(
           `User with email "${options.email}" is exists`
         );
-      } catch (error) {}
+      } catch (error) { }
     }
     if (options.username) {
       try {
@@ -87,7 +75,7 @@ export class AuthService {
         throw new ConflictException(
           `User with username "${options.username}" is exists`
         );
-      } catch (error) {}
+      } catch (error) { }
     }
     const group = this.groupsService.getGroupByName({ name: 'user' });
     const newUser = await plainToClass(User, options).setPassword(
@@ -104,7 +92,7 @@ export class AuthService {
     ];
     const redirect_uri: string = `${
       this.fbConfig.login_dialog_uri
-    }?${queryParams.join('&')}`.replace('{host}', host);
+      }?${queryParams.join('&')}`.replace('{host}', host);
     Logger.log(redirect_uri, AuthService.name + ':requestFacebookRedirectUri');
     return {
       redirect_uri
@@ -161,9 +149,9 @@ export class AuthService {
       );
       throw new BadRequestException(
         error &&
-        error.response &&
-        error.response.data &&
-        error.response.data.error
+          error.response &&
+          error.response.data &&
+          error.response.data.error
           ? error.response.data.error.message
           : error.message
       );
@@ -178,7 +166,7 @@ export class AuthService {
     ];
     const redirect_uri: string = `${
       this.googlePlusConfig.login_dialog_uri
-    }?${queryParams.join('&')}`.replace('{host}', host);
+      }?${queryParams.join('&')}`.replace('{host}', host);
     Logger.log(redirect_uri, AuthService.name + ':requestGoogleRedirectUri');
     return {
       redirect_uri
