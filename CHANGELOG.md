@@ -1,3 +1,13 @@
+<a name="3.3.1"></a>
+## [3.3.1](https://github.com/rucken/schematics/compare/3.3.0...3.3.1) (2018-09-21)
+
+
+### Bug Fixes
+
+* **nestjs-new-template:** Update dependencies and update source for it ([e8c76f5](https://github.com/rucken/schematics/commit/e8c76f5))
+
+
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/rucken/schematics/compare/3.2.6...3.3.0) (2018-09-20)
 
