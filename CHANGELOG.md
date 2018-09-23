@@ -1,3 +1,14 @@
+<a name="3.4.1"></a>
+## [3.4.1](https://github.com/rucken/schematics/compare/3.4.0...3.4.1) (2018-09-23)
+
+
+### Bug Fixes
+
+* **angular-entity:** Change modalItem options name ([7606c94](https://github.com/rucken/schematics/commit/7606c94))
+* **nestjs-template:** Add missing import ([3698de1](https://github.com/rucken/schematics/commit/3698de1))
+
+
+
 <a name="3.4.0"></a>
 # [3.4.0](https://github.com/rucken/schematics/compare/3.3.1...3.4.0) (2018-09-23)
 

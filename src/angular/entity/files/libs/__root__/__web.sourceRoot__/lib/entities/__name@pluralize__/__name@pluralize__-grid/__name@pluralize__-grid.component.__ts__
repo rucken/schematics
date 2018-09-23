@@ -16,7 +16,7 @@ import { <%= classify(name) %>ModalComponent } from '../<%= name %>-modal/<%= na
 })
 export class <%= classify(pluralize(name)) %>GridComponent extends BaseEntityListComponent <<%= classify(name) %>> implements OnInit {
   @Input()
-  modalItemComponent: IBaseEntityModalOptions = {
+  modalItem: IBaseEntityModalOptions = {
       component: <%= classify(name) %>ModalComponent
   };
   @Input()
