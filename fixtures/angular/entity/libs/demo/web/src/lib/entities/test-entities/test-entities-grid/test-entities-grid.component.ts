@@ -16,7 +16,7 @@ import { TestEntityModalComponent } from '../test-entity-modal/test-entity-modal
 })
 export class TestEntitiesGridComponent extends BaseEntityListComponent <TestEntity> implements OnInit {
   @Input()
-  modalItemComponent: IBaseEntityModalOptions = {
+  modalItem: IBaseEntityModalOptions = {
       component: TestEntityModalComponent
   };
   @Input()
