@@ -1,10 +1,10 @@
-import { Component, EventEmitter, OnInit, Output, Inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate } from '@rucken/core';
 import { TestEntity, TEST_ENTITIES_CONFIG_TOKEN } from '@demo/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository, IRestProviderOptions } from 'ngx-repository';
-import { MessageModalService } from '@rucken/web';
+import { MessageModalService, IBaseEntityModalOptions } from '@rucken/web';
 import { TestEntitiesGridModalComponent } from '../test-entities-grid-modal/test-entities-grid-modal.component';
 import { TestEntitiesGridComponent } from '../test-entities-grid/test-entities-grid.component';
 
@@ -18,6 +18,14 @@ export class TestEntityInputComponent extends TestEntitiesGridComponent implemen
 
   @Output()
   select = new EventEmitter <TestEntity> ();
+  @Input()
+  modalAppendFromGrid: IBaseEntityModalOptions = {
+    component: TestEntitiesGridModalComponent,
+    initialState: {
+      title: translate('Select test entity'),
+      yesTitle: translate('Select')
+    }
+  };
 
   constructor(
     public modalService: BsModalService,
@@ -45,16 +53,6 @@ export class TestEntityInputComponent extends TestEntitiesGridComponent implemen
     this.mockedItemsChange.subscribe(items =>
       this.onSelect(items[0])
     );
-  }
-  createAppendFromGridModal(): BsModalRef {
-    return this.modalService.show(TestEntitiesGridModalComponent, {
-      class: 'modal-md',
-      initialState: {
-        title: translate('Select test entity'),
-        yesTitle: translate('Select'),
-        apiUrl: this.apiUrl
-      }
-    });
   }
   onSelect(item: TestEntity) {
     this.select.emit(item);

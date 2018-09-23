@@ -4,7 +4,7 @@ import { ErrorsExtractor, translate } from '@rucken/core';
 import { TestEntity, TEST_ENTITIES_CONFIG_TOKEN } from '@demo/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository, IRestProviderOptions } from 'ngx-repository';
-import { BaseEntityListComponent } from '@rucken/web';
+import { BaseEntityListComponent, IBaseEntityModalOptions } from '@rucken/web';
 import { MessageModalService } from '@rucken/web';
 import { TestEntityModalComponent } from '../test-entity-modal/test-entity-modal.component';
 
@@ -16,7 +16,9 @@ import { TestEntityModalComponent } from '../test-entity-modal/test-entity-modal
 })
 export class TestEntitiesGridComponent extends BaseEntityListComponent <TestEntity> implements OnInit {
   @Input()
-  modalItemComponent = TestEntityModalComponent;
+  modalItemComponent: IBaseEntityModalOptions = {
+      component: TestEntityModalComponent
+  };
   @Input()
   title = translate('Test entities');
   constructor(
