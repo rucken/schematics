@@ -12,7 +12,6 @@ export class AccessGuard extends AuthGuard('jwt') {
     try {
       await super.canActivate(context);
     } catch (error) {
-      return false;
     }
     const roles = this.reflector.get<string[]>('roles', context.getHandler());
     const permissions = this.reflector.get<string[]>(

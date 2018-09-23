@@ -1,3 +1,21 @@
+<a name="3.4.0"></a>
+# [3.4.0](https://github.com/rucken/schematics/compare/3.3.1...3.4.0) (2018-09-23)
+
+
+### Bug Fixes
+
+* **nestjs-generator:** Remove authConfig, change it to coreConfig ([3fe43f3](https://github.com/rucken/schematics/commit/3fe43f3))
+* **nestjs-generator:** Remove execute default guard check for access ([85edaa4](https://github.com/rucken/schematics/commit/85edaa4))
+* **nestjs-template:** Restore run default canActivate in AccessGuard ([3fab4ef](https://github.com/rucken/schematics/commit/3fab4ef))
+
+
+### Features
+
+* **angular-entity:** Changed create modal options method ([e4320ac](https://github.com/rucken/schematics/commit/e4320ac))
+* **deps:** Update dependencies ([f08eab2](https://github.com/rucken/schematics/commit/f08eab2))
+
+
+
 <a name="3.3.1"></a>
 ## [3.3.1](https://github.com/rucken/schematics/compare/3.3.0...3.3.1) (2018-09-21)
 
