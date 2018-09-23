@@ -1,10 +1,10 @@
-import { Component, EventEmitter, OnInit, Output, Inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate } from '@rucken/core';
 import { <%= classify(name) %>, <%= snakecase(pluralize(name), true) %>_CONFIG_TOKEN } from '<%= core.name %>';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository, IRestProviderOptions } from 'ngx-repository';
-import { MessageModalService } from '@rucken/web';
+import { MessageModalService, IBaseEntityModalOptions } from '@rucken/web';
 import { <%= classify(pluralize(name)) %>GridModalComponent } from '../<%= pluralize(name) %>-grid-modal/<%= pluralize(name) %>-grid-modal.component';
 import { <%= classify(pluralize(name)) %>GridComponent } from '../<%= pluralize(name) %>-grid/<%= pluralize(name) %>-grid.component';
 
@@ -18,6 +18,14 @@ export class <%= classify(name) %>InputComponent extends <%= classify(pluralize(
 
   @Output()
   select = new EventEmitter <<%= classify(name) %>> ();
+  @Input()
+  modalAppendFromGrid: IBaseEntityModalOptions = {
+    component: <%= classify(pluralize(name)) %>GridModalComponent,
+    initialState: {
+      title: translate('Select <%= humanize(name,true) %>'),
+      yesTitle: translate('Select')
+    }
+  };
 
   constructor(
     public modalService: BsModalService,
@@ -45,16 +53,6 @@ export class <%= classify(name) %>InputComponent extends <%= classify(pluralize(
     this.mockedItemsChange.subscribe(items =>
       this.onSelect(items[0])
     );
-  }
-  createAppendFromGridModal(): BsModalRef {
-    return this.modalService.show(<%= classify(pluralize(name)) %>GridModalComponent, {
-      class: 'modal-md',
-      initialState: {
-        title: translate('Select <%= humanize(name,true) %>'),
-        yesTitle: translate('Select'),
-        apiUrl: this.apiUrl
-      }
-    });
   }
   onSelect(item: <%= classify(name) %>) {
     this.select.emit(item);
