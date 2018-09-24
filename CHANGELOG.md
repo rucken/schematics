@@ -1,3 +1,13 @@
+<a name="3.4.2"></a>
+## [3.4.2](https://github.com/rucken/schematics/compare/3.4.1...3.4.2) (2018-09-24)
+
+
+### Bug Fixes
+
+* **templates:** Add gitignore to sources ([707108f](https://github.com/rucken/schematics/commit/707108f))
+
+
+
 <a name="3.4.1"></a>
 ## [3.4.1](https://github.com/rucken/schematics/compare/3.4.0...3.4.1) (2018-09-23)
 
