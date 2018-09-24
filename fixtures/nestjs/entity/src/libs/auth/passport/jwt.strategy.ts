@@ -31,8 +31,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       }
     });
   }
-  public async validate(req, payload: IJwtPayload, done) {
-    Logger.log(JSON.stringify(payload), JwtStrategy.name);
+  public async validate(req, payload: IJwtPayload) {
     try {
       await this.groupsService.preloadAll();
     } catch (error) {
@@ -44,9 +43,9 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       user.groups = user.groups.map(group =>
         this.groupsService.getGroupByName({ name: group.name })
       );
-      done(null, user);
+      return user;
     } catch (error) {
-      return done(new UnauthorizedException(), false);
+      throw new UnauthorizedException();
     }
   }
 }

@@ -30,7 +30,7 @@ export default function (options: any): Rule {
       ...dot.dot({ gitInfo: gitInfo }),
       js: 'js',
       ts: 'ts',
-      gitignore: 'gitignore',
+      dot: '.',
       json: 'json',
       env: 'env'
     })

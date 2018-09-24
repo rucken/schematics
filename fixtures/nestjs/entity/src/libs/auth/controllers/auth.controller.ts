@@ -1,34 +1,19 @@
-import {
-  Body,
-  Controller,
-  Get,
-  HttpCode,
-  HttpStatus,
-  Post,
-  Req,
-  Inject,
-  Logger
-} from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Inject, Logger, Post, Req } from '@nestjs/common';
 import { ApiResponse, ApiUseTags } from '@nestjs/swagger';
+import { CORE_CONFIG_TOKEN, ICoreConfig, OutAccountDto } from '@demo/core-nestjs';
 import { plainToClass } from 'class-transformer';
-import { UserTokenDto } from '../dto/user-token.dto';
+import { JsonWebTokenError } from 'jsonwebtoken';
 import { FacebookSignInDto } from '../dto/facebook-signIn.dto';
 import { FacebookTokenDto } from '../dto/facebook-token.dto';
 import { GooglePlusSignInDto } from '../dto/google-plus-signIn.dto';
-import { SignInDto } from '../dto/sign-in.dto';
 import { RedirectUriDto } from '../dto/redirect-uri.dto';
+import { SignInDto } from '../dto/sign-in.dto';
 import { SignUpDto } from '../dto/sign-up.dto';
 import { TokenDto } from '../dto/token.dto';
+import { UserTokenDto } from '../dto/user-token.dto';
+import { IJwtPayload } from '../interfaces/jwt-payload.interface';
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
-import { IJwtPayload } from '../interfaces/jwt-payload.interface';
-import {
-  OutAccountDto,
-  OutUserDto,
-  CORE_CONFIG_TOKEN,
-  ICoreConfig
-} from '@demo/core-nestjs';
-import { JsonWebTokenError } from 'jsonwebtoken';
 
 @ApiUseTags('auth')
 @Controller('/api/auth')
@@ -37,7 +22,7 @@ export class AuthController {
     @Inject(CORE_CONFIG_TOKEN) private readonly coreConfig: ICoreConfig,
     private readonly authService: AuthService,
     private readonly tokenService: TokenService
-  ) {}
+  ) { }
   @HttpCode(HttpStatus.OK)
   @Post('signin')
   @ApiResponse({

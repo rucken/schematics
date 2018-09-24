@@ -92,7 +92,7 @@ export default function (options: any): Rule {
     ...dot.dot({ web: webConfig }),
     js: 'js',
     ts: 'ts',
-    gitignore: 'gitignore',
+    dot: '.',
     json: 'json',
     env: 'env'
   };

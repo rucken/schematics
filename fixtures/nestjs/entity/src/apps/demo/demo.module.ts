@@ -9,14 +9,14 @@ import { services } from './services';
   imports: [TypeOrmModule.forFeature(entities)],
   controllers: [...controllers],
   providers: [...configs, ...services],
-  exports: [...services]
+  exports: [...configs, ...services]
 })
 export class DemoModule {
   static forFeature(): DynamicModule {
     return {
       module: DemoModule,
       providers: [...services],
-      exports: [...services]
+      exports: [...configs, ...services]
     };
   }
   static forRoot(options: { providers: Provider[] }): DynamicModule {
@@ -25,7 +25,7 @@ export class DemoModule {
       imports: [TypeOrmModule.forFeature(entities)],
       controllers: [...controllers],
       providers: [...configs, ...options.providers, ...services],
-      exports: [...services]
+      exports: [...configs, ...services]
     };
   }
 }
