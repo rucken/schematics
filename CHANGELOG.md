@@ -1,3 +1,13 @@
+<a name="3.4.3"></a>
+## [3.4.3](https://github.com/rucken/schematics/compare/3.4.2...3.4.3) (2018-09-28)
+
+
+### Bug Fixes
+
+* **templates:** Update dependencies ([539d00f](https://github.com/rucken/schematics/commit/539d00f))
+
+
+
 <a name="3.4.2"></a>
 ## [3.4.2](https://github.com/rucken/schematics/compare/3.4.1...3.4.2) (2018-09-24)
 
