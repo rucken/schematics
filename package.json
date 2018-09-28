@@ -1,6 +1,6 @@
 {
   "name": "@rucken/schematics",
-  "version": "3.4.2",
+  "version": "3.4.3",
   "engines": {
     "node": ">=10",
     "npm": ">=6.4.0"
