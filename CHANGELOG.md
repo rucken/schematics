@@ -1,3 +1,12 @@
+# [3.5.0](https://github.com/rucken/schematics/compare/3.4.3...3.5.0) (2018-11-17)
+
+
+### Features
+
+* **deps:** Update dependencies and refactor templates for it ([38cdfb3](https://github.com/rucken/schematics/commit/38cdfb3))
+
+
+
 <a name="3.4.3"></a>
 ## [3.4.3](https://github.com/rucken/schematics/compare/3.4.2...3.4.3) (2018-09-28)
 
