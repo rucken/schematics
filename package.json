@@ -1,13 +1,13 @@
 {
   "name": "@rucken/schematics",
-  "version": "3.4.3",
+  "version": "3.5.0",
   "engines": {
     "node": ">=10",
     "npm": ">=6.4.0"
   },
   "license": "MIT",
   "author": "EndyKaufman <admin@site15.ru>",
-  "description": "A schematics collections for generate source files for Angular6+ application based on Rucken template",
+  "description": "A schematics collections for generate source files for Angular7+ application based on Rucken template",
   "bugs": {
     "url": "https://github.com/rucken/schematics/issues"
   },
@@ -30,7 +30,7 @@
   "keywords": [
     "schematics",
     "ngx",
-    "angular6",
+    "angular7",
     "admin ui",
     "web application",
     "seed",

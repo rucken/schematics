@@ -8,7 +8,7 @@
   "private": true,
   "license": "MIT",
   "author": "demo <demo@demo.demo>",
-  "description": "Core with UI for web and native application maked on Angular6+",
+  "description": "Core with UI for web and native application maked on Angular7+",
   "bugs": {
     "url": "https://github.com/demo/core/issues"
   },
@@ -19,7 +19,7 @@
   },
   "keywords": [
     "ngx",
-    "angular6",
+    "angular7",
     "ui",
     "web application",
     "seed",
