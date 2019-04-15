@@ -8,6 +8,7 @@
 
 A schematics collections for generate source files for [Angular7+](https://angular.io/) and [NestJS](https://nestjs.com/) application based on [Rucken](https://github.com/rucken)  template
 
+<!-- generators -->
 ## Links
 
 [@rucken/cli](https://github.com/rucken/cli) - Console tools for create and build [Angular7+](https://angular.io/) and [NestJS](https://nestjs.com/) application based on [Rucken](https://github.com/rucken) template
@@ -15,6 +16,7 @@ A schematics collections for generate source files for [Angular7+](https://angul
 [@rucken/core](https://github.com/rucken/core) - Core with Admin UI for web application maked on [Angular7+](https://angular.io/)
 
 [@rucken/core-nestjs](https://github.com/rucken/core-nestjs) - A simple application demonstrating the basic usage of permissions with [NestJS](https://nestjs.com/)
+<!-- generatorsstop -->
 
 ## License
 
