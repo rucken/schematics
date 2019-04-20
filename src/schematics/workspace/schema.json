@@ -3,16 +3,10 @@
   "id": "workspace",
   "description": "Workspace generator, based on the Rucken template",
   "examples": [
-    "workspace custom-workspace --workspace ./workspace/custom-workspace --author EndyKaufman --email admin@site15.ru"
+    "workspace custom-workspace --author EndyKaufman --email admin@site15.ru"
   ],
   "type": "object",
   "properties": {
-    "workspace": {
-      "type": "string",
-      "hidden": true,
-      "description": "The workspace directory name.",
-      "default": "."
-    },
     "name": {
       "description": "The name of the workspace.",
       "type": "string",

@@ -48,7 +48,7 @@ vendors
     if (path === `/tsconfig.json`) {
         const original = JSON.parse(content);
         if (!original.exclude) {
-            original.exclude = ["scripts", "node_modules", "tmp"];
+            original.exclude = ['scripts', 'node_modules', 'tmp'];
         }
         if (original.exclude.indexOf('scripts') === -1) {
             original.exclude = [
@@ -62,18 +62,18 @@ vendors
     if (path === `/package.json`) {
         const original = JSON.parse(content);
         original.engines = {
-            "node": ">=11",
-            "npm": ">=6.5.0"
+            'node': '>=11',
+            'npm': '>=6.5.0'
         };
         original.author = options.fullAuthorObject;
-        original.scripts["affected:dev"] = "rucken prepare -m dev";
-        original.scripts["affected:prod"] = "rucken prepare -m prod";
-        original.scripts["postinstall"] = "sh ./scripts/postinstall.sh";
-        original.scripts["typeorm"] = "./node_modules/.bin/ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js";
-        original.scripts["migrate:create"] = "npm run typeorm migration:create";
-        original.scripts["migrate:generate"] = "npm run typeorm migration:generate";
-        original.scripts["migrate:prod"] = "cross-env MIGRATIONS=true NODE_ENV=production npm run typeorm migration:run";
-        original.scripts["migrate"] = "cross-env MIGRATIONS=true npm run typeorm migration:run";
+        original.scripts['affected:dev'] = 'rucken prepare -m dev';
+        original.scripts['affected:prod'] = 'rucken prepare -m prod';
+        original.scripts['postinstall'] = 'sh ./scripts/postinstall.sh';
+        original.scripts['typeorm'] = './node_modules/.bin/ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js';
+        original.scripts['migrate:create'] = 'npm run typeorm migration:create';
+        original.scripts['migrate:generate'] = 'npm run typeorm migration:generate';
+        original.scripts['migrate:prod'] = 'cross-env MIGRATIONS=true NODE_ENV=production npm run typeorm migration:run';
+        original.scripts['migrate'] = 'cross-env MIGRATIONS=true npm run typeorm migration:run';
         return fileutils_1.serializeJson(original);
     }
 }
@@ -121,7 +121,7 @@ function addAppFiles(templateSource, tree, options) {
         schematics_1.forEach((fileEntry) => {
             return updateFileFileEntry(tree, fileEntry, options);
         }),
-        schematics_1.move(options.workspace)
+        schematics_1.move(options.name)
     ]));
 }
 function default_1(schema) {

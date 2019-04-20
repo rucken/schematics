@@ -15,15 +15,28 @@ A schematics collections for generate source files for [Angular7+](https://angul
 * [Available generators](#available-generators)
 
 # Install
+<!-- install -->
 ```bash
 npm install -g @angular-devkit/schematics-cli
-npm install --save-dev @rucken/schematics
+npm install -g @rucken/schematics
 ```
+<!-- installstop -->
 
 # Usage
+<!-- usage -->
 ```bash
-schematics @rucken/schematics:<generator name> <arguments>
+# create workspace
+schematics @rucken/schematics:workspace custom-workspace --author EndyKaufman --email admin@site15.ru
+# move to created workspace
+cd custom-workspace
+# create frontend application in workspace
+schematics @rucken/schematics:rucken-app custom-app --api=/api --author EndyKaufman --email admin@site15.ru
+# install dependencies
+npm i
+# start dev server for frontend application
+ng serve custom-app
 ```
+<!-- usagestop -->
 
 # Available generators
 * [Rucken app](#rucken-app) - Frontend application generator on Angular7+ with Bootstrap3, based on the Rucken template
@@ -420,7 +433,7 @@ Workspace generator, based on the Rucken template
 
 Example:
 ```bash
-schematics @rucken/schematics:workspace custom-workspace --workspace ./workspace/custom-workspace --author EndyKaufman --email admin@site15.ru
+schematics @rucken/schematics:workspace custom-workspace --author EndyKaufman --email admin@site15.ru
 ```
 
 ### Parameters
