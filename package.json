@@ -25,13 +25,20 @@
   },
   "keywords": [
     "schematics",
+    "nx",
+    "workspace",
     "ngx",
     "angular7",
-    "admin ui",
-    "web application",
+    "nestjs",
+    "ionic",
+    "bootstrap",
+    "admin",
+    "ui",
+    "backend",
+    "application",
+    "boilerplate",
     "seed",
     "i18n",
-    "bootstrap",
     "ssr"
   ],
   "maintainers": [
