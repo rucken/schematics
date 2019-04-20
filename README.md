@@ -25,10 +25,15 @@ npm install -g @rucken/schematics
 # Usage
 <!-- usage -->
 ```bash
+# create workspace
 schematics @rucken/schematics:workspace custom-workspace --author EndyKaufman --email admin@site15.ru
+# move to created workspace
 cd custom-workspace
+# create frontend application in workspace
 schematics @rucken/schematics:rucken-app custom-app --api=/api --author EndyKaufman --email admin@site15.ru
+# install dependencies
 npm i
+# start dev server for frontend application
 ng serve custom-app
 ```
 <!-- usagestop -->
