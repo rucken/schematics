@@ -1,0 +1,37 @@
+# Credentials
+.travis/*.key
+.travis/*.key.pub
+
+# config
+*.env
+
+deploy
+vendors
+
+# IDE
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+/.idea
+/.awcache
+/.vscode
+
+# misc
+npm-debug.log
+
+# example
+/quick-start
+
+# tests
+/test
+/coverage
+/.nyc_output
+
+# dist
+/dist
+/database/sqlitedb.db
+/client/docs
+/client/index.html

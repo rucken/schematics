@@ -1,7 +1,0 @@
-<% for (i = 0; i < controllers.length; i++) { %>import { <%=classify(controllers[i]+'-controller') %> } from './<%=controllers[i]%>.controller';
-<% } %>
-
-export const controllers = [
-  <% for (i=0;i<controllers.length;i++){ %><%=classify(controllers[i]+'-controller') %>,
-  <% } %>
-];

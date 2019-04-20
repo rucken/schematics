@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "workspace",
+  "description": "Workspace generator, based on the Rucken template",
+  "examples": [
+    "workspace custom-workspace --workspace ./workspace/custom-workspace --author EndyKaufman --email admin@site15.ru"
+  ],
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "string",
+      "hidden": true,
+      "description": "The workspace directory name.",
+      "default": "."
+    },
+    "name": {
+      "description": "The name of the workspace.",
+      "type": "string",
+      "format": "html-selector",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the workspace?"
+    },
+    "author": {
+      "description": "Author name.",
+      "type": "string",
+      "x-prompt": "What author name would you like to use for the all projects? (it is recommended to use Github user for better integration)"
+    },
+    "email": {
+      "description": "Author email name.",
+      "type": "string",
+      "x-prompt": "What author email would you like to use for the all projects?"
+    }
+  },
+  "required": []
+}

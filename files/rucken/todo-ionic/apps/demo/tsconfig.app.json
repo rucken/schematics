@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "module": "es2015",
+    "lib": [
+      "es5",
+      "es6",
+      "es2017",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}

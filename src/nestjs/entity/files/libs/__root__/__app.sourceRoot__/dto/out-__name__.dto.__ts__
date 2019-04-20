@@ -1,8 +1,0 @@
-import { ApiModelProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
-import { <%= classify(name) %>Dto } from './<%=name%>.dto';
-export class Out<%= classify(name) %>Dto {
-  @Type(() => <%= classify(name) %>Dto)
-  @ApiModelProperty({ type: <%= classify(name) %>Dto })
-  <%= camelize(name) %>: <%= classify(name) %>Dto;
-}

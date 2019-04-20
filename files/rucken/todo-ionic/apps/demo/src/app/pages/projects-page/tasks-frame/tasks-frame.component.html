@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button routerLink="/projects">
+                <ion-icon
+                    slot="icon-only"
+                    name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>{{ title$ | async | translate }}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="taskList.onFilterClick()">
+                <ion-icon
+                    slot="icon-only"
+                    name="options"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-searchbar
+            (ionChange)="taskList.setSearchText($event)"
+            [placeholder]="'Search'|translate"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <tasks-list
+        [apiUrl]="apiUrl"
+        [readonly]="!(project$|async|userPerm)"
+        [project]="project$|async"
+        #taskList>
+    </tasks-list>
+    <ion-fab
+        vertical="bottom"
+        horizontal="end"
+        slot="fixed"
+        *ngIf="taskList?.list?.notReadonlyAndEnableCreate$|async">
+        <ion-fab-button (click)="taskList.onCreateClick()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

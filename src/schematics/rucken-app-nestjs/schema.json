@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "rucken-app-nestjs",
+  "description": "REST generator backend applications on NestJS with TypeORM, based on the Rucken template",
+  "examples": [
+    "rucken-app-nestjs custom-app-nestjs --author EndyKaufman --email admin@site15.ru"
+  ],
+  "mainDependencies": {
+    "@angular/core": "../../../files/rucken/todo-nestjs/package.json",
+    "@angular-devkit/architect": "^",
+    "@angular-devkit/core": "^",
+    "@nestjs/common": "^",
+    "@nestjs/core": "^",
+    "@nestjs/passport": "^",
+    "@nestjs/swagger": "^",
+    "@nestjs/typeorm": "^",
+    "@nrwl/nx": "^",
+    "@rucken/auth-nestjs": "^",
+    "@rucken/core-nestjs": "^",
+    "@types/passport-facebook-token": "^",
+    "@types/passport-local": "^",
+    "class-transformer": "^",
+    "class-validator": "^",
+    "connection-string": "^",
+    "fastify-formbody": "^",
+    "jsonwebtoken": "^",
+    "node-django-hashers": "^",
+    "passport": "^",
+    "passport-facebook-token": "^",
+    "passport-google-plus-token": "^",
+    "passport-http-bearer": "^",
+    "passport-jwt": "^",
+    "passport-local": "^",
+    "pg": "^",
+    "rxjs": "^",
+    "sqlite3": "^",
+    "ts-node": "^",
+    "tsconfig-paths": "^",
+    "typeorm": "^",
+    "typescript": "^",
+    "cross-env": "^"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "../../../files/rucken/todo-nestjs/package.json",
+    "@angular/cli": "^",
+    "@angular/compiler": "^",
+    "@nestjs/schematics": "^",
+    "@nestjs/testing": "^",
+    "@nrwl/builders": "^",
+    "@nrwl/schematics": "^",
+    "@rucken/cli": "^",
+    "nodemon": "^",
+    "pm2": "^",
+    "webpack": "^",
+    "webpack-cli": "^",
+    "webpack-node-externals": "^"
+  },
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "string",
+      "hidden": true,
+      "description": "The workspace directory name.",
+      "default": "."
+    },
+    "name": {
+      "description": "The name of the application.",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the application?"
+    },
+    "org": {
+      "description": "The name of organization.",
+      "type": "string"
+    },
+    "author": {
+      "description": "Author name.",
+      "type": "string",
+      "x-prompt": "What author name would you like to use for the application? (it is recommended to use Github user for better integration)"
+    },
+    "email": {
+      "description": "Author email name.",
+      "type": "string",
+      "x-prompt": "What author email would you like to use for the application?"
+    }
+  },
+  "required": []
+}

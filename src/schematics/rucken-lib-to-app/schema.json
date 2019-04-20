@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "rucken-lib-to-app",
+  "description": "Linking the library to the frontend application on Angular7+, based on the Rucken template",
+  "examples": [
+    "rucken-lib-to-app custom-lib --org custom-org --app custom-app",
+    "rucken-lib-to-app custom-lib-web --org custom-org --app custom-app",
+    "rucken-lib-to-app custom-lib --org custom-org --app custom-app-ionic",
+    "rucken-lib-to-app custom-lib-ionic --org custom-org --app custom-app-ionic"
+  ],
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "string",
+      "hidden": true,
+      "description": "The workspace directory name.",
+      "default": "."
+    },
+    "name": {
+      "description": "The name of the library.",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the library?"
+    },
+    "org": {
+      "description": "The name of organization.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the organization?"
+    },
+    "app": {
+      "description": "The name of application.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the application?"
+    }
+  },
+  "required": []
+}

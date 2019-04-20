@@ -1,0 +1,98 @@
+import { Injectable, MethodNotAllowedException, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { User } from '@rucken/core-nestjs';
+import { Repository } from 'typeorm';
+import { <%=classify(name)%> } from '../entities/<%=name%>.entity';
+
+@Injectable()
+export class <%=classify(pluralize(name))%>Service {
+  constructor(@InjectRepository(<%=classify(name)%>) private readonly repository: Repository<<%=classify(name)%>>) {}
+
+  async create(options: { item: <%=classify(name)%> }, user?: User) {
+    try {
+      options.item = await this.repository.save(options.item);
+      return { <%=camelize(name)%>: options.item };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async update(options: { id: number; item: <%=classify(name)%> }, user?: User) {
+    options.item.id = options.id;
+    try {
+      options.item = await this.repository.save(options.item);
+      return { <%=camelize(name)%>: options.item };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async delete(options: { id: number }, user?: User) {
+    try {
+      await this.repository.delete(options.id);
+      return { <%=camelize(name)%>: null };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async findById(options: { id: number }, user?: User) {
+    try {
+      let object: <%=classify(name)%>;
+      let qb = this.repository.createQueryBuilder('<%=camelize(name)%>');
+      qb = qb.andWhere('<%=camelize(name)%>.id = :id', {
+        id: +options.id
+      });
+      object = await qb.getOne();
+      if (!object) {
+        throw new NotFoundException();
+      }
+      return { <%=camelize(name)%>: object };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async findAll(
+    options: {
+      curPage: number;
+      perPage: number;
+      q?: string;
+      sort?: string;
+    },
+    user?: User
+  ) {
+    try {
+      let objects: [<%=classify(name)%>[], number];
+      let qb = this.repository.createQueryBuilder('<%=camelize(name)%>');
+      if (options.q) {
+        qb = qb.andWhere('(<%=camelize(name)%>.title like :q or <%=camelize(name)%>.name like :q or <%=camelize(name)%>.id = :id)', {
+          q: `%${options.q}%`,
+          id: +options.q
+        });
+      }
+      options.sort = options.sort && new <%=classify(name)%>().hasOwnProperty(options.sort.replace('-', '')) ? options.sort : '-id';
+      const field = options.sort.replace('-', '');
+      if (options.sort) {
+        if (options.sort[0] === '-') {
+          qb = qb.orderBy('<%=camelize(name)%>.' + field, 'DESC');
+        } else {
+          qb = qb.orderBy('<%=camelize(name)%>.' + field, 'ASC');
+        }
+      }
+      qb = qb.skip((options.curPage - 1) * options.perPage).take(options.perPage);
+      objects = await qb.getManyAndCount();
+      return {
+        <%=camelize(pluralize(name))%>: objects[0],
+        meta: {
+          perPage: options.perPage,
+          totalPages: options.perPage > objects[1] ? 1 : Math.ceil(objects[1] / options.perPage),
+          totalResults: objects[1],
+          curPage: options.curPage
+        }
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+}

@@ -1,7 +1,0 @@
-<% for (i = 0; i < services.length; i++) { %>import { <%=classify(services[i]+'-service') %> } from './<%=services[i]%>.service';
-<% } %>
-
-export const services = [
-  <% for (i=0;i<services.length;i++){ %><%=classify(services[i]+'-service') %>,
-  <% } %>
-];

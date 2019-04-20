@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "inlineSources": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "lib": [
+      "es5",
+      "es6"
+    ],
+    "target": "es6",
+    "module": "commonjs",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@rucken/todo-nestjs": [
+        "libs/rucken/todo-nestjs/src"
+      ],
+      "@rucken/todo-nestjs/*": [
+        "libs/rucken/todo-nestjs/src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "client",
+    "dist",
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*-spec.ts",
+    "**/*.js"
+  ]
+}
