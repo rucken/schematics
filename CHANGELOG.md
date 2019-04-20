@@ -1,3 +1,12 @@
+# [4.0.0](https://github.com/rucken/schematics/compare/3.5.0...4.0.0) (2019-04-20)
+
+
+### Features
+
+* Rewrite all generators ([c0bd344](https://github.com/rucken/schematics/commit/c0bd344))
+
+
+
 # [3.5.0](https://github.com/rucken/schematics/compare/3.4.3...3.5.0) (2018-11-17)
 
 
