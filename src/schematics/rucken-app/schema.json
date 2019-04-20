@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "rucken-app",
+  "description": "Frontend application generator on Angular7+ with Bootstrap3, based on the Rucken template",
+  "examples": [
+    "rucken-app custom-app --api=/api --author EndyKaufman --email admin@site15.ru"
+  ],
+  "mainDependencies": {
+    "@angular/core": "../../../files/rucken/todo/package.json",
+    "@nguniversal/express-engine": "^",
+    "@ngx-meta/core": "^",
+    "@ngx-translate/core": "^",
+    "@rucken/core": "^",
+    "@rucken/web": "^",
+    "bind-observable": "^",
+    "ngx-bind-io": "^",
+    "ngx-bootstrap": "^",
+    "ngx-cookie-service": "^",
+    "ngx-dynamic-form-builder": "^",
+    "ngx-permissions": "^",
+    "ngx-repository": "^"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "../../../files/rucken/todo/package.json",
+    "@angular/cli": "^",
+    "@angular/compiler-cli": "^",
+    "@compodoc/compodoc": "^",
+    "@rucken/cli": "^",
+    "domino": "^",
+    "ts-node": "^",
+    "tslib": "^",
+    "typescript": "^",
+    "webpack-cli": "^"
+  },
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "string",
+      "hidden": true,
+      "description": "The workspace directory name.",
+      "default": "."
+    },
+    "name": {
+      "description": "The name of the application.",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the application?"
+    },
+    "org": {
+      "description": "The name of organization.",
+      "type": "string"
+    },
+    "api": {
+      "description": "The backend api address (/api, http://host.com/api, https://api.host.com).",
+      "type": "string",
+      "x-prompt": "What backend api address (/api, http://host.com/api, https://api.host.com) would you like to use for the application?"
+    },
+    "author": {
+      "description": "Author name.",
+      "type": "string",
+      "x-prompt": "What author name would you like to use for the application? (it is recommended to use Github user for better integration)"
+    },
+    "email": {
+      "description": "Author email name.",
+      "type": "string",
+      "x-prompt": "What author email would you like to use for the application?"
+    }
+  },
+  "required": []
+}

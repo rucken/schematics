@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "rucken-entity-web-to-app",
+  "description": "Binding of components for editing an entity to a frontend application on Angular7+ with Bootstrap3, based on the Rucken template",
+  "examples": [
+    "rucken-entity-web-to-app custom-entity --lib custom-lib-web --org custom-org --app custom-app --entitiesLib custom-lib"
+  ],
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "string",
+      "hidden": true,
+      "description": "The workspace directory name.",
+      "default": "."
+    },
+    "name": {
+      "description": "The name of the entity.",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the entity?"
+    },
+    "lib": {
+      "description": "The name of the library.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the library?"
+    },
+    "entitiesLib": {
+      "description": "The name of the library with entities.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the library with entities?"
+    },
+    "org": {
+      "description": "The name of organization.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the organization?"
+    },
+    "app": {
+      "description": "The name of application.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the application?"
+    }
+  },
+  "required": []
+}

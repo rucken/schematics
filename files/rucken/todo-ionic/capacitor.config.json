@@ -1,0 +1,6 @@
+{
+  "appId": "io.rucken.android.todoionic",
+  "appName": "rucken-todo-ionic",
+  "bundledWebRuntime": false,
+  "webDir": "dist/demo"
+}

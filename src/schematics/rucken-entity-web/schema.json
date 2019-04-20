@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "rucken-entity-web",
+  "description": "The generator of the main components for editing data on the model and for the frontend application on Angular7+ with Bootstrap3, based on the Rucken template",
+  "examples": [
+    "rucken-entity-web custom-entity --org custom-org --lib custom-lib-web --entitiesLib custom-lib"
+  ],
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "string",
+      "hidden": true,
+      "description": "The workspace directory name.",
+      "default": "."
+    },
+    "name": {
+      "description": "The name of the entity.",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the entity?"
+    },
+    "lib": {
+      "description": "The name of the library.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the library?"
+    },
+    "entitiesLib": {
+      "description": "The name of the library with entities.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the library with entities?"
+    },
+    "org": {
+      "description": "The name of organization.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the organization?"
+    }
+  },
+  "required": []
+}

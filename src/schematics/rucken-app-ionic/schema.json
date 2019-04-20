@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "rucken-app-ionic",
+  "description": "Mobile frontend generator application on Angular7+ with Ionic4, based on the Rucken template",
+  "examples": [
+    "rucken-app-ionic custom-app-ionic --api=/api --author EndyKaufman --email admin@site15.ru"
+  ],
+  "mainDependencies": {
+    "@angular/core": "../../../files/rucken/todo-ionic/package.json",
+    "@capacitor/android": "^",
+    "@capacitor/core": "^",
+    "@ionic-native/core": "^",
+    "@ionic-native/http": "^",
+    "@ionic-native/splash-screen": "^",
+    "@ionic-native/status-bar": "^",
+    "@ionic/angular": "^",
+    "@ionic/storage": "^",
+    "@nguniversal/express-engine": "^",
+    "@ngx-meta/core": "^",
+    "@rucken/core": "^",
+    "@rucken/ionic": "^",
+    "bind-observable": "^",
+    "cordova-android": "^",
+    "cordova-plugin-advanced-http": "^",
+    "cordova-plugin-device": "^",
+    "cordova-plugin-file": "^",
+    "cordova-plugin-ionic-keyboard": "^",
+    "cordova-plugin-ionic-webview": "^",
+    "cordova-plugin-splashscreen": "^",
+    "cordova-plugin-statusbar": "^",
+    "cordova-plugin-whitelist": "^",
+    "cordova-sqlite-storage": "^",
+    "core-js": "^",
+    "ngx-bind-io": "^",
+    "ngx-cookie-service": "^",
+    "ngx-dynamic-form-builder": "^",
+    "ngx-remote-config": "^",
+    "ngx-repository": "^",
+    "rxjs": "^"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "../../../files/rucken/todo-ionic/package.json",
+    "@angular-devkit/core": "^",
+    "@angular/compiler": "^",
+    "@capacitor/cli": "^",
+    "@ionic/ng-toolkit": "^",
+    "@ionic/schematics-angular": "^",
+    "@nrwl/builders": "^",
+    "@rucken/cli": "^",
+    "ng-packagr": "^",
+    "ts-node": "^",
+    "tslib": "^",
+    "typescript": "^"
+  },
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "string",
+      "hidden": true,
+      "description": "The workspace directory name.",
+      "default": "."
+    },
+    "name": {
+      "description": "The name of the application.",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the application?"
+    },
+    "org": {
+      "description": "The name of organization.",
+      "type": "string"
+    },
+    "api": {
+      "description": "The backend api address (/api, http://host.com/api, https://api.host.com).",
+      "type": "string",
+      "x-prompt": "What backend api address (/api, http://host.com/api, https://api.host.com) would you like to use for the application?"
+    },
+    "author": {
+      "description": "Author name.",
+      "type": "string",
+      "x-prompt": "What author name would you like to use for the application? (it is recommended to use Github user for better integration)"
+    },
+    "email": {
+      "description": "Author email name.",
+      "type": "string",
+      "x-prompt": "What author email would you like to use for the application?"
+    }
+  },
+  "required": []
+}

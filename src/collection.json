@@ -1,25 +1,138 @@
 {
   "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "angular-entity": {
-      "description": "Generate frontend model, service, grid, lookup input, modal for edit row in grid, modal for select items from grid with items for Angular 6+ application based on Rucken template",
-      "factory": "./angular/entity",
-      "schema": "./angular/entity/schema.json"
+    "empty-app": {
+      "title": "Empty app",
+      "description": "empty-app",
+      "factory": "./schematics/empty-app",
+      "schema": "./schematics/empty-app/schema.json",
+      "hidden": true
     },
-    "angular-new": {
-      "description": "Generate frontend web empty Angular 6+ application based on Rucken template",
-      "factory": "./angular/new",
-      "schema": "./angular/new/schema.json"
+    "empty-app-e2e": {
+      "title": "Empty app e2e",
+      "description": "empty-app-e2e",
+      "factory": "./schematics/empty-app-e2e",
+      "schema": "./schematics/empty-app-e2e/schema.json",
+      "hidden": true
     },
-    "nestjs-entity": {
-      "description": "Generate dto, entity, service and controller for NestJS backend",
-      "factory": "./nestjs/entity",
-      "schema": "./nestjs/entity/schema.json"
+    "empty-app-ionic": {
+      "title": "Empty app ionic",
+      "description": "empty-app-ionic",
+      "factory": "./schematics/empty-app-ionic",
+      "schema": "./schematics/empty-app-ionic/schema.json",
+      "hidden": true
     },
-    "nestjs-new": {
-      "description": "Generate empty NestJS backend application",
-      "factory": "./nestjs/new",
-      "schema": "./nestjs/new/schema.json"
+    "empty-app-ionic-e2e": {
+      "title": "Empty app ionic e2e",
+      "description": "empty-app-ionic-e2e",
+      "factory": "./schematics/empty-app-ionic-e2e",
+      "schema": "./schematics/empty-app-ionic-e2e/schema.json",
+      "hidden": true
+    },
+    "empty-app-nestjs": {
+      "title": "Empty app nestjs",
+      "description": "empty-app-nestjs",
+      "factory": "./schematics/empty-app-nestjs",
+      "schema": "./schematics/empty-app-nestjs/schema.json",
+      "hidden": true
+    },
+    "empty-lib": {
+      "title": "Empty lib",
+      "description": "empty-lib",
+      "factory": "./schematics/empty-lib",
+      "schema": "./schematics/empty-lib/schema.json",
+      "hidden": true
+    },
+    "empty-lib-nestjs": {
+      "title": "Empty lib nestjs",
+      "description": "empty-lib-nestjs",
+      "factory": "./schematics/empty-lib-nestjs",
+      "schema": "./schematics/empty-lib-nestjs/schema.json",
+      "hidden": true
+    },
+    "rucken-app": {
+      "title": "Rucken app",
+      "description": "Frontend application generator on Angular7+ with Bootstrap3, based on the Rucken template",
+      "factory": "./schematics/rucken-app",
+      "schema": "./schematics/rucken-app/schema.json"
+    },
+    "rucken-app-ionic": {
+      "title": "Rucken app ionic",
+      "description": "Mobile frontend generator application on Angular7+ with Ionic4, based on the Rucken template",
+      "factory": "./schematics/rucken-app-ionic",
+      "schema": "./schematics/rucken-app-ionic/schema.json"
+    },
+    "rucken-app-nestjs": {
+      "title": "Rucken app nestjs",
+      "description": "REST generator backend applications on NestJS with TypeORM, based on the Rucken template",
+      "factory": "./schematics/rucken-app-nestjs",
+      "schema": "./schematics/rucken-app-nestjs/schema.json"
+    },
+    "rucken-entity": {
+      "title": "Rucken entity",
+      "description": "Model generator and frontend application, based on the Rucken template",
+      "factory": "./schematics/rucken-entity",
+      "schema": "./schematics/rucken-entity/schema.json"
+    },
+    "rucken-entity-ionic": {
+      "title": "Rucken entity ionic",
+      "description": "The generator of the main components for editing data on the model and for a mobile frontend application on Angular7+ with Ionic4, based on the Rucken template",
+      "factory": "./schematics/rucken-entity-ionic",
+      "schema": "./schematics/rucken-entity-ionic/schema.json"
+    },
+    "rucken-entity-ionic-to-app": {
+      "title": "Rucken entity ionic to app",
+      "description": "Binding components for editing an entity to a mobile frontend application on Angular7+ with Ionic4, based on the Rucken template",
+      "factory": "./schematics/rucken-entity-ionic-to-app",
+      "schema": "./schematics/rucken-entity-ionic-to-app/schema.json"
+    },
+    "rucken-entity-nestjs": {
+      "title": "Rucken entity nestjs",
+      "description": "The generator of the entity, the DTO, the service and the controller, for editing the entity data for the backend of the application on NestJS with TypeORM, based on the Rucken template",
+      "factory": "./schematics/rucken-entity-nestjs",
+      "schema": "./schematics/rucken-entity-nestjs/schema.json"
+    },
+    "rucken-entity-web": {
+      "title": "Rucken entity web",
+      "description": "The generator of the main components for editing data on the model and for the frontend application on Angular7+ with Bootstrap3, based on the Rucken template",
+      "factory": "./schematics/rucken-entity-web",
+      "schema": "./schematics/rucken-entity-web/schema.json"
+    },
+    "rucken-entity-web-to-app": {
+      "title": "Rucken entity web to app",
+      "description": "Binding of components for editing an entity to a frontend application on Angular7+ with Bootstrap3, based on the Rucken template",
+      "factory": "./schematics/rucken-entity-web-to-app",
+      "schema": "./schematics/rucken-entity-web-to-app/schema.json"
+    },
+    "rucken-lib": {
+      "title": "Rucken lib",
+      "description": "Frontend library generator, based on the Rucken template",
+      "factory": "./schematics/rucken-lib",
+      "schema": "./schematics/rucken-lib/schema.json"
+    },
+    "rucken-lib-nestjs": {
+      "title": "Rucken lib nestjs",
+      "description": "Backend library generator on NestJS, based on the Rucken template",
+      "factory": "./schematics/rucken-lib-nestjs",
+      "schema": "./schematics/rucken-lib-nestjs/schema.json"
+    },
+    "rucken-lib-nestjs-to-app": {
+      "title": "Rucken lib nestjs to app",
+      "description": "Linking the library to the backend application on NestJS, based on the Rucken template",
+      "factory": "./schematics/rucken-lib-nestjs-to-app",
+      "schema": "./schematics/rucken-lib-nestjs-to-app/schema.json"
+    },
+    "rucken-lib-to-app": {
+      "title": "Rucken lib to app",
+      "description": "Linking the library to the frontend application on Angular7+, based on the Rucken template",
+      "factory": "./schematics/rucken-lib-to-app",
+      "schema": "./schematics/rucken-lib-to-app/schema.json"
+    },
+    "workspace": {
+      "title": "Workspace",
+      "description": "Workspace generator, based on the Rucken template",
+      "factory": "./schematics/workspace",
+      "schema": "./schematics/workspace/schema.json"
     }
   }
 }

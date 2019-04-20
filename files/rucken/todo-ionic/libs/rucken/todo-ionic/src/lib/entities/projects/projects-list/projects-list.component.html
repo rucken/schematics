@@ -1,0 +1,94 @@
+<entity-list
+    [bindIO]
+    [items]="items$ | async"
+    [columns]="['description', 'title', 'tasksCount', 'action']"
+    [enableCreate]="'add_project' | perm:false | async"
+    [enableUpdate]="'change_project' | perm:false | async"
+    [enableDelete]="'delete_project' | perm:false | async"
+    [gridCellActionContent]="gridCellActionContent"
+    [itemLabelTemplate]="itemLabelTemplate"
+    #list>
+    <ng-content></ng-content>
+</entity-list>
+<ng-template
+    let-ctx
+    #itemLabelTemplate>
+    <ion-label text-wrap>
+        <ng-container *ngIf="(list.filtredColumns$ | async) as columns">
+            <h2>
+                <ion-icon [name]="(ctx.item|userPerm)?'folder-open':'folder'"></ion-icon>
+                {{ctx.item}}
+            </h2>
+            <p text-wrap>
+                <ion-badge
+                    color="unread"
+                    style="margin-right:5px;">
+                    {{strings['tasksCount']|translate}}:
+                </ion-badge>
+                <ion-badge color="medium">
+                    {{ctx.item.completedTasksCount}}/{{ctx.item.tasksCount}}
+                </ion-badge>
+            </p>
+            <p text-wrap>
+                <ion-badge
+                    color="unread"
+                    style="margin-right:5px;">
+                    {{strings['users']|translate}}:
+                </ion-badge>
+                <ng-container *ngFor="let user of ctx.item.users">
+                    <ion-badge
+                        color="medium"
+                        style="margin-right:5px;">
+                        {{user?.username}}
+                    </ion-badge>
+                </ng-container>
+            </p>
+        </ng-container>
+    </ion-label>
+</ng-template>
+<ng-template
+    #gridCellActionContent
+    let-ctx>
+    <ng-container *ngIf="(list.notReadonlyAndEnableUpdate$ | async) && (ctx.item|userPerm)">
+        <ion-item-option
+            color="primary"
+            (click)="ctx.slidingItem.close();list.onUpdate(ctx.item)"
+            *ngIf="list.updateLink===undefined">
+            <ion-icon
+                slot="icon-only"
+                name="create">
+            </ion-icon>
+        </ion-item-option>
+        <ion-item-option
+            color="primary"
+            *ngIf="list.updateLink!==undefined"
+            (click)="ctx.slidingItem.close()"
+            [routerLink]="[list.updateLink+'/'+ctx.item.id]">
+            <ion-icon
+                slot="icon-only"
+                name="create">
+            </ion-icon>
+        </ion-item-option>
+    </ng-container>
+    <ng-container *ngIf="(list.notReadonlyAndEnableDelete$ | async) && (ctx.item|userPerm)">
+        <ion-item-option
+            color="danger"
+            (click)="ctx.slidingItem.close();list.onDelete(ctx.item)"
+            *ngIf="list.deleteLink===undefined">
+            <ion-icon
+                slot="icon-only"
+                name="trash">
+            </ion-icon>
+        </ion-item-option>
+        <ion-item-option
+            color="danger"
+            *ngIf="list.deleteLink!==undefined"
+            (click)="ctx.slidingItem.close()"
+            [routerLink]="[list.deleteLink+'/'+ctx.item.id]">
+            <ion-icon
+                slot="icon-only"
+                name="trash">
+            </ion-icon>
+        </ion-item-option>
+    </ng-container>
+</ng-template>

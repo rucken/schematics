@@ -8,16 +8,8 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
     "rootDir": "src/",
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
     "sourceMap": true,
-    "strictNullChecks": true,
     "target": "es6",
     "types": [
       "jasmine",
@@ -29,6 +21,8 @@
   ],
   "exclude": [
     "src/**/files/**/*",
-    "fixtures/**/files/**/*"
-  ]
+    "fixtures/**/files/**/*",
+    "files/**/*"
+  ],
+  "baseUrl": "."
 }

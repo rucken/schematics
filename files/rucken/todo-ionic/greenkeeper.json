@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "libs/rucken/todo-ionic/package.json",
+        "package.json"
+      ]
+    }
+  }
+}

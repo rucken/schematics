@@ -1,0 +1,81 @@
+{
+  "name": "@rucken/todo-core",
+  "version": "3.0.5",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6.4.0"
+  },
+  "description": "Core with base class and entities for todo application maked on Angular7+ and based on Rucken template",
+  "keywords": [
+    "angular",
+    "ssr",
+    "todo",
+    "base",
+    "seed",
+    "boilerplate",
+    "i18n",
+    "ngx",
+    "projects",
+    "tasks",
+    "statuses",
+    "users",
+    "shared",
+    "services",
+    "models",
+    "rest",
+    "class",
+    "extends",
+    "ng",
+    "angular2",
+    "angular 2",
+    "angular4",
+    "angular 4",
+    "angular5",
+    "angular 5",
+    "angular6",
+    "angular 6",
+    "angular7",
+    "angular 7",
+    "angularx",
+    "angular-x",
+    "ng2",
+    "ng4",
+    "ng5",
+    "ng6",
+    "rucken",
+    "core"
+  ],
+  "license": "MIT",
+  "author": "EndyKaufman <admin@site15.ru>",
+  "bugs": {
+    "url": "https://github.com/rucken/todo/issues"
+  },
+  "homepage": "https://github.com/rucken/todo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rucken/todo.git"
+  },
+  "maintainers": [
+    {
+      "name": "EndyKaufman",
+      "email": "admin@site15.ru"
+    }
+  ],
+  "peerDependencies": {
+    "rxjs": "6.4.0",
+    "@angular/forms": "7.2.12",
+    "@angular/common": "7.2.12",
+    "@angular/compiler": "7.2.12",
+    "@angular/core": "7.2.12"
+  },
+  "dependencies": {
+    "@ngx-translate/core": "11.0.1",
+    "@types/jsonwebtoken": "8.3.0",
+    "jsonwebtoken": "8.4.0",
+    "ngx-permissions": "6.0.5",
+    "ngx-repository": "0.6.3",
+    "@rucken/core": "3.9.12",
+    "@types/luxon": "1.11.1",
+    "luxon": "1.11.3"
+  }
+}

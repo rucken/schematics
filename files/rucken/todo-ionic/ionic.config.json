@@ -1,0 +1,8 @@
+{
+  "name": "rucken-todo-ionic",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "rucken-lib",
+  "description": "Frontend library generator, based on the Rucken template",
+  "examples": [
+    "rucken-lib custom-lib-web --org custom-org --author EndyKaufman --email admin@site15.ru"
+  ],
+  "type": "object",
+  "properties": {
+    "workspace": {
+      "type": "string",
+      "hidden": true,
+      "description": "The workspace directory name.",
+      "default": "."
+    },
+    "name": {
+      "description": "The name of the library.",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the library?"
+    },
+    "org": {
+      "description": "The name of organization.",
+      "type": "string",
+      "x-prompt": "What name would you like to use for the organization?"
+    },
+    "author": {
+      "description": "Author name.",
+      "type": "string",
+      "x-prompt": "What author name would you like to use for the library? (it is recommended to use Github user for better integration)"
+    },
+    "email": {
+      "description": "Author email name.",
+      "type": "string",
+      "x-prompt": "What author email would you like to use for the library?"
+    }
+  },
+  "required": []
+}

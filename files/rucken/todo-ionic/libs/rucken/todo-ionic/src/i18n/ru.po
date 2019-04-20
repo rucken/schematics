@@ -1,0 +1,163 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+msgid "Sort field"
+msgstr "Поле сортировки"
+
+msgid "Sort type"
+msgstr "Тип сортировки"
+
+msgid "Users"
+msgstr "Пользователи"
+
+msgid "Statuses"
+msgstr "Статусы"
+
+msgid "Id"
+msgstr "Ид."
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Public"
+msgstr "Публичный"
+
+msgid "Created date"
+msgstr "Дата создания"
+
+msgid "Updated date"
+msgstr "Дата обновления"
+
+msgid "Tasks count"
+msgstr "Количество задач"
+
+msgid "Completed tasks"
+msgstr "Выполненные задачи"
+
+msgid "Created user"
+msgstr "Создавший"
+
+msgid "Updated user"
+msgstr "Обновивший"
+
+msgid "Asc"
+msgstr "По возр"
+
+msgid "Desc"
+msgstr "По убыв"
+
+msgid "Projects"
+msgstr "Проекты"
+
+msgid "Projects filters"
+msgstr "Фильтры проектов"
+
+msgid "Open date"
+msgstr "Дата открытия"
+
+msgid "Close date"
+msgstr "Дата закрытия"
+
+msgid "Tasks"
+msgstr "Задачи"
+
+msgid "Tasks filters"
+msgstr "Фильтры задач"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "English"
+msgstr "Английский"
+
+msgid "OK"
+msgstr "Ок"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Assigned user"
+msgstr "Пользователь"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Select"
+msgstr "Выбрать"
+
+msgid "Name"
+msgstr "Наименование"
+
+msgid "Groups filters"
+msgstr "Фильтры групп"
+
+msgid "Profile updated"
+msgstr "Профиль обновлен"
+
+msgid "Groups"
+msgstr "Группы"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Administrator"
+msgstr "Администратор"
+
+msgid "Staff"
+msgstr "Персонал"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "First name"
+msgstr "Имя"
+
+msgid "Last name"
+msgstr "Фамилия"
+
+msgid "Email"
+msgstr "Эл. почта"
+
+msgid "Last login"
+msgstr "Дата последнего входа"
+
+msgid "Date joined"
+msgstr "Дата регистрации"
+
+msgid "Date of birth"
+msgstr "Дата рождения"
+
+msgid "Users filters"
+msgstr "Фильтры пользователей"
+
+msgid "Sign out"
+msgstr "Выйти"
+
+msgid "Do you really want to leave?"
+msgstr "Вы действительно хотите выйти?"
+
+msgid "Error Log"
+msgstr "Ошибка"
+
+msgid "Sign in"
+msgstr "Войти"

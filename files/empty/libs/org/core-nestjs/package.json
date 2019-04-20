@@ -1,0 +1,8 @@
+{
+  "name": "@org/core-nestjs",
+  "version": "0.0.0",
+  "peerDependencies": {
+    "@nestjs/common": "5.7.2",
+    "@nestjs/core": "5.7.2"
+  }
+}

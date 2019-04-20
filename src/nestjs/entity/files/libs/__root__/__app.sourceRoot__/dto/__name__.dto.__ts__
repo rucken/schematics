@@ -1,8 +1,0 @@
-import { MaxLength } from 'class-validator';
-import { ApiModelProperty } from '@nestjs/swagger';
-
-export class <%= classify(name) %>Dto {  
-  @ApiModelProperty({ type: Number })
-  id: number;
-<%for (var i = 0; i < fields.length; i++) { %>  <%='@ApiModelProperty()\n' %>  <%='@MaxLength(100)\n' %>  <%=fields[i] + ': string;\n' %><%}%>
-}
