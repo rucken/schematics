@@ -1,16 +1,16 @@
-const fg = require('fast-glob');
-const ConnectionString = require('connection-string');
-const load = require('dotenv').load;
-const fs = require('fs');
-const path = require('path');
-const runnedInMigration = process.env.MIGRATIONS === 'true';
-const envName = process.env.NODE_ENV || 'develop';
-const isDevelop = envName === 'develop';
-const sourceRootKey = isDevelop ? 'sourceRoot' : 'outputPath';
-const entitiesExt = '{.js,.ts}';
-const angularJson = JSON.parse(fs.readFileSync('angular.json'));
-const packageJson = JSON.parse(fs.readFileSync('package.json'));
-const nxJson = JSON.parse(fs.readFileSync('nx.json'));
+const fg = require("fast-glob");
+const ConnectionString = require("connection-string");
+const load = require("dotenv").load;
+const fs = require("fs");
+const path = require("path");
+const runnedInMigration = process.env.MIGRATIONS === "true";
+const envName = process.env.NODE_ENV || "develop";
+const isDevelop = envName === "develop";
+const sourceRootKey = isDevelop ? "sourceRoot" : "outputPath";
+const entitiesExt = "{.js,.ts}";
+const angularJson = JSON.parse(fs.readFileSync("angular.json"));
+const packageJson = JSON.parse(fs.readFileSync("package.json"));
+const nxJson = JSON.parse(fs.readFileSync("nx.json"));
 const vendors = packageJson.externalLibs || [];
 try {
   fs.accessSync(`${envName}.env`);
@@ -28,7 +28,7 @@ try {
 }
 
 const connectionString = new ConnectionString(
-  process.env.DATABASE_URL || 'sqlite://database/sqlitedb.db'
+  process.env.DATABASE_URL || "sqlite://database/sqlitedb.db"
 );
 const vendorsLibs = Object.keys(vendors).map(index => {
   const vendorConfig = {};
@@ -36,11 +36,11 @@ const vendorsLibs = Object.keys(vendors).map(index => {
   return vendorConfig;
 });
 const libs = Object.keys(angularJson.projects)
-  .filter(key => angularJson.projects[key].projectType === 'library')
+  .filter(key => angularJson.projects[key].projectType === "library")
   .filter(
     key =>
-      nxJson.projects[key].tags.indexOf('nestjs') !== -1 &&
-      nxJson.projects[key].tags.indexOf('library') !== -1
+      nxJson.projects[key].tags.indexOf("nestjs") !== -1 &&
+      nxJson.projects[key].tags.indexOf("library") !== -1
   )
   .filter(
     lib =>
@@ -53,11 +53,11 @@ const libs = Object.keys(angularJson.projects)
   )
   .map(key => angularJson.projects[key]);
 const apps = Object.keys(angularJson.projects)
-  .filter(key => angularJson.projects[key].projectType === 'application')
+  .filter(key => angularJson.projects[key].projectType === "application")
   .filter(
     key =>
-      nxJson.projects[key].tags.indexOf('nestjs') !== -1 &&
-      nxJson.projects[key].tags.indexOf('application') !== -1
+      nxJson.projects[key].tags.indexOf("nestjs") !== -1 &&
+      nxJson.projects[key].tags.indexOf("application") !== -1
   )
   .filter(
     lib =>
@@ -114,18 +114,18 @@ const subscribers = fg.sync(
         ]}/**/subscribers/**/*${entitiesExt}`
   )
 );
-if (connectionString.protocol === 'sqlite') {
+if (connectionString.protocol === "sqlite") {
   const dbFile =
-    './' +
-    (connectionString.hosts ? connectionString.hosts[0].name : '') +
-    (connectionString.path ? '/' + connectionString.path[0] : '');
+    "./" +
+    (connectionString.hosts ? connectionString.hosts[0].name : "") +
+    (connectionString.path ? "/" + connectionString.path[0] : "");
   module.exports = {
-    type: 'sqlite',
+    type: "sqlite",
     database: dbFile,
     entities: entities,
     migrations: migrations,
     subscribers: subscribers,
-    logging: 'all',
+    logging: "all",
     synchronize: false,
     cli: {
       migrationsDir: migrationsDir
@@ -142,7 +142,7 @@ if (connectionString.protocol === 'sqlite') {
     entities: entities,
     migrations: migrations,
     subscribers: subscribers,
-    logging: 'all',
+    logging: "all",
     synchronize: false,
     cli: {
       migrationsDir: migrationsDir
@@ -154,7 +154,7 @@ function normalizationFileList(files) {
   const newFiles = [];
   for (var i = 0; i < files.length; i++) {
     const filename = files[i];
-    if (filename.indexOf('.d.ts') === -1) {
+    if (filename.indexOf(".d.ts") === -1) {
       var founded = false;
       for (var j = 0; j < newFiles.length; j++) {
         const filename = newFiles[j];
