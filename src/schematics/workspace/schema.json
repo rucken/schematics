@@ -3,7 +3,7 @@
   "id": "workspace",
   "description": "Workspace generator, based on the Rucken template",
   "examples": [
-    "workspace custom-workspace --workspace ./workspace/custom-workspace --author EndyKaufman --email admin@site15.ru"
+    "workspace custom-workspace --author EndyKaufman --email admin@site15.ru"
   ],
   "type": "object",
   "properties": {
