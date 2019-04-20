@@ -48,7 +48,7 @@ vendors
     if (path === `/tsconfig.json`) {
         const original = JSON.parse(content);
         if (!original.exclude) {
-            original.exclude = ["scripts", "node_modules", "tmp"];
+            original.exclude = ['scripts', 'node_modules', 'tmp'];
         }
         if (original.exclude.indexOf('scripts') === -1) {
             original.exclude = [
@@ -62,8 +62,8 @@ vendors
     if (path === `/package.json`) {
         const original = JSON.parse(content);
         original.engines = {
-            "node": ">=11",
-            "npm": ">=6.5.0"
+            'node': '>=11',
+            'npm': '>=6.5.0'
         };
         original.author = options.fullAuthorObject;
         original.scripts['affected:dev'] = 'rucken prepare -m dev';

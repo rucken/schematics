@@ -1,3 +1,12 @@
+## [4.0.1](https://github.com/rucken/schematics/compare/4.0.0...4.0.1) (2019-04-20)
+
+
+### Bug Fixes
+
+* Remove workspace argument from workspace generator ([598a252](https://github.com/rucken/schematics/commit/598a252))
+
+
+
 # [4.0.0](https://github.com/rucken/schematics/compare/3.5.0...4.0.0) (2019-04-20)
 
 
