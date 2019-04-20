@@ -9,6 +9,7 @@
   "properties": {
     "workspace": {
       "type": "string",
+      "hidden": true,
       "description": "The workspace directory name.",
       "default": "."
     },
