@@ -51,7 +51,6 @@
   "dependencies": {
     "@angular-devkit/schematics": "^7.0.6",
     "@types/inflection": "^1.5.28",
-    "@types/node": "^10.12.9",
     "dot-object": "^1.7.1",
     "git-user-email": "^0.2.2",
     "git-username": "^1.0.0",
