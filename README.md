@@ -383,7 +383,6 @@ schematics @rucken/schematics:rucken-lib-nestjs custom-lib-nestjs --org custom-o
 ### Parameters
 | Name | Type | Description | Default |
 |------|:----:|------------:|--------:|
-| workspace | {string} | The workspace directory name. | "." |
 | name | {string} | The name of the library. | {"$source":"argv","index":0} |
 | org | {string} | The name of organization. | none |
 | author | {string} | Author name. | none |
