@@ -1,3 +1,13 @@
+## [4.0.2](https://github.com/rucken/schematics/compare/4.0.1...4.0.2) (2019-04-21)
+
+
+### Bug Fixes
+
+* Move needed devDependencies to dependencies for correct work ([31e0abf](https://github.com/rucken/schematics/commit/31e0abf))
+* Revert change workspace folder on create ([9954391](https://github.com/rucken/schematics/commit/9954391))
+
+
+
 ## [4.0.1](https://github.com/rucken/schematics/compare/4.0.0...4.0.1) (2019-04-20)
 
 
