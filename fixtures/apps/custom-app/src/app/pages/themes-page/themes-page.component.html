@@ -4,7 +4,7 @@
       <ul class="nav nav-sidebar">
         <li
           [ngClass]="{ active: (currentTheme$ | async) === theme.url }"
-          *ngFor="let theme of (items$ | async)"
+          *ngFor="let theme of items$ | async"
         >
           <a (click)="setCurrentTheme(theme.url)" href="javascript:void(0)">
             {{ theme.name | translate }}
@@ -18,7 +18,9 @@
       <div class="bs-docs-section clearfix">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header"><h1 id="navbar">Navbar</h1></div>
+            <div class="page-header">
+              <h1 id="navbar">Navbar</h1>
+            </div>
 
             <div class="bs-component">
               <nav class="navbar navbar-default">
@@ -47,10 +49,13 @@
                     <ul class="nav navbar-nav">
                       <li class="active">
                         <a href="javascript:void(0)">
-                          Link <span class="sr-only">(current)</span>
+                          Link
+                          <span class="sr-only">(current)</span>
                         </a>
                       </li>
-                      <li><a href="javascript:void(0)">Link</a></li>
+                      <li>
+                        <a href="javascript:void(0)">Link</a>
+                      </li>
                       <li class="dropdown">
                         <a
                           href="javascript:void(0)"
@@ -59,10 +64,13 @@
                           role="button"
                           aria-expanded="false"
                         >
-                          Dropdown <span class="caret"></span>
+                          Dropdown
+                          <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="javascript:void(0)">Action</a></li>
+                          <li>
+                            <a href="javascript:void(0)">Action</a>
+                          </li>
                           <li>
                             <a href="javascript:void(0)">Another action</a>
                           </li>
@@ -95,7 +103,9 @@
                       </button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a href="javascript:void(0)">Link</a></li>
+                      <li>
+                        <a href="javascript:void(0)">Link</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -129,10 +139,13 @@
                     <ul class="nav navbar-nav">
                       <li class="active">
                         <a href="javascript:void(0)">
-                          Link <span class="sr-only">(current)</span>
+                          Link
+                          <span class="sr-only">(current)</span>
                         </a>
                       </li>
-                      <li><a href="javascript:void(0)">Link</a></li>
+                      <li>
+                        <a href="javascript:void(0)">Link</a>
+                      </li>
                       <li class="dropdown">
                         <a
                           href="javascript:void(0)"
@@ -141,10 +154,13 @@
                           role="button"
                           aria-expanded="false"
                         >
-                          Dropdown <span class="caret"></span>
+                          Dropdown
+                          <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="javascript:void(0)">Action</a></li>
+                          <li>
+                            <a href="javascript:void(0)">Action</a>
+                          </li>
                           <li>
                             <a href="javascript:void(0)">Another action</a>
                           </li>
@@ -177,7 +193,9 @@
                       </button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a href="javascript:void(0)">Link</a></li>
+                      <li>
+                        <a href="javascript:void(0)">Link</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -193,20 +211,36 @@
       <div class="bs-docs-section">
         <div class="page-header">
           <div class="row">
-            <div class="col-lg-12"><h1 id="buttons">Buttons</h1></div>
+            <div class="col-lg-12">
+              <h1 id="buttons">Buttons</h1>
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-lg-7">
             <p class="bs-component">
-              <a href="javascript:void(0)" class="btn btn-default"> Default </a>
-              <a href="javascript:void(0)" class="btn btn-primary"> Primary </a>
-              <a href="javascript:void(0)" class="btn btn-success"> Success </a>
-              <a href="javascript:void(0)" class="btn btn-info"> Info </a>
-              <a href="javascript:void(0)" class="btn btn-warning"> Warning </a>
-              <a href="javascript:void(0)" class="btn btn-danger"> Danger </a>
-              <a href="javascript:void(0)" class="btn btn-link"> Link </a>
+              <a href="javascript:void(0)" class="btn btn-default">
+                Default
+              </a>
+              <a href="javascript:void(0)" class="btn btn-primary">
+                Primary
+              </a>
+              <a href="javascript:void(0)" class="btn btn-success">
+                Success
+              </a>
+              <a href="javascript:void(0)" class="btn btn-info">
+                Info
+              </a>
+              <a href="javascript:void(0)" class="btn btn-warning">
+                Warning
+              </a>
+              <a href="javascript:void(0)" class="btn btn-danger">
+                Danger
+              </a>
+              <a href="javascript:void(0)" class="btn btn-link">
+                Link
+              </a>
             </p>
 
             <p class="bs-component">
@@ -247,13 +281,19 @@
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)">Action</a></li>
-                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Action</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Another action</a>
+                    </li>
                     <li>
                       <a href="javascript:void(0)">Something else here</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="javascript:void(0)">Separated link</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Separated link</a>
+                    </li>
                   </ul>
                 </div>
 
@@ -269,13 +309,19 @@
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)">Action</a></li>
-                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Action</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Another action</a>
+                    </li>
                     <li>
                       <a href="javascript:void(0)">Something else here</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="javascript:void(0)">Separated link</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Separated link</a>
+                    </li>
                   </ul>
                 </div>
 
@@ -291,18 +337,26 @@
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)">Action</a></li>
-                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Action</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Another action</a>
+                    </li>
                     <li>
                       <a href="javascript:void(0)">Something else here</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="javascript:void(0)">Separated link</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Separated link</a>
+                    </li>
                   </ul>
                 </div>
 
                 <div class="btn-group">
-                  <a href="javascript:void(0)" class="btn btn-info"> Info </a>
+                  <a href="javascript:void(0)" class="btn btn-info">
+                    Info
+                  </a>
                   <a
                     href="javascript:void(0)"
                     class="btn btn-info dropdown-toggle"
@@ -311,13 +365,19 @@
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)">Action</a></li>
-                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Action</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Another action</a>
+                    </li>
                     <li>
                       <a href="javascript:void(0)">Something else here</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="javascript:void(0)">Separated link</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Separated link</a>
+                    </li>
                   </ul>
                 </div>
 
@@ -333,13 +393,19 @@
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)">Action</a></li>
-                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Action</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Another action</a>
+                    </li>
                     <li>
                       <a href="javascript:void(0)">Something else here</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="javascript:void(0)">Separated link</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Separated link</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -372,43 +438,70 @@
 
             <div class="bs-component" style="margin-bottom: 15px;">
               <div class="btn-group btn-group-justified">
-                <a href="javascript:void(0)" class="btn btn-default"> Left </a>
+                <a href="javascript:void(0)" class="btn btn-default">
+                  Left
+                </a>
                 <a href="javascript:void(0)" class="btn btn-default">
                   Middle
                 </a>
-                <a href="javascript:void(0)" class="btn btn-default"> Right </a>
+                <a href="javascript:void(0)" class="btn btn-default">
+                  Right
+                </a>
               </div>
             </div>
 
             <div class="bs-component" style="margin-bottom: 15px;">
               <div class="btn-toolbar">
                 <div class="btn-group">
-                  <a href="javascript:void(0)" class="btn btn-default"> 1 </a>
-                  <a href="javascript:void(0)" class="btn btn-default"> 2 </a>
-                  <a href="javascript:void(0)" class="btn btn-default"> 3 </a>
-                  <a href="javascript:void(0)" class="btn btn-default"> 4 </a>
+                  <a href="javascript:void(0)" class="btn btn-default">
+                    1
+                  </a>
+                  <a href="javascript:void(0)" class="btn btn-default">
+                    2
+                  </a>
+                  <a href="javascript:void(0)" class="btn btn-default">
+                    3
+                  </a>
+                  <a href="javascript:void(0)" class="btn btn-default">
+                    4
+                  </a>
                 </div>
 
                 <div class="btn-group">
-                  <a href="javascript:void(0)" class="btn btn-default"> 5 </a>
-                  <a href="javascript:void(0)" class="btn btn-default"> 6 </a>
-                  <a href="javascript:void(0)" class="btn btn-default"> 7 </a>
+                  <a href="javascript:void(0)" class="btn btn-default">
+                    5
+                  </a>
+                  <a href="javascript:void(0)" class="btn btn-default">
+                    6
+                  </a>
+                  <a href="javascript:void(0)" class="btn btn-default">
+                    7
+                  </a>
                 </div>
 
                 <div class="btn-group">
-                  <a href="javascript:void(0)" class="btn btn-default"> 8 </a>
+                  <a href="javascript:void(0)" class="btn btn-default">
+                    8
+                  </a>
                   <div class="btn-group">
                     <a
                       href="javascript:void(0)"
                       class="btn btn-default dropdown-toggle"
                       data-toggle="dropdown"
                     >
-                      Dropdown <span class="caret"></span>
+                      Dropdown
+                      <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a href="javascript:void(0)">Dropdown link</a></li>
-                      <li><a href="javascript:void(0)">Dropdown link</a></li>
-                      <li><a href="javascript:void(0)">Dropdown link</a></li>
+                      <li>
+                        <a href="javascript:void(0)">Dropdown link</a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">Dropdown link</a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)">Dropdown link</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -440,7 +533,9 @@
       <div class="bs-docs-section">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header"><h1 id="typography">Typography</h1></div>
+            <div class="page-header">
+              <h1 id="typography">Typography</h1>
+            </div>
           </div>
         </div>
 
@@ -466,10 +561,10 @@
               <h2>Example body text</h2>
               <p>
                 Nullam quis risus eget
-                <a href="javascript:void(0)">urna mollis ornare</a> vel eu leo.
-                Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Nullam id dolor id nibh ultricies
-                vehicula.
+                <a href="javascript:void(0)">urna mollis ornare</a>
+                vel eu leo. Cum sociis natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. Nullam id dolor id
+                nibh ultricies vehicula.
               </p>
               <p>
                 <small>
@@ -478,15 +573,18 @@
               </p>
               <p>
                 The following snippet of text is
-                <strong>rendered as bold text</strong> .
+                <strong>rendered as bold text</strong>
+                .
               </p>
               <p>
                 The following snippet of text is
-                <em>rendered as italicized text</em> .
+                <em>rendered as italicized text</em>
+                .
               </p>
               <p>
                 An abbreviation of the word attribute is
-                <abbr title="attribute">attr</abbr> .
+                <abbr title="attribute">attr</abbr>
+                .
               </p>
             </div>
           </div>
@@ -559,7 +657,9 @@
       <div class="bs-docs-section">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header"><h1 id="tables">Tables</h1></div>
+            <div class="page-header">
+              <h1 id="tables">Tables</h1>
+            </div>
 
             <div class="bs-component">
               <table class="table table-striped table-hover">
@@ -627,7 +727,9 @@
       <div class="bs-docs-section">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header"><h1 id="forms">Forms</h1></div>
+            <div class="page-header">
+              <h1 id="forms">Forms</h1>
+            </div>
           </div>
         </div>
 
@@ -662,7 +764,10 @@
                         placeholder="Password"
                       />
                       <div class="checkbox">
-                        <label> <input type="checkbox" /> Checkbox </label>
+                        <label>
+                          <input type="checkbox" />
+                          Checkbox
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -845,7 +950,9 @@
       <div class="bs-docs-section">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header"><h1 id="navs">Navs</h1></div>
+            <div class="page-header">
+              <h1 id="navs">Navs</h1>
+            </div>
           </div>
         </div>
 
@@ -855,21 +962,26 @@
             <div class="bs-component">
               <ul class="nav nav-tabs">
                 <li class="active">
-                  <a href="javascript:void(0)" data-toggle="tab"> Home </a>
+                  <a href="javascript:void(0)" data-toggle="tab">
+                    Home
+                  </a>
                 </li>
                 <li>
                   <a href="javascript:void(0)" data-toggle="tab" translate>
                     Profile
                   </a>
                 </li>
-                <li class="disabled"><a>Disabled</a></li>
+                <li class="disabled">
+                  <a>Disabled</a>
+                </li>
                 <li class="dropdown">
                   <a
                     class="dropdown-toggle"
                     data-toggle="dropdown"
                     href="javascript:void(0)"
                   >
-                    Dropdown <span class="caret"></span>
+                    Dropdown
+                    <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
                     <li>
@@ -938,8 +1050,14 @@
             <h2 id="nav-pills">Pills</h2>
             <div class="bs-component">
               <ul class="nav nav-pills">
-                <li class="active"><a href="javascript:void(0)">Home</a></li>
-                <li><a href="javascript:void(0)" translate> Profile </a></li>
+                <li class="active">
+                  <a href="javascript:void(0)">Home</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" translate>
+                    Profile
+                  </a>
+                </li>
                 <li class="disabled">
                   <a href="javascript:void(0)">Disabled</a>
                 </li>
@@ -949,16 +1067,23 @@
                     data-toggle="dropdown"
                     href="javascript:void(0)"
                   >
-                    Dropdown <span class="caret"></span>
+                    Dropdown
+                    <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)">Action</a></li>
-                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Action</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Another action</a>
+                    </li>
                     <li>
                       <a href="javascript:void(0)">Something else here</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="javascript:void(0)">Separated link</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Separated link</a>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -966,8 +1091,14 @@
             <br />
             <div class="bs-component">
               <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="javascript:void(0)">Home</a></li>
-                <li><a href="javascript:void(0)" translate> Profile </a></li>
+                <li class="active">
+                  <a href="javascript:void(0)">Home</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" translate>
+                    Profile
+                  </a>
+                </li>
                 <li class="disabled">
                   <a href="javascript:void(0)">Disabled</a>
                 </li>
@@ -977,16 +1108,23 @@
                     data-toggle="dropdown"
                     href="javascript:void(0)"
                   >
-                    Dropdown <span class="caret"></span>
+                    Dropdown
+                    <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript:void(0)">Action</a></li>
-                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Action</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">Another action</a>
+                    </li>
                     <li>
                       <a href="javascript:void(0)">Something else here</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="javascript:void(0)">Separated link</a></li>
+                    <li>
+                      <a href="javascript:void(0)">Separated link</a>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -1000,13 +1138,19 @@
               </ul>
 
               <ul class="breadcrumb">
-                <li><a href="javascript:void(0)">Home</a></li>
+                <li>
+                  <a href="javascript:void(0)">Home</a>
+                </li>
                 <li class="active">Library</li>
               </ul>
 
               <ul class="breadcrumb">
-                <li><a href="javascript:void(0)">Home</a></li>
-                <li><a href="javascript:void(0)">Library</a></li>
+                <li>
+                  <a href="javascript:void(0)">Home</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Library</a>
+                </li>
                 <li class="active">Data</li>
               </ul>
             </div>
@@ -1018,31 +1162,69 @@
             <h2 id="pagination">Pagination</h2>
             <div class="bs-component">
               <ul class="pagination">
-                <li class="disabled"><a href="javascript:void(0)">«</a></li>
-                <li class="active"><a href="javascript:void(0)">1</a></li>
-                <li><a href="javascript:void(0)">2</a></li>
-                <li><a href="javascript:void(0)">3</a></li>
-                <li><a href="javascript:void(0)">4</a></li>
-                <li><a href="javascript:void(0)">5</a></li>
-                <li><a href="javascript:void(0)">»</a></li>
+                <li class="disabled">
+                  <a href="javascript:void(0)">«</a>
+                </li>
+                <li class="active">
+                  <a href="javascript:void(0)">1</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">2</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">3</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">4</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">5</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">»</a>
+                </li>
               </ul>
 
               <ul class="pagination pagination-lg">
-                <li class="disabled"><a href="javascript:void(0)">«</a></li>
-                <li class="active"><a href="javascript:void(0)">1</a></li>
-                <li><a href="javascript:void(0)">2</a></li>
-                <li><a href="javascript:void(0)">3</a></li>
-                <li><a href="javascript:void(0)">»</a></li>
+                <li class="disabled">
+                  <a href="javascript:void(0)">«</a>
+                </li>
+                <li class="active">
+                  <a href="javascript:void(0)">1</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">2</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">3</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">»</a>
+                </li>
               </ul>
 
               <ul class="pagination pagination-sm">
-                <li class="disabled"><a href="javascript:void(0)">«</a></li>
-                <li class="active"><a href="javascript:void(0)">1</a></li>
-                <li><a href="javascript:void(0)">2</a></li>
-                <li><a href="javascript:void(0)">3</a></li>
-                <li><a href="javascript:void(0)">4</a></li>
-                <li><a href="javascript:void(0)">5</a></li>
-                <li><a href="javascript:void(0)">»</a></li>
+                <li class="disabled">
+                  <a href="javascript:void(0)">«</a>
+                </li>
+                <li class="active">
+                  <a href="javascript:void(0)">1</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">2</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">3</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">4</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">5</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">»</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -1050,15 +1232,21 @@
             <h2 id="pager">Pager</h2>
             <div class="bs-component">
               <ul class="pager">
-                <li><a href="javascript:void(0)">Previous</a></li>
-                <li><a href="javascript:void(0)">Next</a></li>
+                <li>
+                  <a href="javascript:void(0)">Previous</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Next</a>
+                </li>
               </ul>
 
               <ul class="pager">
                 <li class="previous disabled">
                   <a href="javascript:void(0)">← Older</a>
                 </li>
-                <li class="next"><a href="javascript:void(0)">Newer →</a></li>
+                <li class="next">
+                  <a href="javascript:void(0)">Newer →</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -1071,7 +1259,9 @@
       <div class="bs-docs-section">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header"><h1 id="indicators">Indicators</h1></div>
+            <div class="page-header">
+              <h1 id="indicators">Indicators</h1>
+            </div>
           </div>
         </div>
 
@@ -1117,7 +1307,8 @@
                 <button type="button" class="close" data-dismiss="alert">
                   ×
                 </button>
-                <strong>Well done!</strong> You successfully read
+                <strong>Well done!</strong>
+                You successfully read
                 <a href="javascript:void(0)" class="alert-link">
                   this important alert message
                 </a>
@@ -1131,7 +1322,8 @@
                 <button type="button" class="close" data-dismiss="alert">
                   ×
                 </button>
-                <strong>Heads up!</strong> This
+                <strong>Heads up!</strong>
+                This
                 <a href="javascript:void(0)" class="alert-link">
                   alert needs your attention
                 </a>
@@ -1158,17 +1350,20 @@
               <ul class="nav nav-pills">
                 <li class="active">
                   <a href="javascript:void(0)">
-                    Home <span class="badge">42</span>
+                    Home
+                    <span class="badge">42</span>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0)">
-                    Profile <span class="badge"></span>
+                    Profile
+                    <span class="badge"></span>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0)">
-                    Messages <span class="badge">3</span>
+                    Messages
+                    <span class="badge">3</span>
                   </a>
                 </li>
               </ul>
@@ -1288,7 +1483,9 @@
       <div class="bs-docs-section">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header"><h1 id="containers">Containers</h1></div>
+            <div class="page-header">
+              <h1 id="containers">Containers</h1>
+            </div>
             <div class="bs-component">
               <div class="jumbotron">
                 <h1>Jumbotron</h1>
@@ -1297,27 +1494,34 @@
                   for calling extra attention to featured content or
                   information.
                 </p>
-                <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+                <p>
+                  <a class="btn btn-primary btn-lg">Learn more</a>
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-lg-12"><h2>List groups</h2></div>
+          <div class="col-lg-12">
+            <h2>List groups</h2>
+          </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
             <div class="bs-component">
               <ul class="list-group">
                 <li class="list-group-item">
-                  <span class="badge">14</span> Cras justo odio
+                  <span class="badge">14</span>
+                  Cras justo odio
                 </li>
                 <li class="list-group-item">
-                  <span class="badge">2</span> Dapibus ac facilisis in
+                  <span class="badge">2</span>
+                  Dapibus ac facilisis in
                 </li>
                 <li class="list-group-item">
-                  <span class="badge">1</span> Morbi leo risus
+                  <span class="badge">1</span>
+                  Morbi leo risus
                 </li>
               </ul>
             </div>
@@ -1364,7 +1568,9 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-12"><h2>Panels</h2></div>
+          <div class="col-lg-12">
+            <h2>Panels</h2>
+          </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
@@ -1428,7 +1634,9 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-12"><h2>Wells</h2></div>
+          <div class="col-lg-12">
+            <h2>Wells</h2>
+          </div>
         </div>
         <div class="row">
           <div class="col-lg-4">
@@ -1454,7 +1662,9 @@
       <div class="bs-docs-section">
         <div class="row">
           <div class="col-lg-12">
-            <div class="page-header"><h1 id="dialogs">Dialogs</h1></div>
+            <div class="page-header">
+              <h1 id="dialogs">Dialogs</h1>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -1475,7 +1685,9 @@
                       </button>
                       <h4 class="modal-title">Modal title</h4>
                     </div>
-                    <div class="modal-body"><p>One fine body…</p></div>
+                    <div class="modal-body">
+                      <p>One fine body…</p>
+                    </div>
                     <div class="modal-footer">
                       <button
                         type="button"

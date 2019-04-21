@@ -103,7 +103,7 @@ function addAppFiles(templateSource, tree, options) {
 }
 function updatePackageJson(tree, options) {
     return ast_utils_1.updateJsonInTree(core_1.join(core_1.normalize(options.workspace), 'package.json'), packageJson => {
-        const templatePackageJson = JSON.parse(fs_1.readFileSync(`./files/empty/apps/demo-ionic/package.json`.replace('{localPath}', options.basePath)).toString());
+        const templatePackageJson = JSON.parse(fs_1.readFileSync(`${__dirname}/../../../files/empty/apps/demo-ionic/package.json`.replace('{localPath}', options.basePath)).toString());
         if (packageJson.dependencies && templatePackageJson.dependencies) {
             Object.keys(templatePackageJson.dependencies)
                 .filter(key => key.indexOf('webpack') === -1 && packageJson.dependencies[key])

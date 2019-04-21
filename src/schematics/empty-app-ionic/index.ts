@@ -160,7 +160,7 @@ function updatePackageJson(tree: Tree, options: NormalizedSchema): Rule {
   return updateJsonInTree(join(normalize(options.workspace), 'package.json'), packageJson => {
     const templatePackageJson = JSON.parse(
       readFileSync(
-        `./files/empty/apps/demo-ionic/package.json`.replace('{localPath}', options.basePath)
+        `${__dirname}/../../../files/empty/apps/demo-ionic/package.json`.replace('{localPath}', options.basePath)
       ).toString()
     );
     if (packageJson.dependencies && templatePackageJson.dependencies) {

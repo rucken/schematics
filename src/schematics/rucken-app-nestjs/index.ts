@@ -66,7 +66,7 @@ function templateSources(options: NormalizedSchema) {
 function updateScriptsPostinstallSh(options: NormalizedSchema): Rule {
   return updateFileInTree(join(normalize(options.workspace), 'scripts', 'postinstall.sh'), data => {
     const content = readFileSync(
-      `./files/rucken/todo-nestjs/scripts/postinstall.sh`.replace('{localPath}', options.basePath)
+      `${__dirname}/../../../files/rucken/todo-nestjs/scripts/postinstall.sh`.replace('{localPath}', options.basePath)
     ).toString();
     if (clearText(data).indexOf(clearText(content)) === -1) {
       data = data + '\n' + content;
@@ -77,7 +77,7 @@ function updateScriptsPostinstallSh(options: NormalizedSchema): Rule {
 function updateScriptsPreinstallSh(options: NormalizedSchema): Rule {
   return updateFileInTree(join(normalize(options.workspace), 'scripts', 'preinstall.sh'), data => {
     const content = readFileSync(
-      `./files/rucken/todo-nestjs/scripts/preinstall.sh`.replace('{localPath}', options.basePath)
+      `${__dirname}/../../../files/rucken/todo-nestjs/scripts/preinstall.sh`.replace('{localPath}', options.basePath)
     ).toString();
     if (clearText(data).indexOf(clearText(content)) === -1) {
       data = data + '\n' + content;
@@ -88,7 +88,7 @@ function updateScriptsPreinstallSh(options: NormalizedSchema): Rule {
 function updateScriptsPatchJs(options: NormalizedSchema): Rule {
   return updateFileInTree(join(normalize(options.workspace), 'scripts', 'patch.js'), data => {
     const original = readFileSync(
-      `./files/rucken/todo-nestjs/scripts/patch.js`.replace('{localPath}', options.basePath)
+      `${__dirname}/../../../files/rucken/todo-nestjs/scripts/patch.js`.replace('{localPath}', options.basePath)
     ).toString();
     const content = '(function(){\n' + original + ';\n})();';
     if (original && clearText(data).indexOf(clearText(content)) === -1) {
@@ -100,7 +100,7 @@ function updateScriptsPatchJs(options: NormalizedSchema): Rule {
 function updateDevelopEnv(options: NormalizedSchema): Rule {
   return updateFileInTree(join(normalize(options.workspace), 'scripts', 'develop._env'), data => {
     const content = readFileSync(
-      `./files/rucken/todo-nestjs/develop._env`.replace('{localPath}', options.basePath)
+      `${__dirname}/../../../files/rucken/todo-nestjs/develop._env`.replace('{localPath}', options.basePath)
     ).toString();
     return content;
   });
@@ -109,7 +109,7 @@ function updatePackageJson(tree: Tree, options: NormalizedSchema): Rule {
   return updateJsonInTree(join(normalize(options.workspace), 'package.json'), packageJson => {
     const templatePackageJson = JSON.parse(
       readFileSync(
-        `./files/rucken/todo-nestjs/package.json`.replace('{localPath}', options.basePath)
+        `${__dirname}/../../../files/rucken/todo-nestjs/package.json`.replace('{localPath}', options.basePath)
       ).toString()
     );
     packageJson.author = options.fullAuthorObject;

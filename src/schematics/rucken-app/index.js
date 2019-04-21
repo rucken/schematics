@@ -96,7 +96,7 @@ function templateSources(options) {
 }
 function updateScriptsPostinstallSh(options) {
     return ast_utils_1.updateFileInTree(core_1.join(core_1.normalize(options.workspace), 'scripts', 'postinstall.sh'), data => {
-        const content = fs_1.readFileSync(`./files/rucken/todo/scripts/postinstall.sh`.replace('{localPath}', options.basePath)).toString();
+        const content = fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo/scripts/postinstall.sh`.replace('{localPath}', options.basePath)).toString();
         if (strings_1.clearText(data).indexOf(strings_1.clearText(content)) === -1) {
             data = data + '\n' + content;
         }
@@ -105,7 +105,7 @@ function updateScriptsPostinstallSh(options) {
 }
 function updateScriptsPatchJs(options) {
     return ast_utils_1.updateFileInTree(core_1.join(core_1.normalize(options.workspace), 'scripts', 'patch.js'), data => {
-        const original = fs_1.readFileSync(`./files/rucken/todo/scripts/patch.js`.replace('{localPath}', options.basePath)).toString();
+        const original = fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo/scripts/patch.js`.replace('{localPath}', options.basePath)).toString();
         const content = '(function(){\n' + original + ';\n})();';
         if (original && strings_1.clearText(data).indexOf(strings_1.clearText(content)) === -1) {
             data = data + '\n' + content;
@@ -115,7 +115,7 @@ function updateScriptsPatchJs(options) {
 }
 function updatePackageJson(tree, options) {
     return ast_utils_1.updateJsonInTree(core_1.join(core_1.normalize(options.workspace), 'package.json'), packageJson => {
-        const templatePackageJson = JSON.parse(fs_1.readFileSync(`./files/rucken/todo/package.json`.replace('{localPath}', options.basePath)).toString());
+        const templatePackageJson = JSON.parse(fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo/package.json`.replace('{localPath}', options.basePath)).toString());
         packageJson.author = options.fullAuthorObject;
         if (packageJson.dependencies && templatePackageJson.dependencies) {
             Object.keys(templatePackageJson.dependencies)
