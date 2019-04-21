@@ -163,10 +163,13 @@ function normalizeOptions(tree, options) {
             .join('.')), lib: name_utils_1.toFileName(options.lib
             .split('.')
             .map(word => strings_1.dasherize(word))
-            .join('.')), entitiesLib: name_utils_1.toFileName(options.entitiesLib
+            .join('.')), entitiesLib: name_utils_1.toFileName((options.entitiesLib || options.lib)
             .split('.')
             .map(word => strings_1.dasherize(word))
-            .join('.')), app: options.app, org: options.org, appDirectory, workspaceProjectRoot: appProjectRoot, projectRoot: appProject, basePath });
+            .join('.')), app: options.app, org: options.org, entitiesLibOrg: name_utils_1.toFileName((options.entitiesLibOrg || options.org)
+            .split('.')
+            .map(word => strings_1.dasherize(word))
+            .join('.')), appDirectory, workspaceProjectRoot: appProjectRoot, projectRoot: appProject, basePath });
 }
 function addAppFiles(templateSource, tree, options) {
     return schematics_1.mergeWith(schematics_1.apply(schematics_1.url(templateSource), [
@@ -204,8 +207,9 @@ function addChildrenRoute(options) {
       loadChildren: './${inflection_1.pluralize(options.name)}-frame/${inflection_1.pluralize(options.name)}-frame.module#${strings_1.classify(inflection_1.pluralize(options.name))}FrameModule',
       data: ${routesConst}[0].data
     }`;
-        if (a.getElements().filter(e => e.getText().indexOf(routesConst) === -1))
+        if (a.getElements().filter(e => e.getText().indexOf(routesConst) === -1)) {
             a.insertElements(a.getElements().length, [text], { useNewLines: true });
+        }
         sourceFile.addImportDeclaration({
             moduleSpecifier: `./${inflection_1.pluralize(options.name)}-frame/${inflection_1.pluralize(options.name)}-frame.routes`,
             namedImports: [{ name: routesConst }]

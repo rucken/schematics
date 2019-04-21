@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema",
   "id": "rucken-entity",
-  "description": "Model generator and frontend application, based on the Rucken template",
+  "description": "Model generator for frontend application, based on the Rucken template",
   "examples": [
     "rucken-entity custom-entity --org custom-org --lib custom-lib"
   ],

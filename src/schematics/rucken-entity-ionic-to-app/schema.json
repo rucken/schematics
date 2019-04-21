@@ -32,6 +32,11 @@
       "type": "string",
       "x-prompt": "What name would you like to use for the library with entities?"
     },
+    "entitiesLibOrg": {
+      "description": "The name of organization for entities.",
+      "type": "string",
+      "hidden": true
+    },
     "org": {
       "description": "The name of organization.",
       "type": "string",

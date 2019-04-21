@@ -79,7 +79,7 @@ import { StatusSelectModule } from '../../statuses/status-select/status-select.m
     ];
     const toRemoveObject = {};
     toRemoveStrings.forEach(key => (toRemoveObject[key] = ''));
-    return Object.assign({}, toRemoveObject, { '\'title\',\'range\',\'status\',\'action\'': '\'title\',\'name\',\'action\'', 'translate(\'Tasks': 'translate(\'' + strings_1.capitalize(strings_1.underscore(inflection_1.pluralize(options.name))).replace(new RegExp('_', 'g'), ' '), 'translate(\'Task': 'translate(\'' + strings_1.capitalize(strings_1.underscore(options.name)).replace(new RegExp('_', 'g'), ' '), '"description"': '"name"', '.description"': '.name"', 'add_tasks': `add_${inflection_1.pluralize(options.name)}`, 'change_tasks': `change_${inflection_1.pluralize(options.name)}`, 'delete_tasks': `delete_${inflection_1.pluralize(options.name)}`, 'read_tasks': `read_${inflection_1.pluralize(options.name)}`, 'add_task': `add_${options.name}`, 'change_task': `change_${options.name}`, 'delete_task': `delete_${options.name}`, 'read_task': `read_${options.name}`, 'TASKS': inflection_1.pluralize(strings_1.underscore(options.name)).toUpperCase(), 'TASK': strings_1.underscore(options.name).toUpperCase(), 'Tasks': strings_1.classify(inflection_1.pluralize(options.name)), 'Task': strings_1.classify(options.name), 'tasks-': inflection_1.pluralize(options.name) + '-', 'task-': options.name + '-', '/tasks/': '/' + inflection_1.pluralize(options.name) + '/', '/tasks': '/' + inflection_1.pluralize(options.name), '/task/': '/' + options.name + '/', '/task': '/' + options.name, 'tasks': strings_1.camelize(inflection_1.pluralize(options.name)), 'task': strings_1.camelize(options.name), '@rucken/todo-core': '@' + options.org + '/' + options.entitiesLib });
+    return Object.assign({}, toRemoveObject, { '\'title\',\'range\',\'status\',\'action\'': '\'title\',\'name\',\'action\'', 'translate(\'Tasks': 'translate(\'' + strings_1.capitalize(strings_1.underscore(inflection_1.pluralize(options.name))).replace(new RegExp('_', 'g'), ' '), 'translate(\'Task': 'translate(\'' + strings_1.capitalize(strings_1.underscore(options.name)).replace(new RegExp('_', 'g'), ' '), '"description"': '"name"', '.description"': '.name"', 'add_tasks': `add_${inflection_1.pluralize(options.name)}`, 'change_tasks': `change_${inflection_1.pluralize(options.name)}`, 'delete_tasks': `delete_${inflection_1.pluralize(options.name)}`, 'read_tasks': `read_${inflection_1.pluralize(options.name)}`, 'add_task': `add_${options.name}`, 'change_task': `change_${options.name}`, 'delete_task': `delete_${options.name}`, 'read_task': `read_${options.name}`, 'TASKS': inflection_1.pluralize(strings_1.underscore(options.name)).toUpperCase(), 'TASK': strings_1.underscore(options.name).toUpperCase(), 'Tasks': strings_1.classify(inflection_1.pluralize(options.name)), 'Task': strings_1.classify(options.name), 'tasks-': inflection_1.pluralize(options.name) + '-', 'task-': options.name + '-', '/tasks/': '/' + inflection_1.pluralize(options.name) + '/', '/tasks': '/' + inflection_1.pluralize(options.name), '/task/': '/' + options.name + '/', '/task': '/' + options.name, 'tasks': strings_1.camelize(inflection_1.pluralize(options.name)), 'task': strings_1.camelize(options.name), '@rucken/todo-core': '@' + (options.entitiesLibOrg || options.org) + '/' + (options.entitiesLib || options.lib) });
 }
 function pathReplacer(options) {
     return {
@@ -155,10 +155,13 @@ function normalizeOptions(tree, options) {
             .join('.')), lib: name_utils_1.toFileName(options.lib
             .split('.')
             .map(word => strings_1.dasherize(word))
-            .join('.')), entitiesLib: name_utils_1.toFileName(options.entitiesLib
+            .join('.')), entitiesLib: name_utils_1.toFileName((options.entitiesLib || options.lib)
             .split('.')
             .map(word => strings_1.dasherize(word))
-            .join('.')), org: options.org, appDirectory, workspaceProjectRoot: appProjectRoot, projectRoot: appProject, basePath });
+            .join('.')), org: options.org, entitiesLibOrg: name_utils_1.toFileName((options.entitiesLibOrg || options.org)
+            .split('.')
+            .map(word => strings_1.dasherize(word))
+            .join('.')), appDirectory, workspaceProjectRoot: appProjectRoot, projectRoot: appProject, basePath });
 }
 function addAppFiles(templateSource, tree, options) {
     return schematics_1.mergeWith(schematics_1.apply(schematics_1.url(templateSource), [

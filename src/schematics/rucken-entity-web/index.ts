@@ -112,7 +112,7 @@ import { StatusSelectModule } from '../../statuses/status-select/status-select.m
     '/task': '/' + options.name,
     'tasks': camelize(pluralize(options.name)),
     'task': camelize(options.name),
-    '@rucken/todo-core': '@' + options.org + '/' + options.entitiesLib
+    '@rucken/todo-core': '@' + (options.entitiesLibOrg || options.org) + '/' + (options.entitiesLib || options.lib)
   };
 }
 function pathReplacer(options: NormalizedSchema) {
@@ -228,12 +228,18 @@ function normalizeOptions(tree: Tree, options: Schema): NormalizedSchema {
         .join('.')
     ),
     entitiesLib: toFileName(
-      options.entitiesLib
+      (options.entitiesLib || options.lib)
         .split('.')
         .map(word => dasherize(word))
         .join('.')
     ),
     org: options.org,
+    entitiesLibOrg: toFileName(
+      (options.entitiesLibOrg || options.org)
+        .split('.')
+        .map(word => dasherize(word))
+        .join('.')
+    ),
     appDirectory,
     workspaceProjectRoot: appProjectRoot,
     projectRoot: appProject,
