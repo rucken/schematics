@@ -33,7 +33,7 @@
       "x-prompt": "What name would you like to use for the organization?"
     },
     "timestamp": {
-      "description": "Timestamp used in migrations",
+      "description": "Timestamp used in migrations.",
       "type": "number"
     }
   },

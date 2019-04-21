@@ -154,13 +154,19 @@ function normalizeOptions(tree: Tree, options: Schema): NormalizedSchema {
         .join('.')
     ),
     entitiesLib: toFileName(
-      options.entitiesLib
+      (options.entitiesLib || options.lib)
         .split('.')
         .map(word => dasherize(word))
         .join('.')
     ),
     app: options.app,
     org: options.org,
+    entitiesLibOrg: toFileName(
+      (options.entitiesLibOrg || options.org)
+        .split('.')
+        .map(word => dasherize(word))
+        .join('.')
+    ),
     appDirectory,
     workspaceProjectRoot: appProjectRoot,
     projectRoot: appProject,
@@ -233,8 +239,11 @@ function addChildrenRoute(options: NormalizedSchema): Rule {
       loadChildren: './pages/${pluralize(options.name)}-page/${pluralize(options.name)}-page.module#${classify(pluralize(options.name))}PageModule',
       data: ${routesConst}[0].data
     }`;
-      if (a.getElements().filter(e => e.getText().indexOf(routesConst) === -1))
+      if (
+        a.getElements().filter(e => e.getText().indexOf(routesConst) === -1)
+      ) {
         a.insertElements(a.getElements().length - 1, [text], { useNewLines: true });
+      }
       sourceFile.addImportDeclaration({
         moduleSpecifier: `./pages/${pluralize(options.name)}-page/${pluralize(options.name)}-page.routes`,
         namedImports: [{ name: routesConst }]

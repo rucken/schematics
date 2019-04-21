@@ -70,7 +70,7 @@
     },
     "rucken-entity": {
       "title": "Rucken entity",
-      "description": "Model generator and frontend application, based on the Rucken template",
+      "description": "Model generator for frontend application, based on the Rucken template",
       "factory": "./schematics/rucken-entity",
       "schema": "./schematics/rucken-entity/schema.json"
     },

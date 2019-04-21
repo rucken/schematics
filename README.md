@@ -42,7 +42,7 @@ ng serve custom-app
 * [Rucken app](#rucken-app) - Frontend application generator on Angular7+ with Bootstrap3, based on the Rucken template
 * [Rucken app ionic](#rucken-app-ionic) - Mobile frontend generator application on Angular7+ with Ionic4, based on the Rucken template
 * [Rucken app nestjs](#rucken-app-nestjs) - REST generator backend applications on NestJS with TypeORM, based on the Rucken template
-* [Rucken entity](#rucken-entity) - Model generator and frontend application, based on the Rucken template
+* [Rucken entity](#rucken-entity) - Model generator for frontend application, based on the Rucken template
 * [Rucken entity ionic](#rucken-entity-ionic) - The generator of the main components for editing data on the model and for a mobile frontend application on Angular7+ with Ionic4, based on the Rucken template
 * [Rucken entity ionic to app](#rucken-entity-ionic-to-app) - Binding components for editing an entity to a mobile frontend application on Angular7+ with Ionic4, based on the Rucken template
 * [Rucken entity nestjs](#rucken-entity-nestjs) - The generator of the entity, the DTO, the service and the controller, for editing the entity data for the backend of the application on NestJS with TypeORM, based on the Rucken template
@@ -246,7 +246,7 @@ schematics @rucken/schematics:rucken-app-nestjs custom-app-nestjs --author EndyK
 _See code: [src/schematics/rucken-app-nestjs/index.ts](https://github.com/rucken/schematics/blob/master/src/schematics/rucken-app-nestjs/index.ts)_
 
 ## Rucken entity
-Model generator and frontend application, based on the Rucken template
+Model generator for frontend application, based on the Rucken template
 
 Example:
 ```bash
@@ -313,7 +313,7 @@ schematics @rucken/schematics:rucken-entity-nestjs custom-entity --org custom-or
 | name | {string} | The name of the entity. | {"$source":"argv","index":0} |
 | lib | {string} | The name of the library. | none |
 | org | {string} | The name of organization. | none |
-| timestamp | {number} | Timestamp used in migrations | none |
+| timestamp | {number} | Timestamp used in migrations. | none |
 
 _See code: [src/schematics/rucken-entity-nestjs/index.ts](https://github.com/rucken/schematics/blob/master/src/schematics/rucken-entity-nestjs/index.ts)_
 

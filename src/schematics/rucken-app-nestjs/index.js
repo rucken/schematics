@@ -40,7 +40,7 @@ function templateSources(options) {
 }
 function updateScriptsPostinstallSh(options) {
     return ast_utils_1.updateFileInTree(core_1.join(core_1.normalize(options.workspace), 'scripts', 'postinstall.sh'), data => {
-        const content = fs_1.readFileSync(`./files/rucken/todo-nestjs/scripts/postinstall.sh`.replace('{localPath}', options.basePath)).toString();
+        const content = fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo-nestjs/scripts/postinstall.sh`.replace('{localPath}', options.basePath)).toString();
         if (strings_1.clearText(data).indexOf(strings_1.clearText(content)) === -1) {
             data = data + '\n' + content;
         }
@@ -49,7 +49,7 @@ function updateScriptsPostinstallSh(options) {
 }
 function updateScriptsPreinstallSh(options) {
     return ast_utils_1.updateFileInTree(core_1.join(core_1.normalize(options.workspace), 'scripts', 'preinstall.sh'), data => {
-        const content = fs_1.readFileSync(`./files/rucken/todo-nestjs/scripts/preinstall.sh`.replace('{localPath}', options.basePath)).toString();
+        const content = fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo-nestjs/scripts/preinstall.sh`.replace('{localPath}', options.basePath)).toString();
         if (strings_1.clearText(data).indexOf(strings_1.clearText(content)) === -1) {
             data = data + '\n' + content;
         }
@@ -58,7 +58,7 @@ function updateScriptsPreinstallSh(options) {
 }
 function updateScriptsPatchJs(options) {
     return ast_utils_1.updateFileInTree(core_1.join(core_1.normalize(options.workspace), 'scripts', 'patch.js'), data => {
-        const original = fs_1.readFileSync(`./files/rucken/todo-nestjs/scripts/patch.js`.replace('{localPath}', options.basePath)).toString();
+        const original = fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo-nestjs/scripts/patch.js`.replace('{localPath}', options.basePath)).toString();
         const content = '(function(){\n' + original + ';\n})();';
         if (original && strings_1.clearText(data).indexOf(strings_1.clearText(content)) === -1) {
             data = data + '\n' + content;
@@ -68,13 +68,13 @@ function updateScriptsPatchJs(options) {
 }
 function updateDevelopEnv(options) {
     return ast_utils_1.updateFileInTree(core_1.join(core_1.normalize(options.workspace), 'scripts', 'develop._env'), data => {
-        const content = fs_1.readFileSync(`./files/rucken/todo-nestjs/develop._env`.replace('{localPath}', options.basePath)).toString();
+        const content = fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo-nestjs/develop._env`.replace('{localPath}', options.basePath)).toString();
         return content;
     });
 }
 function updatePackageJson(tree, options) {
     return ast_utils_1.updateJsonInTree(core_1.join(core_1.normalize(options.workspace), 'package.json'), packageJson => {
-        const templatePackageJson = JSON.parse(fs_1.readFileSync(`./files/rucken/todo-nestjs/package.json`.replace('{localPath}', options.basePath)).toString());
+        const templatePackageJson = JSON.parse(fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo-nestjs/package.json`.replace('{localPath}', options.basePath)).toString());
         packageJson.author = options.fullAuthorObject;
         packageJson.externalLibs = templatePackageJson.externalLibs.filter(lib => lib !== './dist/rucken/todo-nestjs');
         if (packageJson.scripts && templatePackageJson.scripts) {

@@ -121,7 +121,7 @@ function addAppFiles(templateSource, tree, options) {
         schematics_1.forEach((fileEntry) => {
             return updateFileFileEntry(tree, fileEntry, options);
         }),
-        schematics_1.move(options.name)
+        schematics_1.move(options.workspace || options.name)
     ]));
 }
 function default_1(schema) {

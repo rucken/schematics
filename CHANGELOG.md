@@ -1,3 +1,13 @@
+## [4.0.3](https://github.com/rucken/schematics/compare/4.0.2...4.0.3) (2019-04-21)
+
+
+### Bug Fixes
+
+* Add entitiesLibOrg for correct detect lib with entities ([f89a09b](https://github.com/rucken/schematics/commit/f89a09b))
+* Change path to files used as template ([5df4e6f](https://github.com/rucken/schematics/commit/5df4e6f))
+
+
+
 ## [4.0.2](https://github.com/rucken/schematics/compare/4.0.1...4.0.2) (2019-04-21)
 
 

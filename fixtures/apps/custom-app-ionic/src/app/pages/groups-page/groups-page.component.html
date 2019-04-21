@@ -23,7 +23,7 @@
     vertical="bottom"
     horizontal="end"
     slot="fixed"
-    *ngIf="(groupList?.list?.notReadonlyAndEnableCreate$ | async)"
+    *ngIf="groupList?.list?.notReadonlyAndEnableCreate$ | async"
   >
     <ion-fab-button (click)="groupList.onCreateClick()">
       <ion-icon name="add"></ion-icon>

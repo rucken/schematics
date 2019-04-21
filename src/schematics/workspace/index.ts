@@ -155,7 +155,7 @@ function addAppFiles(
       forEach((fileEntry: FileEntry) => {
         return updateFileFileEntry(tree, fileEntry, options);
       }),
-      move(options.name)
+      move(options.workspace || options.name)
     ])
   );
 }
