@@ -10,7 +10,7 @@ interface NormalizedSchema extends Schema {
   fullAuthorObject: {
     name: string,
     email: string
-  },
+  };
   basePath: string;
 }
 
