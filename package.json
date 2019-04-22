@@ -20,6 +20,7 @@
     "build:tsc": "tsc -p tsconfig.json",
     "build": "run-s build:tsc",
     "create-fixtures": "sh ./scripts/create-fixtures.sh",
+    "build-fixtures": "sh ./scripts/build-fixtures.sh",
     "test": "run-s build:tsc create-fixtures",
     "schematics": "./node_modules/.bin/schematics --dry-run=false --force"
   },
