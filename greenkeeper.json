@@ -1,0 +1,26 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "files/empty/apps/demo-ionic/package.json",
+        "files/empty/libs/org/core-nestjs/package.json",
+        "files/empty/libs/org/core-web/package.json",
+        "files/rucken/todo-ionic/libs/rucken/todo-ionic/package.json",
+        "files/rucken/todo-ionic/package.json",
+        "files/rucken/todo-nestjs/libs/rucken/todo-nestjs/package.json",
+        "files/rucken/todo-nestjs/package.json",
+        "files/rucken/todo/libs/rucken/todo-core/package.json",
+        "files/rucken/todo/libs/rucken/todo-web/package.json",
+        "files/rucken/todo/package.json",
+        "files/workspace/package.json",
+        "fixtures/apps/custom-app-ionic/package.json",
+        "fixtures/libs/custom-org/custom-lib-ionic/package.json",
+        "fixtures/libs/custom-org/custom-lib-nestjs/package.json",
+        "fixtures/libs/custom-org/custom-lib-web/package.json",
+        "fixtures/libs/custom-org/custom-lib/package.json",
+        "fixtures/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
