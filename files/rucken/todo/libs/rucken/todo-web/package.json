@@ -72,7 +72,7 @@
   "dependencies": {
     "@ngx-translate/core": "11.0.1",
     "@types/object-path": "0.11.0",
-    "ngx-bootstrap": "3.2.0",
+    "ngx-bootstrap": "4.0.1",
     "ngx-dynamic-form-builder": "0.9.0",
     "ngx-permissions": "6.0.5",
     "ngx-repository": "0.6.3",
