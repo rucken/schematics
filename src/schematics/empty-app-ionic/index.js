@@ -115,7 +115,7 @@ function updatePackageJson(tree, options) {
         }
         if (packageJson.devDependencies && templatePackageJson.devDependencies) {
             Object.keys(templatePackageJson.devDependencies)
-                .filter(key => key.indexOf('webpack') === -1 && packageJson.devDependencies[key])
+                .filter(key => key.indexOf('webpack') === -1 && !packageJson.dependencies[key])
                 .forEach(key => (packageJson.devDependencies[key] = versions_1.vlatest([
                 packageJson.devDependencies[key],
                 templatePackageJson.devDependencies[key]
