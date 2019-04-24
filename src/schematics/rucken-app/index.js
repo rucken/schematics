@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular-devkit/core");
 const schematics_1 = require("@angular-devkit/schematics");
 const fs_1 = require("fs");
+const versions_1 = require("../../utils/versions");
 const ast_utils_1 = require("../../utils/ast-utils");
 const common_1 = require("../../utils/common");
 const name_utils_1 = require("../../utils/name-utils");
@@ -120,14 +121,18 @@ function updatePackageJson(tree, options) {
         if (packageJson.dependencies && templatePackageJson.dependencies) {
             Object.keys(templatePackageJson.dependencies)
                 .filter(key => key.indexOf('webpack') === -1)
-                .forEach(key => (packageJson.dependencies[key] =
-                templatePackageJson.dependencies[key]));
+                .forEach(key => (packageJson.dependencies[key] = versions_1.vlatest([
+                packageJson.dependencies[key],
+                templatePackageJson.dependencies[key]
+            ])));
         }
         if (packageJson.devDependencies && templatePackageJson.devDependencies) {
             Object.keys(templatePackageJson.devDependencies)
-                .filter(key => key.indexOf('webpack') === -1)
-                .forEach(key => (packageJson.devDependencies[key] =
-                templatePackageJson.devDependencies[key]));
+                .filter(key => key.indexOf('webpack') === -1 && !packageJson.dependencies[key])
+                .forEach(key => (packageJson.devDependencies[key] = versions_1.vlatest([
+                packageJson.devDependencies[key],
+                templatePackageJson.devDependencies[key]
+            ])));
         }
         delete packageJson.dependencies['@rucken/todo-core'];
         return packageJson;

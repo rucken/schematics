@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular-devkit/core");
 const schematics_1 = require("@angular-devkit/schematics");
 const fs_1 = require("fs");
+const versions_1 = require("../../utils/versions");
 const ast_utils_1 = require("../../utils/ast-utils");
 const common_1 = require("../../utils/common");
 const fileutils_1 = require("../../utils/fileutils");
@@ -165,9 +166,12 @@ function filterFiles(path) {
             core_1.join(core_1.normalize('apps'), 'demo', 'src', 'app', 'pages', 'projects-page'),
         '/' + core_1.join(core_1.normalize('libs')),
         '/' + core_1.join(core_1.normalize('.git')) + '/',
+        '/' + core_1.join(core_1.normalize('.travis.yml')),
         '/' + core_1.join(core_1.normalize('package-lock.json')),
         '/' + core_1.join(core_1.normalize('greenkeeper.json')),
         '/' + core_1.join(core_1.normalize('scripts'), 'publish.sh'),
+        '/' + core_1.join(core_1.normalize('scripts'), 'prepare-android-env.sh'),
+        '/' + core_1.join(core_1.normalize('scripts'), 'publish-gh-pages.sh'),
         '/' + core_1.join(core_1.normalize('CHANGELOG.md')),
         '/' + core_1.join(core_1.normalize('README.md')),
         '/' + core_1.join(core_1.normalize('apps'), 'demo-e2e'),
@@ -280,14 +284,18 @@ function updatePackageJson(tree, options) {
         if (packageJson.dependencies && templatePackageJson.dependencies) {
             Object.keys(templatePackageJson.dependencies)
                 .filter(key => key.indexOf('webpack') === -1)
-                .forEach(key => (packageJson.dependencies[key] =
-                templatePackageJson.dependencies[key]));
+                .forEach(key => (packageJson.dependencies[key] = versions_1.vlatest([
+                packageJson.dependencies[key],
+                templatePackageJson.dependencies[key]
+            ])));
         }
         if (packageJson.devDependencies && templatePackageJson.devDependencies) {
             Object.keys(templatePackageJson.devDependencies)
-                .filter(key => key.indexOf('webpack') === -1)
-                .forEach(key => (packageJson.devDependencies[key] =
-                templatePackageJson.devDependencies[key]));
+                .filter(key => key.indexOf('webpack') === -1 && !packageJson.dependencies[key])
+                .forEach(key => (packageJson.devDependencies[key] = versions_1.vlatest([
+                packageJson.devDependencies[key],
+                templatePackageJson.devDependencies[key]
+            ])));
         }
         return packageJson;
     });

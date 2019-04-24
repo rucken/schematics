@@ -7,7 +7,6 @@ import {
   RouteReuseStrategy,
   RouterModule
 } from '@angular/router';
-import { HTTP } from '@ionic-native/http/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -37,17 +36,13 @@ import {
 } from '@rucken/ionic';
 import { NgxBindIOModule } from 'ngx-bind-io';
 import { NgxPermissionsModule } from 'ngx-permissions';
-import {
-  NgxRemoteConfigModule,
-  NgxRemoteConfigService
-} from 'ngx-remote-config';
+import { NgxRemoteConfigModule } from 'ngx-remote-config';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { config } from './config/config';
 import { SharedModule } from './shared/shared.module';
 import { metaFactory } from './utils/meta-factory';
-import { NgxRemoteConfigIonicService } from './utils/ngx-remote-config.service';
 import { CustomOrgCustomLibModule } from '@custom-org/custom-lib';
 import {
   CustomOrgCustomLibIonicModule,
@@ -63,8 +58,10 @@ import {
     HttpClientModule,
     NgxRemoteConfigModule.forRoot({
       withoutIterceptor: !environment.production,
-      url: environment.remoteConfig.url,
-      default: environment.remoteConfig.default
+      url: !environment.production ? undefined : environment.remoteConfig.url,
+      default: !environment.production
+        ? undefined
+        : environment.remoteConfig.default
     }),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot(),
@@ -108,11 +105,6 @@ import {
     CustomEntitiesListFiltersModalModule.forRoot()
   ],
   providers: [
-    HTTP,
-    {
-      provide: NgxRemoteConfigService,
-      useClass: NgxRemoteConfigIonicService
-    },
     {
       provide: CONTENT_TYPES_CONFIG_TOKEN,
       useValue: {
