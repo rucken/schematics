@@ -1,3 +1,12 @@
+# [4.1.0](https://github.com/rucken/schematics/compare/4.0.4...4.1.0) (2019-04-24)
+
+
+### Features
+
+* Update dependencies and ionic application template and update method for correct detect latest deps versions ([caf5e71](https://github.com/rucken/schematics/commit/caf5e71))
+
+
+
 ## [4.0.4](https://github.com/rucken/schematics/compare/4.0.3...4.0.4) (2019-04-22)
 
 

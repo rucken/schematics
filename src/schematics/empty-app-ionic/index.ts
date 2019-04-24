@@ -181,7 +181,7 @@ function updatePackageJson(tree: Tree, options: NormalizedSchema): Rule {
     }
     if (packageJson.devDependencies && templatePackageJson.devDependencies) {
       Object.keys(templatePackageJson.devDependencies)
-        .filter(key => key.indexOf('webpack') === -1 && packageJson.devDependencies[key])
+        .filter(key => key.indexOf('webpack') === -1 && !packageJson.dependencies[key])
         .forEach(
           key =>
             (
