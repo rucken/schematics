@@ -200,7 +200,7 @@ function updateSourceFiles(
     return 'export const RuI18n = {};';
   }
   if (path === `/apps/demo/src/app/index.ts`) {
-    return `export * from './i18n/ru.i18n';`
+    return `export * from './i18n/ru.i18n';`;
   }
   return undefined;
 }
