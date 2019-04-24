@@ -23,4 +23,3 @@ export * from './pages/users-page/users-page.routes';
 export * from './shared/shared.module';
 export * from './utils/initialize-app';
 export * from './utils/meta-factory';
-export * from './utils/ngx-remote-config.service';

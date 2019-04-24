@@ -1,6 +1,7 @@
 import { join, normalize, Path } from '@angular-devkit/core';
 import { apply, chain, FileEntry, filter, forEach, mergeWith, move, Rule, SchematicContext, template, Tree, url } from '@angular-devkit/schematics';
 import { existsSync, readFileSync } from 'fs';
+import { vlatest } from '../../utils/versions';
 import { updateFileInTree, updateJsonInTree } from '../../utils/ast-utils';
 import { offsetFromRoot } from '../../utils/common';
 import { toFileName } from '../../utils/name-utils';
@@ -130,8 +131,12 @@ function updatePackageJson(tree: Tree, options: NormalizedSchema): Rule {
         .filter(key => key.indexOf('webpack') === -1)
         .forEach(
           key =>
-            (packageJson.dependencies[key] =
-              templatePackageJson.dependencies[key])
+            (packageJson.dependencies[key] = vlatest(
+              [
+                packageJson.dependencies[key],
+                templatePackageJson.dependencies[key]
+              ]
+            ))
         );
     }
     if (packageJson.devDependencies && templatePackageJson.devDependencies) {
@@ -139,8 +144,12 @@ function updatePackageJson(tree: Tree, options: NormalizedSchema): Rule {
         .filter(key => key.indexOf('webpack') === -1)
         .forEach(
           key =>
-            (packageJson.devDependencies[key] =
-              templatePackageJson.devDependencies[key])
+            (packageJson.devDependencies[key] = vlatest(
+              [
+                packageJson.devDependencies[key],
+                templatePackageJson.devDependencies[key]
+              ]
+            ))
         );
     }
     return packageJson;

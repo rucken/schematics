@@ -1,3 +1,12 @@
+# [0.1.0](https://github.com/rucken/todo-ionic/compare/0.0.4...0.1.0) (2019-04-23)
+
+
+### Features
+
+* Update and remove no used files ([f124e78](https://github.com/rucken/todo-ionic/commit/f124e78))
+
+
+
 ## [0.0.4](https://github.com/rucken/todo-ionic/compare/0.0.3...0.0.4) (2019-04-09)
 
 

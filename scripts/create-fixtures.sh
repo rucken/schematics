@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -rf ./fixtures
 npx schematics-readme
-npm run schematics -- .:workspace fixtures --author EndyKaufman --email admin@site15.ru 
+npm run schematics -- .:workspace fixtures --author EndyKaufman --email admin@site15.ru
 npm run schematics -- .:rucken-app custom-app --api=/api --author EndyKaufman --email admin@site15.ru --workspace fixtures
 npm run schematics -- .:rucken-app-ionic custom-app-ionic --api=/api --author EndyKaufman --email admin@site15.ru --workspace fixtures
 npm run schematics -- .:rucken-app-nestjs custom-app-nestjs --author EndyKaufman --email admin@site15.ru --workspace fixtures

@@ -85,6 +85,7 @@ vendors
       'npm': '>=6.5.0'
     };
     original.author = options.fullAuthorObject;
+    original.scripts['affected:prepare'] = 'rucken prepare';
     original.scripts['affected:dev'] = 'rucken prepare -m dev';
     original.scripts['affected:prod'] = 'rucken prepare -m prod';
     original.scripts['postinstall'] = 'sh ./scripts/postinstall.sh';
