@@ -99,7 +99,7 @@ function updateScriptsPatchJs(options: NormalizedSchema): Rule {
   });
 }
 function updateDevelopEnv(options: NormalizedSchema): Rule {
-  return updateFileInTree(join(normalize(options.workspace), 'scripts', 'develop._env'), data => {
+  return updateFileInTree(join(normalize(options.workspace), 'develop._env'), data => {
     const content = readFileSync(
       `${__dirname}/../../../files/rucken/todo-nestjs/develop._env`.replace('{localPath}', options.basePath)
     ).toString();

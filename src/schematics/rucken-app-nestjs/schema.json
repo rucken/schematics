@@ -66,6 +66,7 @@
     "name": {
       "description": "The name of the application.",
       "type": "string",
+      "format": "html-selector",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -74,7 +75,8 @@
     },
     "org": {
       "description": "The name of organization.",
-      "type": "string"
+      "type": "string",
+      "format": "html-selector"
     },
     "author": {
       "description": "Author name.",

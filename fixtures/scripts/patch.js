@@ -1,5 +1,3 @@
-// scripts/patch.js
-
 (function() {
   const fs = require('fs');
   const f =
