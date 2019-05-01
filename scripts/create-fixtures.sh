@@ -23,6 +23,3 @@ npm run schematics -- .:rucken-entity-ionic-to-app custom-entity --lib custom-li
 npm run schematics -- .:rucken-lib-nestjs custom-lib-nestjs --org custom-org --author EndyKaufman --email admin@site15.ru --workspace fixtures
 npm run schematics -- .:rucken-entity-nestjs custom-entity --org custom-org --lib custom-lib-nestjs --timestamp 1553957529598 --workspace fixtures
 npm run schematics -- .:rucken-lib-nestjs-to-app custom-lib-nestjs --org custom-org --app custom-app-nestjs --workspace fixtures
-cd fixtures
-npm i
-npm run affected:prod
