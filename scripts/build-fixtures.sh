@@ -1,4 +1,5 @@
 #!/bin/bash
+npx schematics-readme
 cd fixtures
 npm i
 npm run affected:prod
