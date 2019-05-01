@@ -68,7 +68,7 @@ function updateScriptsPatchJs(options) {
     });
 }
 function updateDevelopEnv(options) {
-    return ast_utils_1.updateFileInTree(core_1.join(core_1.normalize(options.workspace), 'scripts', 'develop._env'), data => {
+    return ast_utils_1.updateFileInTree(core_1.join(core_1.normalize(options.workspace), 'develop._env'), data => {
         const content = fs_1.readFileSync(`${__dirname}/../../../files/rucken/todo-nestjs/develop._env`.replace('{localPath}', options.basePath)).toString();
         return content;
     });

@@ -16,6 +16,7 @@
     "name": {
       "description": "The name of the entity.",
       "type": "string",
+      "format": "html-selector",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -25,11 +26,13 @@
     "lib": {
       "description": "The name of the library.",
       "type": "string",
+      "format": "html-selector",
       "x-prompt": "What name would you like to use for the library?"
     },
     "org": {
       "description": "The name of organization.",
       "type": "string",
+      "format": "html-selector",
       "x-prompt": "What name would you like to use for the organization?"
     }
   },
