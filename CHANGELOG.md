@@ -1,3 +1,15 @@
+## [4.1.1](https://github.com/rucken/schematics/compare/4.1.0...4.1.1) (2019-05-01)
+
+
+### Bug Fixes
+
+* Add html-selector  to generator properties ([0efdd1f](https://github.com/rucken/schematics/commit/0efdd1f))
+* Add scripts to workspace generator ([00e9f7e](https://github.com/rucken/schematics/commit/00e9f7e))
+* Update dependencies ([18be4b6](https://github.com/rucken/schematics/commit/18be4b6))
+* Update nestjs app generator ([745245f](https://github.com/rucken/schematics/commit/745245f))
+
+
+
 # [4.1.0](https://github.com/rucken/schematics/compare/4.0.4...4.1.0) (2019-04-24)
 
 
