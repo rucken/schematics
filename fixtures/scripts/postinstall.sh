@@ -1,4 +1,4 @@
-
+#!/bin/bash
 node ./scripts/patch.js
 node ./scripts/patch.js
 if [ ! -d "./vendors/rucken/core-nestjs" ]; then
