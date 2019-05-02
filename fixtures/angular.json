@@ -26,9 +26,7 @@
               "apps/custom-app/src/favicon.ico",
               "apps/custom-app/src/assets"
             ],
-            "styles": [
-              "apps/custom-app/src/styles.scss"
-            ],
+            "styles": ["apps/custom-app/src/styles.scss"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -40,7 +38,7 @@
                   "with": "apps/custom-app/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -48,7 +46,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -83,9 +81,7 @@
             "polyfills": "apps/custom-app/src/polyfills.ts",
             "tsConfig": "apps/custom-app/tsconfig.spec.json",
             "karmaConfig": "apps/custom-app/karma.conf.js",
-            "styles": [
-              "apps/custom-app/src/styles.scss"
-            ],
+            "styles": ["apps/custom-app/src/styles.scss"],
             "scripts": [],
             "assets": [
               "apps/custom-app/src/favicon.ico",
@@ -100,9 +96,7 @@
               "apps/custom-app/tsconfig.app.json",
               "apps/custom-app/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -208,7 +202,7 @@
                   "with": "apps/custom-app-ionic/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": false,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -216,7 +210,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -281,9 +275,7 @@
               "apps/custom-app-ionic/tsconfig.app.json",
               "apps/custom-app-ionic/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -331,9 +323,7 @@
               "apps/custom-app-nestjs/tsconfig.app.json",
               "apps/custom-app-nestjs/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -373,9 +363,7 @@
               "libs/custom-org/custom-lib/tsconfig.lib.json",
               "libs/custom-org/custom-lib/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       },
@@ -413,9 +401,7 @@
               "libs/custom-org/custom-lib-web/tsconfig.lib.json",
               "libs/custom-org/custom-lib-web/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       },
@@ -453,9 +439,7 @@
               "libs/custom-org/custom-lib-ionic/tsconfig.lib.json",
               "libs/custom-org/custom-lib-ionic/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       },
@@ -505,9 +489,7 @@
               "libs/custom-org/custom-lib-nestjs/tsconfig.lib.json",
               "libs/custom-org/custom-lib-nestjs/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {

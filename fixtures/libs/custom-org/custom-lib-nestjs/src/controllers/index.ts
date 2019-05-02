@@ -1,3 +1,7 @@
 import { CustomEntitiesController } from './custom-entities.controller';
+import { CustomEntitiesController } from './custom-entities.controller';
 
-export const CUSTOM_LIB_NESTJS_CONTROLLERS = [CustomEntitiesController];
+export const CUSTOM_LIB_NESTJS_CONTROLLERS = [
+  CustomEntitiesController,
+  CustomEntitiesController
+];
