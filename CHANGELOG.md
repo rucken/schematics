@@ -1,3 +1,12 @@
+## [4.1.2](https://github.com/rucken/schematics/compare/4.1.1...4.1.2) (2019-05-02)
+
+
+### Bug Fixes
+
+* Add tsickle in devDependencies for workspace generator ([7ee5b91](https://github.com/rucken/schematics/commit/7ee5b91))
+
+
+
 ## [4.1.1](https://github.com/rucken/schematics/compare/4.1.0...4.1.1) (2019-05-01)
 
 
