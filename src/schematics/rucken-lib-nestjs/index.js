@@ -37,6 +37,9 @@ function updateSourceFiles(path, content, options) {
     if (path === `/src/services/index.ts`) {
         return `export const ${strings_1.underscore(options.name).toUpperCase()}_SERVICES = []`;
     }
+    if (path === `/src/entities/index.ts`) {
+        return `export const ${strings_1.underscore(options.name).toUpperCase()}_ENTITIES = []`;
+    }
     if (path === `/src/index.ts`) {
         return `export * from './i18n/ru.i18n';`;
     }

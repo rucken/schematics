@@ -1,3 +1,12 @@
+## [4.1.3](https://github.com/rucken/schematics/compare/4.1.2...4.1.3) (2019-05-03)
+
+
+### Bug Fixes
+
+* **rucken-lib-nestjs:** Clear index.ts for entities ([c2a5d96](https://github.com/rucken/schematics/commit/c2a5d96))
+
+
+
 ## [4.1.2](https://github.com/rucken/schematics/compare/4.1.1...4.1.2) (2019-05-02)
 
 
