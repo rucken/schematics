@@ -84,8 +84,13 @@ function updateSourceFiles(
       options.name
     ).toUpperCase()}_SERVICES = []`;
   }
+  if (path === `/src/entities/index.ts`) {
+    return `export const ${underscore(
+      options.name
+    ).toUpperCase()}_ENTITIES = []`;
+  }
   if (path === `/src/index.ts`) {
-    return `export * from './i18n/ru.i18n';`
+    return `export * from './i18n/ru.i18n';`;
   }
   if (path === `/package.json`) {
     const original = JSON.parse(content);
