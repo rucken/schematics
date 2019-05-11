@@ -1,3 +1,12 @@
+## [4.1.5](https://github.com/rucken/schematics/compare/4.1.4...4.1.5) (2019-05-11)
+
+
+### Bug Fixes
+
+* Update dependencies for workspace ([9c2ca05](https://github.com/rucken/schematics/commit/9c2ca05))
+
+
+
 ## [4.1.4](https://github.com/rucken/schematics/compare/4.1.3...4.1.4) (2019-05-11)
 
 
