@@ -39,7 +39,6 @@ ng serve custom-app
 <!-- usagestop -->
 
 # Available generators
-* [Workspace](#workspace) - Workspace generator, based on the Rucken template
 * [Rucken app](#rucken-app) - Frontend application generator on Angular7+ with Bootstrap3, based on the Rucken template
 * [Rucken app ionic](#rucken-app-ionic) - Mobile frontend generator application on Angular7+ with Ionic4, based on the Rucken template
 * [Rucken app nestjs](#rucken-app-nestjs) - REST generator backend applications on NestJS with TypeORM, based on the Rucken template
@@ -53,24 +52,7 @@ ng serve custom-app
 * [Rucken lib nestjs](#rucken-lib-nestjs) - Backend library generator on NestJS, based on the Rucken template
 * [Rucken lib nestjs to app](#rucken-lib-nestjs-to-app) - Linking the library to the backend application on NestJS, based on the Rucken template
 * [Rucken lib to app](#rucken-lib-to-app) - Linking the library to the frontend application on Angular7+, based on the Rucken template
-
-## Workspace
-Workspace generator, based on the Rucken template
-
-Example:
-```bash
-schematics @rucken/schematics:workspace custom-workspace --author EndyKaufman --email admin@site15.ru
-```
-
-### Parameters
-| Name | Type | Description | Default |
-|------|:----:|------------:|--------:|
-| name | {string} | The name of the workspace. | {"$source":"argv","index":0} |
-| author | {string} | Author name. | none |
-| email | {string} | Author email name. | none |
-
-_See code: [src/schematics/workspace/index.ts](https://github.com/rucken/schematics/blob/master/src/schematics/workspace/index.ts)_
-
+* [Workspace](#workspace) - Workspace generator, based on the Rucken template
 ## Rucken app
 Frontend application generator on Angular7+ with Bootstrap3, based on the Rucken template
 
@@ -444,6 +426,23 @@ schematics @rucken/schematics:rucken-lib-to-app custom-lib-ionic --org custom-or
 | app | {string} | The name of application. | none |
 
 _See code: [src/schematics/rucken-lib-to-app/index.ts](https://github.com/rucken/schematics/blob/master/src/schematics/rucken-lib-to-app/index.ts)_
+
+## Workspace
+Workspace generator, based on the Rucken template
+
+Example:
+```bash
+schematics @rucken/schematics:workspace custom-workspace --author EndyKaufman --email admin@site15.ru
+```
+
+### Parameters
+| Name | Type | Description | Default |
+|------|:----:|------------:|--------:|
+| name | {string} | The name of the workspace. | {"$source":"argv","index":0} |
+| author | {string} | Author name. | none |
+| email | {string} | Author email name. | none |
+
+_See code: [src/schematics/workspace/index.ts](https://github.com/rucken/schematics/blob/master/src/schematics/workspace/index.ts)_
 
 <!-- generatorsstop -->
 
