@@ -188,7 +188,7 @@ function addChildrenRoute(options) {
     const fileName = name_utils_1.toFileName('entities-page.children-routes');
     const srcPath = core_1.join(core_1.normalize(options.workspace), 'apps', options.app, 'src', 'app', 'pages', 'entities-page', fileName);
     return ast_utils_1.updateFileInTree(srcPath + '.ts', (data, host) => {
-        const project = new ts_morph_1.default();
+        const project = new ts_morph_1.Project();
         project.manipulationSettings.set({
             insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces: true,
             quoteKind: ts_morph_1.QuoteKind.Single

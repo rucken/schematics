@@ -3,7 +3,7 @@ import { apply, chain, FileEntry, filter, forEach, mergeWith, move, Rule, Schema
 import { addImportToModule } from '@schematics/angular/utility/ast-utils';
 import { InsertChange } from '@schematics/angular/utility/change';
 import { pluralize } from 'inflection';
-import Project, { QuoteKind, SyntaxKind } from 'ts-morph';
+import { Project, QuoteKind, SyntaxKind } from 'ts-morph';
 import { readIntoSourceFile, updateFileInTree } from '../..//utils/ast-utils';
 import { offsetFromRoot } from '../../utils/common';
 import { toFileName } from '../../utils/name-utils';

@@ -1,3 +1,12 @@
+## [4.1.4](https://github.com/rucken/schematics/compare/4.1.3...4.1.4) (2019-05-11)
+
+
+### Bug Fixes
+
+* Update dependencies ([14e0a82](https://github.com/rucken/schematics/commit/14e0a82))
+
+
+
 ## [4.1.3](https://github.com/rucken/schematics/compare/4.1.2...4.1.3) (2019-05-03)
 
 
