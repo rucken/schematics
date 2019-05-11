@@ -2,7 +2,7 @@ import { join, normalize, Path } from '@angular-devkit/core';
 import { apply, chain, FileEntry, filter, forEach, mergeWith, move, Rule, SchematicContext, template, Tree, url } from '@angular-devkit/schematics';
 import { existsSync } from 'fs';
 import { pluralize } from 'inflection';
-import Project, { QuoteKind, SyntaxKind } from 'ts-morph';
+import { Project, QuoteKind, SyntaxKind } from 'ts-morph';
 import { updateFileInTree } from '../..//utils/ast-utils';
 import { offsetFromRoot } from '../../utils/common';
 import { toFileName } from '../../utils/name-utils';
