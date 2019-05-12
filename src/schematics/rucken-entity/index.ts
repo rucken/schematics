@@ -91,7 +91,7 @@ function createProviders(options: NormalizedSchema): Rule {
     );
     project.addExistingSourceFiles(srcPath);
 
-    const allImports = [];
+    let allImports = [];
     let allProviders = [];
 
     project
@@ -129,6 +129,14 @@ function createProviders(options: NormalizedSchema): Rule {
           )} } from './${sourceFile.getBaseName().replace('.ts', '')}';`
         );
       });
+
+    allImports = allImports.filter((elem, index, self) => {
+      return index === self.indexOf(elem);
+    });
+    allProviders = allProviders.filter((elem, index, self) => {
+      return index === self.indexOf(elem);
+    });
+
     const newSourceFile = project.createSourceFile(
       'providers.ts',
       `import { Provider } from '@angular/core';
