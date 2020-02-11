@@ -73,7 +73,7 @@ function createProviders(options, typeName, asProviders = true) {
         });
         host.getDir(srcPath).subfiles.forEach(key => project.createSourceFile('/' + core_1.join(srcPath, key), host.read('/' + core_1.join(srcPath, key)).toString('utf-8')));
         project.addExistingSourceFiles(srcPath);
-        const allImports = [];
+        let allImports = [];
         let allClasses = [];
         project
             .getSourceFiles()
@@ -88,6 +88,12 @@ function createProviders(options, typeName, asProviders = true) {
                 ...classesNames
             ];
             allImports.push(`import { ${classesNames.join(', ')} } from './${sourceFile.getBaseName().replace('.ts', '')}';`);
+        });
+        allImports = allImports.filter((elem, index, self) => {
+            return index === self.indexOf(elem);
+        });
+        allClasses = allClasses.filter((elem, index, self) => {
+            return index === self.indexOf(elem);
         });
         const newSourceFile = project.createSourceFile('index.ts', (asProviders ? `import { Provider } from '@nestjs/common';
 ` : '') +

@@ -48,7 +48,7 @@ function createProviders(options) {
         });
         host.getDir(srcPath).subfiles.forEach(key => project.createSourceFile('/' + core_1.join(srcPath, key), host.read('/' + core_1.join(srcPath, key)).toString('utf-8')));
         project.addExistingSourceFiles(srcPath);
-        const allImports = [];
+        let allImports = [];
         let allProviders = [];
         project
             .getSourceFiles()
@@ -69,6 +69,12 @@ function createProviders(options) {
                 }))
             ];
             allImports.push(`import { ${variables.join(', ')} } from './${sourceFile.getBaseName().replace('.ts', '')}';`);
+        });
+        allImports = allImports.filter((elem, index, self) => {
+            return index === self.indexOf(elem);
+        });
+        allProviders = allProviders.filter((elem, index, self) => {
+            return index === self.indexOf(elem);
         });
         const newSourceFile = project.createSourceFile('providers.ts', `import { Provider } from '@angular/core';
 ${allImports.join('\n')}
