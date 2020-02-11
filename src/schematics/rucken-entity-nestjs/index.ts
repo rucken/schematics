@@ -126,7 +126,7 @@ function createProviders(options: NormalizedSchema, typeName: string, asProvider
     );
     project.addExistingSourceFiles(srcPath);
 
-    const allImports = [];
+    let allImports = [];
     let allClasses = [];
 
     project
@@ -152,6 +152,14 @@ function createProviders(options: NormalizedSchema, typeName: string, asProvider
           )} } from './${sourceFile.getBaseName().replace('.ts', '')}';`
         );
       });
+
+    allImports = allImports.filter((elem, index, self) => {
+      return index === self.indexOf(elem);
+    });
+    allClasses = allClasses.filter((elem, index, self) => {
+      return index === self.indexOf(elem);
+    });
+
     const newSourceFile = project.createSourceFile(
       'index.ts',
       (

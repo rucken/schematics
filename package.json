@@ -1,6 +1,6 @@
 {
   "name": "@rucken/schematics",
-  "version": "4.1.5",
+  "version": "4.1.6",
   "engines": {
     "node": ">=11",
     "npm": ">=6.5.0"
@@ -62,9 +62,6 @@
     "@angular/platform-browser": "7.2.15",
     "@angular/platform-browser-dynamic": "7.2.15",
     "@angular/router": "7.2.15",
-    "@ngrx/effects": "7.4.0",
-    "@ngrx/router-store": "7.4.0",
-    "@ngrx/store": "7.4.0",
     "@nrwl/nx": "7.8.5",
     "@nrwl/schematics": "7.8.5",
     "@schematics/angular": "^7.3.9",
@@ -97,7 +94,6 @@
     "@ngrx/store-devtools": "7.4.0",
     "@nrwl/builders": "7.8.5",
     "@nrwl/schematics": "7.8.5",
-    "@rucken/cli": "4.1.3",
     "@types/jasmine": "3.3.12",
     "@types/jasminewd2": "2.0.6",
     "@types/node": "12.0.0",
@@ -122,9 +118,9 @@
     "prettier": "1.17.0",
     "protractor": "5.4.2",
     "ts-node": "8.1.0",
+    "tsickle": "0.35.0",
     "tslint": "5.16.0",
-    "typescript": "3.2.4",
-    "tsickle": "0.35.0"
+    "typescript": "3.2.4"
   },
   "greenkeeper": {
     "ignore": [
