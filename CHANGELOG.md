@@ -1,3 +1,13 @@
+## [4.1.6](https://github.com/rucken/schematics/compare/4.1.5...4.1.6) (2020-02-11)
+
+
+### Bug Fixes
+
+* Remove duplicated names ([#11](https://github.com/rucken/schematics/issues/11)) ([e1a1243](https://github.com/rucken/schematics/commit/e1a1243c33817457927faf719b781db4c9b9c9f9))
+* Remove not need deps ([a36b617](https://github.com/rucken/schematics/commit/a36b617f775db837b4de8eafd06feb47c7143f07))
+
+
+
 ## [4.1.5](https://github.com/rucken/schematics/compare/4.1.4...4.1.5) (2019-05-11)
 
 
