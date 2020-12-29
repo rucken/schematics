@@ -6,7 +6,7 @@
 [![Gitter][gitter-image]][gitter-url]
 [![Join the chat at telegram][telegram-image]][telegram-url]
 
-A schematics collections for generate source files for [Angular7+](https://angular.io/) and [NestJS](https://nestjs.com/) application based on [Rucken](https://rucken.io)  template
+A schematics collections for generate source files for [Angular7+](https://angular.io/) and [NestJS](https://nestjs.com/) application based on [Rucken](https://rucken.ru)  template
 
 <!-- generators -->
 

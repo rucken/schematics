@@ -49,13 +49,13 @@ import { TASKS_FRAME_ROUTES } from './tasks-frame/tasks-frame.routes';`,
     ];
     const toRemoveObject = {};
     toRemoveStrings.forEach(key => (toRemoveObject[key] = ''));
-    return Object.assign({}, toRemoveObject, { 'EndyKaufman <admin@site15.ru>': options.fullAuthor, 'EndyKaufman': options.author, 'admin@site15.ru': options.email, 'http://rucken.io/': options.api, 'http://localhost:5000/api': 'http://localhost:3000/api', '/demo-web/': '/' + options.name + '/', '/demo-web': '/' + options.name, 'demo-web': options.name, '/demo/': '/' + options.name + '/', '/demo': '/' + options.name, 'todo-demo': options.name
+    return Object.assign({}, toRemoveObject, { 'EndyKaufman <admin@site15.ru>': options.fullAuthor, 'EndyKaufman': options.author, 'admin@site15.ru': options.email, 'http://rucken.ru/': options.api, 'http://localhost:5000/api': 'http://localhost:3000/api', '/demo-web/': '/' + options.name + '/', '/demo-web': '/' + options.name, 'demo-web': options.name, '/demo/': '/' + options.name + '/', '/demo': '/' + options.name, 'todo-demo': options.name
             .split('.')
             .map(word => strings_1.dasherize(word))
             .join('.'), 'rucken-todo': options.name
             .split('.')
             .map(word => strings_1.dasherize(word))
-            .join('.'), 'https://todo-nestjs.rucken.io/api': options.api, 'http://todo-nestjs.rucken.io/api': options.api, 'Rucken: Todo': strings_1.capitalize(options.name)
+            .join('.'), 'https://todo-nestjs.rucken.ru/api': options.api, 'http://todo-nestjs.rucken.ru/api': options.api, 'Rucken: Todo': strings_1.capitalize(options.name)
             .split('-')
             .join(' '), DemoWeb: strings_1.classify(options.name) });
 }

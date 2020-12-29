@@ -72,7 +72,7 @@ import { PROJECTS_PAGE_ROUTES } from './pages/projects-page/projects-page.routes
     'EndyKaufman <admin@site15.ru>': options.fullAuthor,
     'EndyKaufman': options.author,
     'admin@site15.ru': options.email,
-    'http://rucken.io/': options.api,
+    'http://rucken.ru/': options.api,
     'node_modules/@ionic/core/dist/ionic/svg':
       'node_modules/ionicons/dist/ionicons/svg',
     '/apps/demo/src': '/src',
@@ -94,8 +94,8 @@ import { PROJECTS_PAGE_ROUTES } from './pages/projects-page/projects-page.routes
       .split('.')
       .map(word => dasherize(word))
       .join('.'),
-    'https://todo-nestjs.rucken.io/api': options.api,
-    'http://todo-nestjs.rucken.io/api': options.api,
+    'https://todo-nestjs.rucken.ru/api': options.api,
+    'http://todo-nestjs.rucken.ru/api': options.api,
     'demo-todo': options.name
       .split('.')
       .map(word => dasherize(word))

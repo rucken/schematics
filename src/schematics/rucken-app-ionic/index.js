@@ -57,7 +57,7 @@ import { PROJECTS_PAGE_ROUTES } from './pages/projects-page/projects-page.routes
     ];
     const toRemoveObject = {};
     toRemoveStrings.forEach(key => (toRemoveObject[key] = ''));
-    return Object.assign({}, toRemoveObject, { 'EndyKaufman <admin@site15.ru>': options.fullAuthor, 'EndyKaufman': options.author, 'admin@site15.ru': options.email, 'http://rucken.io/': options.api, 'node_modules/@ionic/core/dist/ionic/svg': 'node_modules/ionicons/dist/ionicons/svg', '/apps/demo/src': '/src', 'http://localhost:5000/api': 'http://localhost:3000/api', 'io.rucken.android.todoionic': 'com.' + options.name.split('-').join(''), 'rucken-todo-ionic': options.name
+    return Object.assign({}, toRemoveObject, { 'EndyKaufman <admin@site15.ru>': options.fullAuthor, 'EndyKaufman': options.author, 'admin@site15.ru': options.email, 'http://rucken.ru/': options.api, 'node_modules/@ionic/core/dist/ionic/svg': 'node_modules/ionicons/dist/ionicons/svg', '/apps/demo/src': '/src', 'http://localhost:5000/api': 'http://localhost:3000/api', 'io.rucken.android.todoionic': 'com.' + options.name.split('-').join(''), 'rucken-todo-ionic': options.name
             .split('.')
             .map(word => strings_1.dasherize(word))
             .join('.'), '/demo-todo/': '/' + options.name + '/', '/demo-todo': '/' + options.name, 'Rucken: Todo Ionic': strings_1.capitalize(options.name)
@@ -67,7 +67,7 @@ import { PROJECTS_PAGE_ROUTES } from './pages/projects-page/projects-page.routes
             .join(' '), 'rucken-todo': options.name
             .split('.')
             .map(word => strings_1.dasherize(word))
-            .join('.'), 'https://todo-nestjs.rucken.io/api': options.api, 'http://todo-nestjs.rucken.io/api': options.api, 'demo-todo': options.name
+            .join('.'), 'https://todo-nestjs.rucken.ru/api': options.api, 'http://todo-nestjs.rucken.ru/api': options.api, 'demo-todo': options.name
             .split('.')
             .map(word => strings_1.dasherize(word))
             .join('.'), '/demo/': '/' + options.name + '/', '/demo': '/' + options.name, demo: options.name
